@@ -8,10 +8,10 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 export const mapStateToProps = (state) => {
     debugger
     return {
-        
         errors: state.errors.session,
         formType: 'login',
-        loggedin: Boolean(state.session.id)
+        loggedin: Boolean(state.session.currentUser), 
+        demouser: { username: 'nancy kerrigan', email: 'nk@aol.com', password: 'nancy5' } 
     }
 }
 
@@ -19,10 +19,11 @@ export const mapDispatchToProps = (dispatch) => {
     debugger
     return {
         processForm: (user) => dispatch(login(user)),
-        otherForm: (
-            <button onClick={()=> dispatch(openModal('signup'))}>Sign Up</button>
-        ),
-        closeModal: () => dispatch(closeModal())
+        otherForm: ()=> dispatch(openModal('signup')),
+        closeModal: () => {
+            debugger
+            return dispatch(closeModal())
+        }
     };
 };
 

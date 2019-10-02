@@ -9,11 +9,14 @@ function Modal({modal, closeModal}) {
     return null;
   }
   let component;
+  debugger
   switch (modal) {
     case 'login':
+      debugger
       component = <LoginContainer />;
       break;
     case 'signup':
+      debugger
       component = <SignupContainer />;
       break;
     default:
@@ -38,7 +41,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   debugger
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => {
+      debugger 
+      return dispatch(closeModal())
+    }
   };
 };
 

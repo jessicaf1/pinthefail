@@ -6,6 +6,7 @@ export default({ currentUser, logout, openModal }) => {
 //         <div>
 //             <h2>hello, {currentUser.username}</h2>
 //             <button onClick={logout}>Logout</button>
+
 //         </div>
 //     ) : (
 //         <div>
@@ -22,17 +23,27 @@ export default({ currentUser, logout, openModal }) => {
 //         </div>
 //     )
 // }
+    
 
     const signInSignUp = () => (
         <div>
-            <button onClick={() => openModal('Log In')}>Login</button>
-            <button onClick={() => openModal('Sign Up')}>Signup</button>
+            <button className="modalbutton" onClick={() => openModal('login')}>Login</button>
+        <button className="modalbutton" onClick={() => openModal('signup')}>Signup</button>
         </div>
     );
     const navbar = () => (
       <div>
-        <h2 className="header-name">welcome, {currentUser.username}</h2>
-        <button className="header-button" onClick={logout}>Log Out</button>
+        <form className="nav-bar">
+          <img className="image" src={window.logo}/>
+          <input className="btn spacebar" type="text" placeholder="search..."/>
+          <button className="btn" type="submit">Home</button>
+          <button className="btn" type="submit">{currentUser.username}</button>
+          <button className="btn" type="submit">Following</button>
+         <ul class="dropdown">
+           <span class="dropdown-button">...</span>
+            <li><button className="btn dropdown-little-button" onClick={logout}>Log Out</button></li>
+         </ul>
+        </form>
       </div>
     );
   

@@ -10,12 +10,8 @@ const App = () => (
  <div>
      <Modal/> 
      <header>
-        <h1>pinthefail</h1>
         <NavBarContainer/>
     </header>
-
-    <AuthRoute path="/login" component={LoginContainer}/>
-    <AuthRoute path="/signup" component={SignupContainer}/>
 </div>
 );
 
