@@ -34,9 +34,10 @@ render() {
     }
 
     return(
-        <div>
-        <h2>{this.props.formType}</h2>
-            <form onSubmit={this.handleSubmit}>
+        <div className="form-all">
+            <form className="signup-form" onSubmit={this.handleSubmit}>
+            Please {this.props.formType} or {this.props.otherForm}
+            <div onClick={this.props.closeModal}>X</div>
                 <label>
                     <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')}/>
                 </label>
