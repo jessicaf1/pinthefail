@@ -53,3 +53,13 @@ body {
     border-radius: 5px solid gray;
     font-color: gray;
 }
+
+.session-button {
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+.session-button:hover {
+    background-color: darkred;
+}

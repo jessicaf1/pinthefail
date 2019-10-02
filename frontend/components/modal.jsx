@@ -10,10 +10,10 @@ function Modal({modal, closeModal}) {
   }
   let component;
   switch (modal) {
-    case 'Log In':
+    case 'login':
       component = <LoginContainer />;
       break;
-    case 'Sign Up':
+    case 'signup':
       component = <SignupContainer />;
       break;
     default:
@@ -29,12 +29,14 @@ function Modal({modal, closeModal}) {
 }
 
 const mapStateToProps = state => {
+  debugger
   return {
     modal: state.ui.modal
   };
 };
 
 const mapDispatchToProps = dispatch => {
+  debugger
   return {
     closeModal: () => dispatch(closeModal())
   };

@@ -5,12 +5,14 @@ import NavBar from './nav_bar';
 import { openModal } from '../../actions/modal_actions'
 
 const mapStateToProps = state => {
+    debugger
     return {
         currentUser: state.entities.users[state.session.id]
     }
 }
 
 const mapDispatchToProps = dispatch => {
+    debugger
     return {
         logout: () => dispatch(logout()),
         openModal: modal => dispatch(openModal(modal))

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -13,31 +14,43 @@ class SessionForm extends React.Component {
     }
 
 handleInput(field) {
+    debugger
     return(e) => {
         this.setState({ [field]: e.target.value} );
     }
 }
 
 handleSubmit(e) {
+    debugger
     e.preventDefault();
-    this.props.processForm(this.state)
-    .then( ()=> this.props.history.push('/'));
+    this.props.processForm(this.state).then(this.props.closeModal);
 }
 
-render() {
-    let otherLink;
-    if(this.props.formType === 'Sign Up'){
-        otherLink = <Link to="/login">Log In</Link>
-    }
-    else {
-        otherLink = <Link to="/signup">Sign Up</Link>
-    }
+// render() {
+    // let otherLink;
+    // if(this.props.formType === 'Sign Up'){
+    //     otherLink = <Link to="/login">Log In</Link>
+    // }
+    // else {
+    //     otherLink = <Link to="/signup">Sign Up</Link>
+    // }
 
+renderErrors() {
+    return (
+        <ul>
+            {this.props.errors.map((error, index)=> (
+                <li key = {i}>{error}</li>
+            ))} 
+        </ul>
+    );
+    } 
+   render(){
     return(
         <div className="form-all">
             <form className="signup-form" onSubmit={this.handleSubmit}>
-            Please {this.props.formType} or {this.props.otherForm}
+            either {this.props.formType} or {this.props.otherForm}
             <div onClick={this.props.closeModal}>X</div>
+            {this.renderErrors()}
                 <label>
                     <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')}/>
                 </label>
@@ -47,13 +60,12 @@ render() {
                 <label>
                     <input type="password" placeholder="password" value={this.state.password} onChange={this.handleInput('password')}/>
                 </label>
-                <input type="submit" value={this.props.formType}/>
+                <input className="session-button" type="submit" value={this.props.formType}/>
             </form>
-            <h4>{otherLink}</h4>
+
         </div>
         )
-
-    }
+    } 
 }
 
-export default SessionForm; 
+export default withRouter(SessionForm); 

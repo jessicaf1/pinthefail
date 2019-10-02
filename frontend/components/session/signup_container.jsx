@@ -5,19 +5,23 @@ import {signup} from '../../actions/session_actions';
 import SessionForm from './sessionform';
 import { openModal, closeModal } from '../../actions/modal_actions'
 
-export const mapStateToProps = (state, ownProps) => {
+export const mapStateToProps = (state) => {
+    debugger
     return {
+        
         errors: state.errors.session,
-        formType: 'Sign Up',
+        formType: 'signup',
         loggedin: Boolean(state.session.id)
     }
 }
 
-export const mapDispatchToProps = (dispatch, ownProps) => {
+export const mapDispatchToProps = (dispatch) => {
+    
     return {
+        
         processForm: (user) => dispatch(signup(user)),
         otherForm: (
-            <button onClick={()=> dispatch(openModal('Log In'))}>Log In</button>
+            <button onClick={()=> dispatch(openModal('login'))}>Log In</button>
         ),
         closeModal: () => dispatch(closeModal())
     };
