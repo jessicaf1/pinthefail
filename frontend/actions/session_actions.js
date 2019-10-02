@@ -5,40 +5,40 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 const receiveCurrentUser = user => {
-  return {
-    type: RECEIVE_CURRENT_USER, 
-    user 
-  }
+    return {
+        type: RECEIVE_CURRENT_USER,
+        user
+    }
 }
 
 const logoutCurrentUser = () => {
-  return {
-    type: LOGOUT_CURRENT_USER
-  };
+    return {
+        type: LOGOUT_CURRENT_USER
+    };
 };
 
 const receiveErrors = errors => {
-  return {
-    type: RECEIVE_SESSION_ERRORS,
-    errors
-  };
+    return {
+        type: RECEIVE_SESSION_ERRORS,
+        errors
+    };
 };
 
 
 export const signup = user => {
-  return dispatch => {
-    return APIUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)))
-  }
+    return dispatch => {
+        return APIUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)))
+    }
 }
 
 export const login = user => {
-  return dispatch => {
-    return APIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)))
-  }
+    return dispatch => {
+        return APIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)))
+    }
 }
 
 export const logout = () => {
-  return dispatch => {
-    return APIUtil.logout().then(user => dispatch(logout()));
-  };
+    return dispatch => {
+        return APIUtil.logout().then(user => dispatch(logoutCurrentUser()));
+    };
 };
