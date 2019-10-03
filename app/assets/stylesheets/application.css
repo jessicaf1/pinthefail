@@ -86,6 +86,8 @@ body {
     color: grey;
     border: 0;
     background: none; 
+    height: 30px;
+    font-size: 15px; 
 }
 
  .spacebar {
