@@ -28,20 +28,20 @@ export default({ currentUser, logout, openModal }) => {
     const signInSignUp = () => (
         <div>
             <button className="modalbutton" onClick={() => openModal('login')}>Login</button>
-        <button className="modalbutton" onClick={() => openModal('signup')}>Signup</button>
+            <button className="modalbutton" onClick={() => openModal('signup')}>Signup</button>
         </div>
     );
     const navbar = () => (
       <div>
         <form className="nav-bar">
-          <img className="image" src={window.logo}/>
+          <img className="image" id="spacethumb" src={window.logo}/>
           <input className="btn spacebar" type="text" placeholder="search..."/>
           <button className="btn" type="submit">Home</button>
           <button className="btn" type="submit">{currentUser.username}</button>
           <button className="btn" type="submit">Following</button>
-         <ul class="dropdown">
-           <span class="dropdown-button">...</span>
-            <li><button className="btn dropdown-little-button" onClick={logout}>Log Out</button></li>
+          <button><img className="image" src={window.dots} onClick={logout} /></button>
+         <ul>
+            <li><button onClick={logout}>Log Out</button></li>
          </ul>
         </form>
       </div>

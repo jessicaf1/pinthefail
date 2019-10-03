@@ -38,7 +38,7 @@
 
 body {
     background: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,"\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3",Hiragino Kaku Gothic Pro,"\30E1\30A4\30EA\30AA",Meiryo,"\FF2D\FF33 \FF30\30B4\30B7\30C3\30AF",Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
 }
 
 .form-all {
@@ -68,9 +68,9 @@ body {
     flex-direction: column; 
     align-items: center; 
     justify-content: space-around; 
-    width: 250px; 
-    height: 300px;
-    box-sizing: border-box;
+    width: 230px; 
+    min-height: 300px;
+    
 }
 
 .nav-bar {
@@ -121,9 +121,10 @@ body {
 
 .headerlogo {
     font-weight: bold; 
-    font-size: 16px; 
-    padding: 20px;  
+    font-size: 20px; 
+    padding: 8px;  
     color: rgb(51, 51, 51);
+    letter-spacing: -.5px;
 
 }
 
@@ -132,18 +133,20 @@ body {
 }
 
 .headersublogo {
-    padding-top: 0px; 
-    font-size: 8px; 
+    font-size: 9px; 
     color: rgb(51, 51, 51);
+    font-weight: normal;
 }
 
 .modalbutton {
     float: left; 
 }
 
-.buttons {
-    width: 60%; 
+.sub-buttons {
+    width: 50%; 
     margin: 10px; 
+    padding-top: 10px;
+    height: 40px; 
 }
 
 .session-button {
@@ -151,29 +154,47 @@ body {
 }
 
 .field {
-    margin: 3px; 
     border: 0.5px solid lightgray; 
-    border-radius: 5px; 
+    border-radius: 3px; 
+    border-color: #8e8e8e; 
+    color: black;
+    padding: 5px;  
+    align-items: center; 
+    margin: 1px; 
+}
+::placeholder {
+    color: #bfbfbf;
+    font-weight: normal; 
+    border-color:#8e8e8e;
 }
 
 .footer {
     font-size: 8px; 
     word-wrap: break-word; 
     align-items: center; 
-    color: lightgray; 
+    color: gray; 
+}
+.footer-button:hover {
+    text-decoration: underline; 
 }
 
 .footer-button {
     background-color: white; 
+    color: black; 
+    text-align: center; 
+    padding-left: 2px; 
 }
 
 .errors {
-    height: 3px; 
+    height: 2px; 
+    padding-right: 80px;  
+    padding-bottom: 10px; 
+    align-items: center;
 }
 
 #left  {
     position: absolute; 
-    left: 50px; 
+    left: 70px; 
     background-color: lightgray;
     color: rgb(51, 51, 51);
     border-radius: 5px; 
@@ -181,4 +202,26 @@ body {
     padding: 6px; 
     width: 50px; 
     font-weight: bold; 
+}
+
+#spacethumb {
+    padding-top: 10px;
+    margin: 5px; 
+}
+
+.spanner {
+    display: flex; 
+    justify-content: center; 
+}
+
+.error {
+    font-size: 6px; 
+    text-align: center; 
+    list-style-type: none; 
+}
+
+.input-fields{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
