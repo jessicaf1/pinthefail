@@ -45,6 +45,7 @@ body {
     display: flex;
     justify-content: center;
     width: 1000px;
+    height: 500px; 
 }
 
 
@@ -266,4 +267,15 @@ body {
     bottom: 0x;
     left: 0px; 
     color: grey; 
+}
+
+.footergit {
+    position: absolute;
+    bottom: 0;
+    font-size: 10px; 
+    color: grey;
+}
+
+.footergit:hover {
+    color: red; 
 }
