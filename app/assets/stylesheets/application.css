@@ -255,8 +255,15 @@ body {
     color: #8e8e8e;
     height: 30px; 
     width: 50px;
+    border: none; 
 }
 
 .menubutton:hover {
     background: darkgray;
+}
+
+.footer {
+    bottom: 0x;
+    left: 0px; 
+    color: grey; 
 }

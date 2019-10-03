@@ -108,7 +108,9 @@ renderErrors() {
                 </div>
             </div>
             </form>
-    
+            <footer className="footer">
+            <a href="https://github.com/jessicaf1/pinthefail">find me on git!</a>
+            </footer>
         </div>
         )
     } 
