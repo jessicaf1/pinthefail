@@ -14,13 +14,13 @@
  *= require_self
  */
 
-.modal-background {
+#modal-background {
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background: white;
+    background: rgba(0, 0, 0, 0.4);
     z-index: 12;
 }
 
@@ -30,10 +30,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 16; 
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 100px; 
 }
 
 body {
@@ -54,7 +50,8 @@ body {
     background-color: red;
     border-radius: 5px;
     color: white;
-    width: 100%; 
+    font-weight: bold; 
+    width: 273px; 
     height: 30px; 
 }
 
@@ -71,7 +68,7 @@ body {
     align-items: center; 
     justify-content: space-around; 
     width: 390px; 
-    height: 450px;
+    height: 550px;
     
 }
 
@@ -116,6 +113,7 @@ body {
     right: 0;  
     height: 2px; 
     width: 2px; 
+    visibility: hidden; 
 }
 
 #otherbutton {
@@ -130,7 +128,7 @@ body {
     padding: 6px;  
     color: rgb(51, 51, 51);
     letter-spacing: -.5px;
-
+    margin-top: -26px;
 }
 
 .headerimage {
@@ -141,14 +139,16 @@ body {
     font-size: 12px; 
     color: rgb(51, 51, 51);
     font-weight: normal;
+    margin-top: -24px; 
 }
 
 .modalbutton {
     float: left; 
+    visibility: hidden; 
 }
 
 .sub-buttons {
-    width: 210px; 
+    width: 274px; 
     margin: 10px; 
     padding-top: 10px;
     height: 45px; 
@@ -168,7 +168,7 @@ body {
     padding: 5px;  
     align-items: center; 
     margin: 5px; 
-    width: 200px; 
+    width: 260px; 
     height: 30px; 
     position: sticky; 
 }
@@ -205,7 +205,7 @@ body {
 
 #left  {
     position: fixed; 
-    left: 10%; 
+    left: -90px; 
     background-color: rgb(249, 242, 242);
     color: rgb(51, 51, 51);
     border-radius: 10px; 
@@ -275,6 +275,7 @@ body {
     bottom: 0;
     font-size: 10px; 
     color: grey;
+    margin-bottom: -100px; 
 }
 
 .footergit:hover {
