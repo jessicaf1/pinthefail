@@ -64,7 +64,7 @@ export default ({ currentUser, logout, openModal }) => {
           <img className="image" id="spacethumb" src={window.logo}/>
           <input className="btn spacebar" type="text" placeholder="search..."/>
           <button className="btn" type="submit">Home</button>
-          <button className="btn" type="submit">{currentUser.username}</button>
+          <button className="btn" type="submit">{currentUser.email}</button>
           <button className="btn" type="submit">Following</button>
          
          <DropDownContainer/> 

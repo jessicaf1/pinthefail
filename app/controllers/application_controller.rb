@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_logged_in
     unless @current_user
-      render json: { base: ['invalid username and/or password']}, status: 401 
+      render json: { base: ['invalid email and/or password']}, status: 401 
     end 
   end
 

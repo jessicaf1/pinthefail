@@ -153,7 +153,7 @@ body {
     padding-top: 10px;
     height: 45px; 
     margin-top: -4px;
-    margin-bottom: 14px; 
+    margin-bottom: 30px; 
 }
 
 .session-button {
@@ -167,9 +167,10 @@ body {
     color: black;
     padding: 5px;  
     align-items: center; 
-    margin: 1px; 
+    margin: 5px; 
     width: 200px; 
     height: 30px; 
+    position: sticky; 
 }
 ::placeholder {
     color: #bfbfbf;
@@ -278,4 +279,10 @@ body {
 
 .footergit:hover {
     color: red; 
+}
+
+.err {
+    font-size: 10px;
+    color: red; 
+    position: relative; 
 }

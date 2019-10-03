@@ -4,5 +4,6 @@ class RemoveColumnFromUsers < ActiveRecord::Migration[5.2]
     remove_column :users, :l_name
     remove_column :users, :location
     remove_column :users, :description
+    
   end
 end

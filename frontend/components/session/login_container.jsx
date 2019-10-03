@@ -11,7 +11,7 @@ export const mapStateToProps = (state) => {
         errors: state.errors.session,
         formType: 'login',
         loggedin: Boolean(state.session.currentUser), 
-        demouser: { username: 'nancy kerrigan', email: 'nk@aol.com', password: 'nancy5' } 
+        demouser: { email: 'nk@aol.com', password: 'nancy5' } 
     }
 }
 
