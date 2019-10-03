@@ -16,9 +16,12 @@ const App = () => (
     </header>
     <Switch>
        <Route exact path="/" component={Background}/> 
+  
     </Switch>
 </div>
 );
 
 export default App;
     
+{/* <Route path="/users/:userId" component={UserShowPage} />
+    <Route path="/users/:UserId/edot" component={UserEditPage} /> */}
