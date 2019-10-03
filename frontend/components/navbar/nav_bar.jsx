@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DropDownContainer from './drop_down_container';
 
-class NavBar extends React.Component {
-  constructor(props){
-    super(props)
-    this.switchClicked = this.switchClicked.bind(this)
-    this.dropdownBar = this.dropdownBar.bind(this)
-    this.state = { clicked: false }
-  }
+export default ({ currentUser, logout, openModal }) => {
+    // this.switchClicked = this.switchClicked.bind(this)
+    // this.dropdownBar = this.dropdownBar.bind(this)
+    // this.state = { clicked: false }
+
 
 //     const display = currentUser ? (
 //         <div>
@@ -30,53 +29,53 @@ class NavBar extends React.Component {
 //         </div>
 //     )
 // }
-    dropdownBar() {
-      if(this.state.clicked === true){
-        return (
-          <ul>
-            <li><button className="visible" onClick={this.props.logout}>Log Out</button></li>
-          </ul>
-        )
-      }
-    }
+    // dropdownBar() {
+    //   if(this.state.clicked === true){
+    //     return (
+    //       <ul>
+    //         <li><button className="visible" onClick={this.props.logout}>Log Out</button></li>
+    //       </ul>
+    //     )
+    //   }
+    //   else{
+    //     return (null) 
+    //   }
+    // }
 
-    switchClicked() {
+    // switchClicked() {
+    //     this.state.clicked = !this.state.clicked,
+    //     this.dropdownBar()
+    // }
+
+    const signInSignUp = () => {
       return (
-        this.state.clicked = !this.state.clicked,
-        this.dropdownBar()
-      ) 
-    }
-
-    signInSignUp() {
         <div>
             <button className="modalbutton" onClick={() => openModal('login')}>Login</button>
             <button className="modalbutton" onClick={() => openModal('signup')}>Signup</button>
         </div>
+      ) 
+      
     }
 
-    navbar(){
+  const navbar = (currentUser, logout) => {
+    return(
       <div>
         <form className="nav-bar">
           <img className="image" id="spacethumb" src={window.logo}/>
           <input className="btn spacebar" type="text" placeholder="search..."/>
           <button className="btn" type="submit">Home</button>
-          <button className="btn" type="submit">{this.props.currentUser.username}</button>
+          <button className="btn" type="submit">{currentUser.username}</button>
           <button className="btn" type="submit">Following</button>
-          <button><img className="image" src={window.dots} onClick={this.switchClicked()} /></button>
-         <ul>
-            
-         </ul>
+         
+         <DropDownContainer/> 
         </form>
       </div>
+    ) 
     };
 
-    render() {
-    return (
-      this.props.currentUser ?
-      this.navbar(this.props.currentUser, this.props.logout) :
-      this.signInSignUp()
-    );
-  };
-}
-
-export default NavBar
+     debugger
+    return ( currentUser ?
+      navbar(currentUser, logout) :
+      signInSignUp()
+      );
+} 

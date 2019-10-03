@@ -54,6 +54,7 @@ body {
     border-radius: 5px;
     color: white;
     width: 100%; 
+    height: 30px; 
 }
 
 .session-button:hover {
@@ -63,13 +64,13 @@ body {
 .signup-form {
     background-color: white;
     border: 1px solid lightgray; 
-    border-radius: 5px; 
+    border-radius: 10px; 
     display: flex;
     flex-direction: column; 
     align-items: center; 
     justify-content: space-around; 
-    width: 230px; 
-    min-height: 300px;
+    width: 390px; 
+    height: 450px;
     
 }
 
@@ -77,6 +78,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center; 
+    height: 10%; 
 } 
 
 .btn {
@@ -87,7 +89,7 @@ body {
 }
 
  .spacebar {
-  width: 90%;
+  width: 80%;
   background-color: lightgray; 
   color: white; 
   border-radius: 5px; 
@@ -102,7 +104,7 @@ body {
  }
 
 .image {
-    width: 20px;
+    width: 30px;
 }
 
 .x {
@@ -115,14 +117,14 @@ body {
 
 #otherbutton {
    float: left; 
-   border: 1px
+   border: 1px;
    border-radius: 5px; 
 }
 
 .headerlogo {
     font-weight: bold; 
-    font-size: 20px; 
-    padding: 8px;  
+    font-size: 32px; 
+    padding: 6px;  
     color: rgb(51, 51, 51);
     letter-spacing: -.5px;
 
@@ -133,7 +135,7 @@ body {
 }
 
 .headersublogo {
-    font-size: 9px; 
+    font-size: 12px; 
     color: rgb(51, 51, 51);
     font-weight: normal;
 }
@@ -143,10 +145,10 @@ body {
 }
 
 .sub-buttons {
-    width: 50%; 
+    width: 210px; 
     margin: 10px; 
     padding-top: 10px;
-    height: 40px; 
+    height: 45px; 
     margin-top: -4px;
     margin-bottom: 14px; 
 }
@@ -156,16 +158,19 @@ body {
 }
 
 .field {
-    border: 0.5px solid lightgray; 
+    border: 1px solid lightgray; 
     border-radius: 3px; 
     border-color: #8e8e8e; 
     color: black;
     padding: 5px;  
     align-items: center; 
     margin: 1px; 
+    width: 200px; 
+    height: 30px; 
 }
 ::placeholder {
     color: #bfbfbf;
+    font-size: 16px; 
     font-weight: normal; 
     border-color:#8e8e8e;
 }
@@ -195,14 +200,15 @@ body {
 }
 
 #left  {
-    position: absolute; 
-    left: 70px; 
-    background-color: lightgray;
+    position: fixed; 
+    left: 10%; 
+    background-color: rgb(249, 242, 242);
     color: rgb(51, 51, 51);
-    border-radius: 5px; 
-    font-size: 8px; 
+    border-radius: 10px; 
+    font-size: 16px; 
     padding: 6px; 
-    width: 50px; 
+    width: 140px; 
+    height: 40px;
     font-weight: bold; 
 }
 
@@ -214,6 +220,7 @@ body {
 .spanner {
     display: flex; 
     justify-content: center; 
+    font-weight: bold; 
 }
 
 .error {
@@ -233,4 +240,21 @@ body {
     flex-direction: column; 
     align-items: center; 
     margin-bottom: 9px; 
+}
+
+#toggbutton {
+    position: relative;
+    border: none; 
+}
+
+.menubutton {
+    position: fixed;
+    background: lightgray;
+    color: #8e8e8e;
+    height: 30px; 
+    width: 50px;
+}
+
+.menubutton:hover {
+    background: darkgray;
 }

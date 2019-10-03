@@ -13,11 +13,11 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
+    // debugger
     return {
         logout: () => dispatch(logout()),
         openModal: modal =>  {
-            debugger
+            // debugger
             return dispatch(openModal(modal));  
         }
     }
