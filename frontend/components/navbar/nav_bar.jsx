@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default({ currentUser, logout, openModal }) => {
+class NavBar extends React.Component {
+  constructor(props){
+    super(props)
+    this.switchClicked = this.switchClicked.bind(this)
+    this.dropdownBar = this.dropdownBar.bind(this)
+    this.state = { clicked: false }
+  }
+
 //     const display = currentUser ? (
 //         <div>
 //             <h2>hello, {currentUser.username}</h2>
@@ -23,34 +30,53 @@ export default({ currentUser, logout, openModal }) => {
 //         </div>
 //     )
 // }
-    
+    dropdownBar() {
+      if(this.state.clicked === true){
+        return (
+          <ul>
+            <li><button className="visible" onClick={this.props.logout}>Log Out</button></li>
+          </ul>
+        )
+      }
+    }
 
-    const signInSignUp = () => (
+    switchClicked() {
+      return (
+        this.state.clicked = !this.state.clicked,
+        this.dropdownBar()
+      ) 
+    }
+
+    signInSignUp() {
         <div>
             <button className="modalbutton" onClick={() => openModal('login')}>Login</button>
             <button className="modalbutton" onClick={() => openModal('signup')}>Signup</button>
         </div>
-    );
-    const navbar = () => (
+    }
+
+    navbar(){
       <div>
         <form className="nav-bar">
           <img className="image" id="spacethumb" src={window.logo}/>
           <input className="btn spacebar" type="text" placeholder="search..."/>
           <button className="btn" type="submit">Home</button>
-          <button className="btn" type="submit">{currentUser.username}</button>
+          <button className="btn" type="submit">{this.props.currentUser.username}</button>
           <button className="btn" type="submit">Following</button>
-          <button><img className="image" src={window.dots} onClick={logout} /></button>
+          <button><img className="image" src={window.dots} onClick={this.switchClicked()} /></button>
          <ul>
-            <li><button onClick={logout}>Log Out</button></li>
+            
          </ul>
         </form>
       </div>
-    );
-  
+    };
+
+    render() {
     return (
-      currentUser ?
-      navbar(currentUser, logout) :
-      signInSignUp()
+      this.props.currentUser ?
+      this.navbar(this.props.currentUser, this.props.logout) :
+      this.signInSignUp()
     );
   };
-  
+}
+
+export default NavBar

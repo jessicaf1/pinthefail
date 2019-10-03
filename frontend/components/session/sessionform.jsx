@@ -97,6 +97,7 @@ renderErrors() {
                 </label>
                 {this.renderErrors()}
             </div>
+            <div className="bottom">
                 <div className="sub-buttons">
                         <input className="session-button" type="submit" value={this.props.formType}/>
                         {demoU}
@@ -105,6 +106,7 @@ renderErrors() {
                 <div className="footer">
                 {disp}
                 </div>
+            </div>
             </form>
     
         </div>

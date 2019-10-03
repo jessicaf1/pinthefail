@@ -147,6 +147,8 @@ body {
     margin: 10px; 
     padding-top: 10px;
     height: 40px; 
+    margin-top: -4px;
+    margin-bottom: 14px; 
 }
 
 .session-button {
@@ -224,4 +226,11 @@ body {
     display: flex;
     flex-direction: column; 
     align-items: center;
+}
+
+.bottom {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 9px; 
 }
