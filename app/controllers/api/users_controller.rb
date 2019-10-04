@@ -23,6 +23,10 @@ class Api::UsersController < ApplicationController
     end 
   end
 
+  def index 
+    @users = User.all 
+  end
+
   def user_params
     params.require(:user).permit(:username, :email, :password, :f_name, :l_name, :location, :description)
   end
