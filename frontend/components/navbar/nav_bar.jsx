@@ -56,7 +56,7 @@ export default ({ currentUser, logout, openModal }) => {
       ) 
       
     }
-
+    // let firstInitial = currentUser.email.split("@")[0]
   const navbar = (currentUser, logout) => {
     return(
       <div>
@@ -64,7 +64,7 @@ export default ({ currentUser, logout, openModal }) => {
           <img className="image" id="spacethumb" src={window.logo}/>
           <input className="btn spacebar" type="text" placeholder="search..."/>
           <button className="btn" type="submit">Home</button>
-          <Link to={`/users/${currentUser.id}`}>{currentUser.email}</Link>
+          <Link to={`/users/${currentUser.id}`}>{currentUser.email.split("@")[0]}</Link>
           <button className="btn" type="submit">Following</button>
          <DropDownContainer/> 
         </form>

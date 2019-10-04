@@ -17,7 +17,7 @@ end
 def usernameIs
   username = self.email.split("@")[0]
   self.username = username
-  self.save!
+  self.save
 end
 
 def password=(password)

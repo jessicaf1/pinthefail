@@ -9,6 +9,7 @@ import DropDownContainer from './navbar/drop_down_container'
 import Background from './background'
 import UserShowContainer from './users/user_showpage_container'
 import EditFormContainer from './users/user_edit_form_container'
+import BoardContainer from './boards/board_container'
 
 const App = () => (
  <div>
@@ -19,7 +20,8 @@ const App = () => (
     <Switch>
        <Route exact path="/" component={Background}/> 
        <Route path="/users/:userId" component={UserShowContainer} />
-       <Route path="users/profile" component={EditFormContainer}/>
+       <Route path="/users/:userId/edit" component={EditFormContainer}/>
+       <Route path="/users/:userId/boards" component={BoardContainer}/>
     </Switch>
 </div>
 );

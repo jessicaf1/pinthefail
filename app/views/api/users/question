@@ -1,0 +1,5 @@
+- when i changed jbuilder it wouldnt  let me access currentUser.email,
+but it also won't let me change state in navBarcontainer (added json.user do/end around it). can't figure out
+how to split email on the @sign, tried it in both model level and in navb component 
+- routes - why is edit container not loading
+- not sure how fname, lname, etc, figure into state 
