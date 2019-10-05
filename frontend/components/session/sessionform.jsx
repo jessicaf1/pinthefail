@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSubmitdemoUser = this.handleSubmitdemoUser.bind(this);
     //this.renderEmailblank = this.renderEmailblank.bind(this)
+    // this.handledemoUser = this.handledemoUser.bind(this)
     }
 
 handleInput(field) {
@@ -23,8 +24,36 @@ handleInput(field) {
 
 handleSubmit(e) {
     e.preventDefault();
+    console.log("hi")
     this.props.processForm(this.state).then(this.props.closeModal);
 }
+
+// handledemoUser(e){
+//     e.preventDefault();
+//     this.setState({ email:'', password:''} )
+
+//     let demoUserEmail = 'bwaldorf@aol.com'.split("");
+//     let demoPassword = 'nancy5'.split("")
+
+//     const animateLogin = () => {
+//         const int = setInterval(()=> {
+//             let email = this.state.email;
+//             let password = this.state.password;
+
+//             if (demoUserEmail.length > 0){
+//                 email += demoUserEmail.shift();
+//                 this.setState({email})
+//             } else if (demoPassword.length > 0){
+//                 password += demoPassword.shift();
+//                 this.setState({password});
+//             } else {
+//                 clearInterval(int);
+//                 this.props.processForm({email: 'bwaldorf@aol.com', password: 'nancy5'}).then(this.props.closeModal)
+//             }
+//         }, 30);
+//     }
+// animateLogin();
+// }
 
     handleSubmitdemoUser(e) {
         debugger

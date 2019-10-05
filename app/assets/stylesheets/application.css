@@ -74,7 +74,6 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 10%;
-     
 }
 
 .btn {
@@ -84,7 +83,7 @@ body {
     background: none;
     height: 30px;
     font-size: 15px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .spacebar {
@@ -250,7 +249,7 @@ body {
 #dropdown-menu-button {
     position: relative;
     border: none;
-    background: none; 
+    background: none;
 }
 
 .menubutton {
@@ -291,115 +290,111 @@ body {
 }
 
 .showpage {
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    color: #2e2b2b; 
-    margin-left: 100px; 
+    color: #2e2b2b;
+    margin-left: 100px;
 }
 
 .showpage-clickable {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
 }
 
-.showpage-bps{
-    display: flex; 
-    color: grey; 
-    font-weight: 500; 
+.showpage-bps {
+    display: flex;
+    color: grey;
+    font-weight: 500;
 }
 
-
-#showpage-boards{
-    margin-left: 5px; 
-   
+#showpage-boards {
+    margin-left: 5px;
 }
 
-#showpage-boards:hover{
+#showpage-boards:hover {
     text-decoration: underline;
-    color: black; 
+    color: black;
 }
 
-#showpage-pins:hover{
+#showpage-pins:hover {
     text-decoration: underline;
-    color: black; 
+    color: black;
 }
 
 .showpage-header {
-    font-size: 36px; 
+    font-size: 36px;
     font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight:500; 
+    font-weight: 500;
 }
 
 .showpage-button {
     border: none;
     padding: 0;
-    background: none; 
+    background: none;
 }
 
 .showpage-image {
-    width: 100px; ;
-    float: right; 
-    margin-right: 50px; 
-    margin-top: -90px; 
+    width: 100px;
+    ;
+    float: right;
+    margin-right: 50px;
+    margin-top: -90px;
 }
 
-.showpage-pencil{
-    width: 60px; 
+.showpage-pencil {
+    width: 60px;
 }
 
-.image-plus{
-    width:60px; 
+.image-plus {
+    width: 60px;
 }
 
 .editForm {
-    display: flex; 
-    flex-direction: column; 
-    color: #211922; 
+    display: flex;
+    flex-direction: column;
+    color: #333333;
     justify-content: space-around;
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 600px;
 }
 
 .names {
     display: flex;
-    width: 100% 
+    width: 100%
 }
 
 .edit-name {
     height: 40px;
     border-radius: 3px;
     border-width: 1px;
-    border-color: #8e8e8e; 
-    display: block; 
-     width: 300px; 
-     font-size: 12px; 
-     padding-left: 16px; 
+    border-color: #8e8e8e;
+    display: block;
+    width: 290px;
+    font-size: 12px;
+    padding-left: 16px;
 }
 
 #edit-header {
-    font-size: 36px; 
-    font-weight: bold; 
+    font-size: 36px;
+    font-weight: bold;
     margin-bottom: 14px;
 }
 
 #edit-sub {
     font-size: 14px;
-    margin-bottom: 20px;  
-}
-
-.edit-top-button {
-    display: flex; 
-      float: right; 
-      margin-left: 50px; 
+    margin-bottom: 20px;
 }
 
 .edit-button {
     width: 80px;
-    height: 50px; 
-    background: white; 
-    border: none; 
-    border-radius: 5px; 
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 5px;
     font-size: 16px;
-    color: grey; 
-    font-weight: 500; 
+    color: grey;
+    font-weight: 500;
 }
 
 .edit-button:hover {
@@ -407,62 +402,76 @@ body {
 }
 
 .edit-button:focus {
-    background: red; 
-}
-
-.editForm {
-    margin-left: 250px; 
-    margin-top: 50px; 
-    width: 600px; 
+    background: red;
 }
 
 #edit-location {
     width: 100%;
     height: 42px;
-    border-radius: 3px; 
-    border-width: 1px; 
-     font-size: 14px; 
-       padding-left: 16px; 
-         border-color: #8e8e8e;
-       border-width: 1px;
-       border-radius: 4px;  
+    border-radius: 3px;
+    border-width: 1px;
+    font-size: 14px;
+    padding-left: 16px;
+    border-color: #8e8e8e;
+    border-width: 1px;
+    border-radius: 4px;
 }
 
 #edit-description {
     width: 100%;
     height: 87px;
     margin-top: 4px;
-    margin-bottom: 40px; 
-     font-size: 14px; 
-       padding-left: 16px; 
-       border-color: #8e8e8e;
-       border-width: 1px;
-       border-radius: 4px;  
-    display: block; 
+    margin-bottom: 40px;
+    font-size: 14px;
+    padding-left: 16px;
+    border-color: #8e8e8e;
+    border-width: 1px;
+    border-radius: 4px;
 }
 
-.edit-username{
+.edit-username {
     margin-top: 20px;
-    margin-bottom: 20px; 
-      border-color: #8e8e8e;
-       border-width: 1px;
-       border-radius: 4px;  
+    margin-bottom: 20px;
+    border-color: #8e8e8e;
+    border-width: 1px;
+    border-radius: 4px;
 }
 
 .navLink {
     text-decoration: none;
     color: gray;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-.label{
-    display: block; 
+.label {
+    display: block;
 }
 
-#span{
-    font-weight: 500; 
+#span {
+    font-weight: 500;
 }
 
-.whole-page{
-    display: flex; 
+.whole-page {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.edit-photo {
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+}
+
+#edit-pinface {
+    width: 75px;
+}
+
+.edit-and-span {
+    display: flex;
+}
+
+.leftspan {
+    margin-left: -300px;
+    position: fixed;
 }

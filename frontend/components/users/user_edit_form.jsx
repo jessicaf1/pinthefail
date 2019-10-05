@@ -3,8 +3,12 @@ import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 
 class UserEditForm extends React.Component {
     constructor(props){
+        
         super(props);
+        
+        // console.log(this.props.currentUser)
         this.state = {...this.props.currentUser, photoFile:null, photoUrl: null};
+        debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleFile = this.handleFile.bind(this);
@@ -24,15 +28,17 @@ class UserEditForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
+        debugger
         formData.append('user[f_name]', this.state.f_name); 
+        debugger
         formData.append('user[l_name]', this.state.l_name); 
         formData.append('user[username]', this.state.username); 
         formData.append('user[description]', this.state.description); 
         formData.append('user[location]', this.state.location); 
-        if (this.state.photoFile) {
-            formData.append('user[photo]', this.state.photoFile);
-        }
-        this.props.updateUser(formData, this.props.currentUser.id).then(alert("saved!"))
+        // if (this.state.photoFile) {
+        //     formData.append('user[photo]', this.state.photoFile);
+        // }
+     this.props.updateUser(formData).then(alert("saved!"))
        
     }
 
@@ -65,23 +71,29 @@ class UserEditForm extends React.Component {
         return(
         <div>   
         <div className="whole-page">
-            <div className="edit-and-span">
+            <div className="left-span">
                 <span id="span">Edit Profile</span>
-                <Link to={`/users/${this.props.currentUser.id}/edit`}> 
-                    <img className="showpage-pencil" src={window.pencil} />
-                </Link>
-            </div>
-            <div className="edit-top-button" >
-                <button className="edit-button" onClick={this.handleCancel}>Cancel</button>
-                <button className="edit-button" onClick={this.handleSubmit}>Done</button>
-            </div>
+                    <Link to={`/users/${this.props.currentUser.id}/edit`}> 
+                        <img className="showpage-pencil" src={window.pencil} />
+                    </Link>
+                    </div>
+           
     <div className="editForm">
         <div id="edit-header">Edit Profile</div>
         <div id="edit-sub">People on pinthefail will get to know you with the info below</div>
-  
+        <div className="edit-and-span">
+                <div className="edit-top-button" >
+                    <button className="edit-button" onClick={this.handleCancel}>Cancel</button>
+                    <button className="edit-button" onClick={this.handleSubmit}>Done</button>
+                   
+                </div>
+                </div>
+       
     <form>
-        <label>
-            Photo
+        <label className="edit-photo">
+            <div id="edit-photo-text"> Photo</div>
+            <br/> 
+            <img className="showpage-image" id="edit-pinface" src={window.pinface} />
             <input type="file" onChange={this.handleFile}/>
         </label>
         <div className="names">
@@ -95,10 +107,15 @@ class UserEditForm extends React.Component {
             <input type="text" className="edit-name" value={this.state.l_name} onChange={this.handleInput('l_name')} placeholder="Ex. Smith"/>
             </label>
                     </div>
+                    <br/>
             <label>
                 Username 
-            <input type="text" className="edit-username" value={this.state.username} onChange={this.handleInput('username')} placeholder="?"/>
+                <br/>
+                www.pinterest.com/
+            <input type="text" className="edit-username" val
+            ue={this.state.username} onChange={this.handleInput('username')} placeholder=""/>
             </label>
+            <br/>
             <label id="label">
                   About Your Profile
             <input type="text" id="edit-description" value={this.state.description} onChange={this.handleInput('description')} placeholder="Write a little bit about yourself here"/>

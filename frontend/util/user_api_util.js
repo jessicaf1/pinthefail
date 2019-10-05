@@ -22,14 +22,14 @@ export const fetchUser = (id) => {
 //     });
 // }
 
-export const updateUser = (user, userId) => {
+export const updateUser = (user) => {
     debugger
     return $.ajax({
-      method: "PATCH",
-      url: `/api/users/${userId}`,
-      data: { user },
-      contentType: false,
-      processData: false
+        method: "PATCH",
+        url: `/api/users/${user.id}`,
+        data: { user },
+        contentType: false,
+        processData: false
     });
-    
+
 }

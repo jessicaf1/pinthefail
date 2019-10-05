@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import UserEditForm from './user_edit_form';
 import { updateUser, fetchUser } from '../../actions/user_actions'
 
-const mapStateToProps = state => {
+const mapStateToProps = (state)=> {
     debugger
-    return {
+    
+   return {
     currentUser: state.entities.users[state.session.currentUser]
+    
     }
 }
 

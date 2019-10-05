@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/user_api_util';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
-import {receiveCurrentUser} from './session_actions'
+import { receiveCurrentUser } from './session_actions'
 
 const receiveUser = user => {
     return {
@@ -36,7 +36,7 @@ export const fetchUser = (id) => {
 // }
 
 export const updateUser = (user) => {
-    debugger 
+    debugger
     return dispatch => {
         return APIUtil.updateUser(user).then(user => dispatch(receiveUser(user)))
     }
