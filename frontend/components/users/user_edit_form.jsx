@@ -4,9 +4,15 @@ import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 class UserEditForm extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props.currentUser;
+        this.state = {...this.props.currentUser, photoFile:null, photoUrl: null};
         this.handleSubmit = this.handleSubmit.bind(this);
-        //this.state = { f_name: '', l_name: '', location: '', username: '', description:'' }
+        this.handleCancel = this.handleCancel.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+        
+    }
+
+    componentDidMount(){
+        this.props.fetchUser(this.props.match.params.userId)
     }
 
     handleInput(field){
@@ -17,43 +23,95 @@ class UserEditForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.updateUser(this.state);
+        const formData = new FormData();
+        formData.append('user[f_name]', this.state.f_name); 
+        formData.append('user[l_name]', this.state.l_name); 
+        formData.append('user[username]', this.state.username); 
+        formData.append('user[description]', this.state.description); 
+        formData.append('user[location]', this.state.location); 
+        if (this.state.photoFile) {
+            formData.append('user[photo]', this.state.photoFile);
+        }
+        this.props.updateUser(formData, this.props.currentUser.id).then(alert("saved!"))
+       
     }
+
+    handleFile(e){
+        // e.preventDefault; 
+        //photoFile - file //photo_url - reader reading file for us 
+
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () =>
+            this.setState({ photoUrl: reader.result, photoFile: file });
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({ photoUrl: "", photoFile: null });
+        }
+    }
+
+  //this.props.updateUser
+    
 
     handleCancel(e){
         e.preventDefault();
-        this.props.history.push('/users/:userId');
+        this.props.history.push(`/users/${this.props.currentUser.id}`);
     }
+
 
     render(){
         return(
+        <div>   
+        <div className="whole-page">
+            <div className="edit-and-span">
+                <span id="span">Edit Profile</span>
+                <Link to={`/users/${this.props.currentUser.id}/edit`}> 
+                    <img className="showpage-pencil" src={window.pencil} />
+                </Link>
+            </div>
+            <div className="edit-top-button" >
+                <button className="edit-button" onClick={this.handleCancel}>Cancel</button>
+                <button className="edit-button" onClick={this.handleSubmit}>Done</button>
+            </div>
     <div className="editForm">
-        <div>Edit Profile</div>
-        <div>People on pinthefail will get to know you with the info below</div>
-        <div className="edit-top-button" onClick={this.handleCancel}>Cancel</div>
-        <div className="edit-top-button" onClick={this.handleSubmit}>Done</div>
+        <div id="edit-header">Edit Profile</div>
+        <div id="edit-sub">People on pinthefail will get to know you with the info below</div>
+  
     <form>
-            <label>
+        <label>
+            Photo
+            <input type="file" onChange={this.handleFile}/>
+        </label>
+        <div className="names">
+            <label className="name-input">
                 First Name
-                 <input type="text" value={this.state.f_name} onChange={this.handleInput('f_name')} placeholder={this.state.email}/>
+                 <input className="edit-name" type="text" value={this.state.f_name} onChange={this.handleInput('f_name')} placeholder={this.state.email}/>
             </label>
+            &nbsp; 
             <label>
                 Last Name 
-            <input type="text" value={this.state.l_name} onChange={this.handleInput('l_name')} placeholder="Ex. Smith"/>
+            <input type="text" className="edit-name" value={this.state.l_name} onChange={this.handleInput('l_name')} placeholder="Ex. Smith"/>
             </label>
+                    </div>
             <label>
                 Username 
-            <input type="text" value={this.state.username} onChange={this.handleInput('username')} placeholder="?"/>
+            <input type="text" className="edit-username" value={this.state.username} onChange={this.handleInput('username')} placeholder="?"/>
             </label>
-            <textarea value={this.state.description} placeholder="Write a little bit about yourself here">
-                About Your Profile
-            </textarea>
+            <label id="label">
+                  About Your Profile
+            <input type="text" id="edit-description" value={this.state.description} onChange={this.handleInput('description')} placeholder="Write a little bit about yourself here"/>
+              
+            </label>
             <label>
                 Location 
-            <input type="text" value={this.state.location} onChange={this.handleInput('location')}/>
+            <input type="text" id="edit-location" value={this.state.location} onChange={this.handleInput('location')} placeholder="e.g, NYC"/>
             </label>
     </form>
     </div>
+                </div>
+            </div>
         ) 
     } 
 

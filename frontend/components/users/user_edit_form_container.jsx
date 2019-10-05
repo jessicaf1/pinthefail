@@ -1,9 +1,10 @@
 
 import { connect } from 'react-redux';
 import UserEditForm from './user_edit_form';
-import { updateUser } from '../../actions/user_actions'
+import { updateUser, fetchUser } from '../../actions/user_actions'
 
 const mapStateToProps = state => {
+    debugger
     return {
     currentUser: state.entities.users[state.session.currentUser]
     }
@@ -11,7 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateUser: user => dispatch(updateUser(user))
+        updateUser: user => dispatch(updateUser(user)),
+        fetchUser: id => dispatch(fetchUser(id)),
     }
 }
 

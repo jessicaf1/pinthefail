@@ -3,3 +3,41 @@ but it also won't let me change state in navBarcontainer (added json.user do/end
 how to split email on the @sign, tried it in both model level and in navb component 
 - routes - why is edit container not loading
 - not sure how fname, lname, etc, figure into state 
+
+questions for the weekend:
+
+pin belongs to one specific user? is it current user??
+do i make boards-pins simultaneously? not totally sure how that factors in 
+so - 
+
+pin is not connected to user but pin has many boards thru user?
+
+ASSOCIATIONS: 
+board belongs to user
+pin belongs to user 
+
+user has many boards, user has many pins
+
+THROUGH ASSOCATIONS:
+pin has many boards thru user?
+
+AWS q's:
+
+
+has_one_attached_photo in posts is talking about which component for me?
+
+pin doesnt have user Id
+linkURL optional 
+
+both has_many/no belongs_to 
+
+instance of board-pin belongs to pin and to board 
+
+board has many board-pins and pin has many board-pins 
+board has many pins thru board-pins 
+
+need board show 
+need to modify userjbuilder to have board IDs/write assocation from users - board-pins, belongs to pin 
+
+pinning a pin to a board - adds an entry to the b-p tale 
+pins controller 

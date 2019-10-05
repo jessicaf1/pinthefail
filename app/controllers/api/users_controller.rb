@@ -13,10 +13,17 @@ class Api::UsersController < ApplicationController
   end
 
   def update
+    debugger
     @user = User.find(params[:id])
+    if params[:user][:photo]
+      debugger
+      @user.photo.attach(params[:user][:photo])
+    end 
     if @user && @user.update_attributes(user_params)
+      debugger
       render :show 
     elsif !@user 
+      debugger
       render json: ['user does not exist']
     else
       render json: @user.errors.full_messages
@@ -27,8 +34,12 @@ class Api::UsersController < ApplicationController
     @users = User.all 
   end
 
+  def show 
+    @user = User.find(params[:id]) 
+  end
+
   def user_params
-    params.require(:user).permit(:username, :email, :password, :f_name, :l_name, :location, :description)
+    params.require(:user).permit(:username, :email, :password, :f_name, :l_name, :location, :description, :photo)
   end
 
 end

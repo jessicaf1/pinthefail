@@ -36,9 +36,9 @@ class DropDown extends React.Component{
     
     return (
       <div>
-        <button onClick={this.showMenu}>
-           <img className="image" id="toggbutton" src={window.dots}/>
-        </button>
+        <div onClick={this.showMenu}>
+           <img className="dropdown-menu-button image" src={window.dots}/>
+        </div>
       {
         this.state.showMenu 
         ? (

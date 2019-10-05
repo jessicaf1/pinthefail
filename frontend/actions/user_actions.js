@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/user_api_util';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
+import {receiveCurrentUser} from './session_actions'
 
 const receiveUser = user => {
     return {
@@ -22,20 +23,21 @@ export const fetchUsers = () => {
     }
 }
 
-export const fetchUser = () => {
+export const fetchUser = (id) => {
     return dispatch => {
-        return APIUtil.fetchUser().then(user => dispatch(receiveUser(user)))
+        return APIUtil.fetchUser(id).then(user => dispatch(receiveCurrentUser(user)))
     }
 }
 
-export const createUser = (user) => {
-    return dispatch => {
-        return APIUtil.createUser().then(user => dispatch(receiveUser(user)))
-    }
-}
+// export const createUser = (user) => {
+//     return dispatch => {
+//         return APIUtil.createUser().then(user => dispatch(receiveUser(user)))
+//     }
+// }
 
 export const updateUser = (user) => {
+    debugger 
     return dispatch => {
-        return APIUtil.updateUser().then(user => dispatch(receiveUser(user)))
+        return APIUtil.updateUser(user).then(user => dispatch(receiveUser(user)))
     }
 }

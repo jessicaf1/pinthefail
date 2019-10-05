@@ -9,7 +9,8 @@ import DropDownContainer from './navbar/drop_down_container'
 import Background from './background'
 import UserShowContainer from './users/user_showpage_container'
 import EditFormContainer from './users/user_edit_form_container'
-import BoardContainer from './boards/board_container'
+import BoardIndexContainer from './boards/board_container'
+import PinsContainer from './pins/pins_container'
 
 const App = () => (
  <div>
@@ -19,9 +20,11 @@ const App = () => (
     </header>
     <Switch>
        <Route exact path="/" component={Background}/> 
+        <Route path="/users/:userId/edit" component={EditFormContainer} />
        <Route path="/users/:userId" component={UserShowContainer} />
-       <Route path="/users/:userId/edit" component={EditFormContainer}/>
-       <Route path="/users/:userId/boards" component={BoardContainer}/>
+       
+       <Route path="/users/:userId/boards" component={BoardIndexContainer}/>
+       <Route path="/users/:userId/pins" component={PinsContainer} />
     </Switch>
 </div>
 );
