@@ -5,8 +5,9 @@ import { openModal, closeModal } from '../../actions/modal_actions'
  
 const mapStateToProps = (state,ownProps) => {
     let board = state.entities.boards[ownProps.match.params.boardId]
+    let currentUser = state.entities.users[board.user_id]
     return {
-    //currentUser: state.users[state.session.currentUser] - can i pass this in to state
+    currentUser, 
     board 
     }
 }

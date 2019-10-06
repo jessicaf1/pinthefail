@@ -12,6 +12,7 @@ import EditFormContainer from './users/user_edit_form_container'
 import BoardIndexContainer from './boards/board_index_container'
 import PinsIndexContainer from './pins/pin_index_container'
 import BoardShowContainer from './boards/board_show_container'
+import BoardCreateFormContainer from './boards/board_create_form_container'
 
 const App = () => (
  <div>
@@ -22,11 +23,12 @@ const App = () => (
     <Switch>
        <Route exact path="/" component={Background}/> 
         <Route path="/users/:userId/edit" component={EditFormContainer} />
+        <Route path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
         <Route path="/users/:userId/boards" component={BoardIndexContainer}/>
         <Route path="/users/:userId/:boardId" component={BoardShowContainer}/>
         <Route path="/users/:userId/pins" component={PinsIndexContainer} />
        <Route path="/users/:userId" component={UserShowContainer} />
-       
+      
       
       
     </Switch>

@@ -20,9 +20,10 @@ function Modal({modal, closeModal}) {
       debugger
       component = <SignupContainer />;
       break;
-    case 'create board':
+    case 'createBoard':
       debugger
       component = <BoardCreateFormContainer/>;
+      break; 
     default:
       return null;
   }

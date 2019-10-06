@@ -3,9 +3,9 @@ import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 
 class BoardCreateForm extends React.Component {
     constructor(props){
-        super(props)
+        super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleCancel = this.handleCancel.bind(This)
+        this.handleCancel = this.handleCancel.bind(this);
         this.state = {name:''}
     }
 
@@ -36,4 +36,4 @@ render(){
 
 }
 
-export default BoardCreateForm
+export default withRouter(BoardCreateForm) 

@@ -2,22 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions'
 import UserDropDown from './user_drop_down';
+import {createBoard} from '../../actions/board_actions'
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
 
   return {
-    currentUser: state.entities.users[state.session.currentUser]
+    currentUser: state.entities.users[state.session.currentUser],
+    formType: 'createBoard',
 
   }
 }
 
-const mapDispatchToProps = dispatch => {
-
+export const mapDispatchToProps = dispatch => {
+  
   return {
-    openModal: modal => {
-      return dispatch(openModal(modal));
+    openModal: () => dispatch(openModal('createBoard')),
     }
-  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDropDown)

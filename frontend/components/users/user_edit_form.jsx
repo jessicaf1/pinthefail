@@ -100,7 +100,7 @@ class UserEditForm extends React.Component {
         <div className="names">
             <label className="name-input">
                 First Name
-                 <input className="edit-name" type="text" value={this.state.f_name} onChange={this.handleInput('f_name')} placeholder={this.state.email}/>
+                 <input className="edit-name" type="text" value={this.state.f_name} onChange={this.handleInput('f_name')} placeholder="Ex. Nancy"/>
             </label>
             &nbsp; 
             <label>
@@ -123,7 +123,7 @@ class UserEditForm extends React.Component {
             </label>
             <label>
                 Location 
-            <input type="text" id="edit-location" value={this.state.location} onChange={this.handleInput('location')} placeholder="e.g, NYC"/>
+            <input type="text" id="edit-location" value={this.state.location} onChange={this.handleInput('location')} placeholder="Ex. NYC"/>
             </label>
     </form>
     </div>

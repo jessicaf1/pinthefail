@@ -1,4 +1,4 @@
-import { RECEIVE_PIN, RECEIVE_PIN, REMOVE_PIN } from '../actions/pin_actions';
+import { RECEIVE_PINS, RECEIVE_PIN, REMOVE_PIN } from '../actions/pin_actions';
 
 const PinsReducer = (state = {}, action) => {
     switch (action.type) {

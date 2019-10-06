@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { connect } from 'react-redux';
 import UserEditForm from './user_edit_form';
 import { updateUser, fetchUser } from '../../actions/user_actions'
