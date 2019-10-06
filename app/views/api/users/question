@@ -41,3 +41,7 @@ need to modify userjbuilder to have board IDs/write assocation from users - boar
 
 pinning a pin to a board - adds an entry to the b-p tale 
 pins controller 
+
+
+
+controllers/jbuilder 

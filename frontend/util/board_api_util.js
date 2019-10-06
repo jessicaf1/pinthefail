@@ -1,29 +1,36 @@
 export const fetchBoards = () => {
-  return $.ajax({
-    method: "GET",
-    url: "/api/boards"
-  });
+    return $.ajax({
+        method: "GET",
+        url: "/api/boards"
+    });
 };
 
 export const fetchBoard = id => {
-  return $.ajax({
-    method: "GET",
-    url: `/api/users/${id}`
-  });
+    return $.ajax({
+        method: "GET",
+        url: `/api/boards/${id}`
+    });
 };
 
-export const createBoard = user => {
-  return $.ajax({
-    method: "POST",
-    url: "/api/users",
-    data: { user }
-  });
+export const createBoard = board => {
+    return $.ajax({
+        method: "POST",
+        url: "/api/boards",
+        data: { board }
+    });
 };
 
-export const updateBoard = user => {
-  return $.ajax({
-    method: "PATCH",
-    url: `/api/users/${user.id}`,
-    data: { user }
-  });
+export const updateBoard = board => {
+    return $.ajax({
+        method: "PATCH",
+        url: `/api/boards/${board.id}`,
+        data: { board }
+    });
+};
+
+export const deleteBoard = id => {
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/boards/${board.id}`,
+    });
 };

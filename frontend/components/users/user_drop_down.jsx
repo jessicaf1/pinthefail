@@ -41,7 +41,7 @@ class UserDropDown extends React.Component {
                 ref={(element) => {
                   this.dropdownMenu = element;
                 }}>
-                <button>Create Board</button>
+                <button onClick={this.props.openModal}>Create Board</button>
                 <button>Create Pin</button>
 
               </div>

@@ -256,8 +256,7 @@ body {
     position: fixed;
     background: lightgray;
     color: #8e8e8e;
-    height: 30px;
-    width: 50px;
+    min-height: 50px;
     border: none;
 }
 
@@ -342,7 +341,11 @@ body {
 }
 
 .showpage-pencil {
-    width: 60px;
+    width: 70px;
+}
+
+.edit-pencil {
+    width: 40px;
 }
 
 .image-plus {
@@ -357,6 +360,7 @@ body {
     margin-left: 100px;
     margin-top: 50px;
     width: 600px;
+    position: relative;
 }
 
 .names {
@@ -469,9 +473,21 @@ body {
 
 .edit-and-span {
     display: flex;
+    position: absolute;
+    right: 20px;
+    top: 0;
 }
 
 .leftspan {
     margin-left: -300px;
     position: fixed;
+}
+
+.left-span {
+    align-self: flex-start;
+    margin-top: 50px;
+}
+
+#showpage-button {
+    margin-top: 10px;
 }

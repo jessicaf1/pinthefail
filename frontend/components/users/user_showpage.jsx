@@ -2,6 +2,7 @@ import React from 'react';
 import NavBarContainer from '../navbar/nav_bar_container';
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 import UserDropDownContainer from './user_drop_down_container';
+import BoardIndexContainer from '../boards/board_index_container'; 
 
 class UserShowPage extends React.Component {
     constructor(props){
@@ -51,7 +52,7 @@ return(
             </div>
         </div>
     <img className="showpage-image" src={window.pinface} />
-   
+    <BoardIndexContainer/>
     </div>
 )
 

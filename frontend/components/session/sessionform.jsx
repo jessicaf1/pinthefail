@@ -24,7 +24,6 @@ handleInput(field) {
 
 handleSubmit(e) {
     e.preventDefault();
-    console.log("hi")
     this.props.processForm(this.state).then(this.props.closeModal);
 }
 

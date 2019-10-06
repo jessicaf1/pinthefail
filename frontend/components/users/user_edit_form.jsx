@@ -72,10 +72,11 @@ class UserEditForm extends React.Component {
         <div>   
         <div className="whole-page">
             <div className="left-span">
-                <span id="span">Edit Profile</span>
+               
                     <Link to={`/users/${this.props.currentUser.id}/edit`}> 
-                        <img className="showpage-pencil" src={window.pencil} />
+                        <img className="edit-pencil" src={window.pencil} />
                     </Link>
+                    <span id="span">Edit Profile</span>
                     </div>
            
     <div className="editForm">
@@ -112,8 +113,7 @@ class UserEditForm extends React.Component {
                 Username 
                 <br/>
                 www.pinterest.com/
-            <input type="text" className="edit-username" val
-            ue={this.state.username} onChange={this.handleInput('username')} placeholder=""/>
+            <input type="text" className="edit-username" value={this.state.username} onChange={this.handleInput('username')} placeholder=""/>
             </label>
             <br/>
             <label id="label">
