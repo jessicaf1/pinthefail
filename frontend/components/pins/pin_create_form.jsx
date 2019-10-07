@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 
-class PinCreateForm extends React.Component {
+class CreatePinForm extends React.Component {
     constructor(props){
         
         super(props);
         
         // console.log(this.props.currentUser)
-        this.state = {...this.props.currentUser, photoFile:null, photoUrl: null};
+        this.state = {...this.props.pin, photoFile:null, photoUrl: null};
         debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
@@ -26,6 +26,8 @@ class PinCreateForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('pin[name]', this.state.name); 
+        formData.append('pin[id]', this.state.id); 
+        formData.append('pin[link_url]', this.state.name); 
         if (this.state.photoFile) {
             formData.append('pin[photo]', this.state.photoFile);
         }
@@ -72,4 +74,4 @@ class PinCreateForm extends React.Component {
 
 }
 
-export default CreatePinForm
+export default CreatePinForm;

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import LoginContainer from '../components/session/login_container';
 import SignupContainer from '../components/session/signup_container';
 import BoardCreateFormContainer from '../components/boards/board_create_form_container';
+import PinEditFormContainer from '../components/pins/pin_edit_form_container'
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -24,6 +25,9 @@ function Modal({modal, closeModal}) {
       debugger
       component = <BoardCreateFormContainer/>;
       break; 
+    case 'editPin':
+      component = <PinEditFormContainer/>;
+      break;  
     default:
       return null;
   }

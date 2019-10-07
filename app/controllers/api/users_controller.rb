@@ -11,10 +11,10 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    
+    # debugger
     @user = User.find(params[:id]) 
     if @user && @user.update_attributes(user_params)
-      debugger
+      # debugger
       render :show 
     else  
       render json: @user.errors.full_messages, status: 422 

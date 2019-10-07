@@ -1,7 +1,7 @@
 
 import React from 'react';
 import BoardIndexItem from './board_index_item';
-import NavBarContainer from '../navbar/nav_bar_container'; 
+
 
 class BoardIndex extends React.Component {
     constructor(props){
@@ -9,16 +9,11 @@ class BoardIndex extends React.Component {
     }
 
 componentDidMount(){
-    this.fetchCorrectBoards;
-}
-
-fetchCorrectBoards(){
-    this.props.fetchBoards().filter(board=> board.user_id === this.props.currentUser.id)
+    this.props.fetchBoards();
 }
 
 
 render(){
-
 
     let boards = this.props.boards.map(board=> {
         return <BoardIndexItem board={board} key={board.id} openModal={this.props.openModal}/>

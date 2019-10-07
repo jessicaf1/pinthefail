@@ -7,13 +7,16 @@ import PinsIndexContainer from '../pins/pin_index_container'
 
 class UserShowPage extends React.Component {
     constructor(props){
+        debugger
         super(props)
         this.sendToEdit = this.sendToEdit.bind(this);
         this.sendToBoards = this.sendToBoards.bind(this);
         this.sendToPins = this.sendToPins.bind(this);
+        this.state = this.props.user 
     }
 
 componentDidMount(){
+    debugger
     this.props.fetchUser(this.props.match.params.userId)
 }
 
@@ -35,12 +38,13 @@ sendToEdit(e){
 
 
 render(){
-
+    debugger 
 return(
     <div>
         <div className="showpage">
         <div className="showpage-clickable">
             <UserDropDownContainer />
+            
             <Link to={`/users/${this.props.user.id}/edit`}>
                 <img className="showpage-pencil" src={window.pencil} />
             </Link>
@@ -53,6 +57,7 @@ return(
             </div>
         </div>
     <img className="showpage-image" src={window.pinface} />
+    {/* <img src={this.props.user.photoUrl} alt=""/> */}
     <BoardIndexContainer/>
    
     </div>

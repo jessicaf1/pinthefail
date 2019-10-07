@@ -1,6 +1,14 @@
 class Api::PinsController < ApplicationController
     def create
+         
         @pin = Pin.new(pin_params)
+        # debugger
+        if @pin.save 
+            # debugger
+            render :show 
+        else
+            render json: ['invalid pin'], status: 422 
+        end 
     end
 
     def index
@@ -9,12 +17,9 @@ class Api::PinsController < ApplicationController
     end
 
     def show 
+        # debugger
         @pin = Pin.find(params[:id])
-        if @pin.update
-            render :show 
-        else
-            render json: @pin.errors.full_messages, status: 422
-        end 
+        render :show
     end
 
     def update
@@ -36,6 +41,6 @@ class Api::PinsController < ApplicationController
     end
 
     def pin_params
-        params.require(:pin).permit(:name, :link_url)
+        params.require(:pin).permit(:name, :link_url, :photo)
     end
 end

@@ -7,7 +7,7 @@ class UserEditForm extends React.Component {
         super(props);
         debugger
         // console.log(this.props.currentUser)
-        this.state = {...this.props.currentUser, photoFile:null, photoUrl: null, email: '', f_name:'', l_name:'', location:'', description:''};
+        this.state = {...this.props.currentUser, photoFile:null, photoUrl: null};
         debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
@@ -31,6 +31,7 @@ class UserEditForm extends React.Component {
         const formData = new FormData();
         debugger
         formData.append('user[f_name]', this.state.f_name); 
+        formData.append('user[id]', this.state.id); 
         debugger
         formData.append('user[l_name]', this.state.l_name); 
         formData.append('user[username]', this.state.username); 

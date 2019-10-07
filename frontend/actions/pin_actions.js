@@ -4,13 +4,15 @@ export const RECEIVE_PINS = 'RECEIVE_PINS';
 export const REMOVE_PIN = 'REMOVE_PIN';
 
 const receivePin = pin => {
+    debugger
     return {
-        type: RECEIVE_PINS,
+        type: RECEIVE_PIN,
         pin
     }
 }
 
 const receivePins = pins => {
+    debugger
     return {
         type: RECEIVE_PINS,
         pins
@@ -37,21 +39,22 @@ export const fetchPin = (id) => {
 }
 
 export const createPin = (pin) => {
+    debugger
     return dispatch => {
-        return APIUtil.createPin(board).then(pin => dispatch(receivePin(pin)))
+        return APIUtil.createPin(pin).then(pin => dispatch(receivePin(pin)))
     }
 }
 
 export const updatePin = (pin) => {
     debugger
     return dispatch => {
-        return APIUtil.updatePin(pin).then(pin => dispatch(receiveBoard(pin)))
+        return APIUtil.updatePin(pin).then(pin => dispatch(receivePin(pin)))
     }
 }
 
 export const deletePin = (id) => {
     debugger
     return dispatch => {
-        return APIUtil.deletePin(id).then(board => dispatch(removePin(board)))
+        return APIUtil.deletePin(id).then(pin => dispatch(removePin(pin)))
     }
 }

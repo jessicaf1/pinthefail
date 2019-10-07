@@ -1,4 +1,5 @@
 import { RECEIVE_BOARD, RECEIVE_BOARDS, REMOVE_BOARD } from '../actions/board_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions'
 
 const BoardsReducer = (state = {}, action) => {
     switch (action.type) {
@@ -11,7 +12,9 @@ const BoardsReducer = (state = {}, action) => {
         case REMOVE_BOARD:
             let newState = Object.assign({}, state);
             delete newState[action.boardId];
-            return newState
+            return newState;
+        case RECEIVE_CURRENT_USER:
+            return Object.assign({}, state, action.payload.boards);
         default:
             return state;
     }

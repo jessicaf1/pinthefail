@@ -7,6 +7,7 @@ class BoardCreateForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.state = this.props.board 
     }
 
 componentDidMount(){

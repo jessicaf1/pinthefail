@@ -1,17 +1,23 @@
 import {connect} from 'react-redux';
-import PinIndex from '../pins/pin_index';
+import PinIndex from './pin_index';
 import {fetchPins, fetchPin} from '../../actions/pin_actions';
+import { fetchBoards } from '../../actions/board_actions'
 
 const mapStateToProps = state => {
+    debugger
+    let pins = Object.values(state.entities.pins); 
+    let boards = Object.values(state.entities.boards)
     return {
-        pins: Object.values(state.entities.pins)
+        pins, boards 
     }
 }
 
 const mapDispatchToProps = dispatch => {
+    debugger
     return{
         fetchPin: id => dispatch(fetchPin(id)),
-        fetchPins: () => dispatch(fetchPins())
+        fetchPins: () => dispatch(fetchPins()), 
+        fetchBoards: () => dispatch(fetchBoards())
     }
 }
 

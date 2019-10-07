@@ -7,6 +7,6 @@ has_many :board_pins
 
 has_many :boards,
 through: :board_pins, 
-source: board 
+source: :board 
 
 end 

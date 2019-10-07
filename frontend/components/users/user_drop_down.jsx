@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import { Route, Redirect, Link, HashRouter, Switch } from 'react-router-dom';
 
 class UserDropDown extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class UserDropDown extends React.Component {
   }
 
   render() {
-
+  debugger
     return (
       <div className="container">
         <div onClick={this.showMenu}>
@@ -42,7 +42,7 @@ class UserDropDown extends React.Component {
                   this.dropdownMenu = element;
                 }}>
                 <button onClick={this.props.openModal}>Create Board</button>
-                <button> Create Pin</button>
+                <Link to="/users/pinBuilder">Create Pin</Link>
 
               </div>
             )

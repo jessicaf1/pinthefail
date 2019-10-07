@@ -5,7 +5,8 @@ import { openModal } from  '../../actions/modal_actions';
 import { fetchUser, updateUser} from '../../actions/user_actions'
 
 export const mapStateToProps = (state, ownProps) => {
-    const user = state.entities.users[ownProps.match.params.userId]
+    // const user = state.entities.users[ownProps.match.params.userId]
+    const user = state.entities.users[state.session.currentUser]
     return {user}
 }
 

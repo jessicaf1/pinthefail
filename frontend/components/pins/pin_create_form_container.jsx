@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
-import PinCreateForm from './pin_create_form';
+import CreatePinForm from './pin_create_form';
 import { createPin } from '../../actions/pin_actions';
-import { fetchBoards } from '../../'
+import { fetchBoards } from '../../actions/board_actions'
 import { openModal, closeModal } from '../../actions/modal_actions'
-import { create } from 'domain';
+
 
 const mapStateToProps = state => {
-    return{
+    debugger
+    return {
         pin: {name: '', link_url:''}
     }
 }
 
-const mapDispatchToProps = state => {
+const mapDispatchToProps = dispatch => {
+    debugger
     return {
         createPin: pin => dispatch(createPin(pin)),
         fetchBoards: () => dispatch(fetchBoards()),
@@ -21,4 +23,4 @@ const mapDispatchToProps = state => {
     
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PinCreateForm)
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePinForm)

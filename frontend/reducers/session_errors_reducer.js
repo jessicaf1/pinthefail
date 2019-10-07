@@ -16,8 +16,10 @@ export default (state = [], action) => {
             debugger
             return [];
         case CLEAR_SESSION_ERRORS:
+            debugger
             return [];
         case CLOSE_MODAL:
+            debugger
             return [];
         default:
             return state;

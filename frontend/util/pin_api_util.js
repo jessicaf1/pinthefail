@@ -13,10 +13,13 @@ export const fetchPin = id => {
 };
 
 export const createPin = pin => {
+    debugger
     return $.ajax({
         method: "POST",
         url: "/api/pins",
-        data: { pin }
+        data: pin, 
+        contentType: false, 
+        processData: false  
     });
 };
 
@@ -31,6 +34,6 @@ export const updatePin = pin => {
 export const deletePin = id => {
     return $.ajax({
         method: "DELETE",
-        url: `/api/pins/${pin.id}`,
+        url: `/api/pins/${id}`,
     });
 };

@@ -13,7 +13,7 @@ has_many :boards
 
 has_many :board_pins,
 through: :boards,
-source: :boards
+source: :board_pins
 
 has_many :pins,
 through: :board_pins, 

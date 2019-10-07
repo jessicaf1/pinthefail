@@ -19,11 +19,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
   } else {
     store = configureStore();
   }
-  window.fetchUsers = store.fetchUsers; 
-  window.fetchBoards = store.fetchBoards; 
+ 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root)
   window.getState = store.getState;
+  window.fetchUsers = store.fetchUsers;
+  window.fetchBoards = store.fetchBoards; 
 })
 
 

@@ -7,61 +7,61 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-User.destroy_all
-Board.destroy_all
 Pin.destroy_all 
+Board.destroy_all
 BoardPin.destroy_all 
+User.destroy_all
 
 demouser = User.create(email: 'bwaldorf@aol.com', f_name: 'Blair', l_name: 'Waldorf', password: 'nancy5', description: 'xoxo gossip girl', location: 'nyc')
 file = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/blair.jpeg')
 demouser.photo.attach(io: file, filename: 'blair.jpeg')
 user2 = User.create(email: 'mattsaracen@aol.com', f_name: 'matt', l_name: 'saracen', password: 'football', description: 'qb6', location: 'dillon')
 
-board1 = Board.create(name:'Bad Gossip Girl Relationships', description: 'Characters that should not have been together', user_id: 1)
-board2 = Board.create(name: 'Babies', description: 'no thank you')
+board1 = Board.create(name:'Bad Gossip Girl Relationships', description: 'Characters that should not have been together', user_id: demouser.id)
+board2 = Board.create(name: 'Babies', description: 'no thank you', user_id: demouser.id)
 
-pin1 = Pin.new(name: 'Blair and Dan')
-file1 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/blairanddan.jpeg)
+pin1 = Pin.create(name: 'Blair and Dan')
+file1 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/blairanddan.jpeg')
 pin1.photo.attach(io: file1, filename: 'blairanddan.jpeg')
 
-pin2 = Pin.new(name: 'Chuck and Jenny')
-file2 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/chuckandjenny.jpg)
+pin2 = Pin.create(name: 'Chuck and Jenny')
+file2 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/chuckandjenny.jpg')
 pin2.photo.attach(io: file2, filename: 'chuckandjenny.jpeg')
 
-pin3 = Pin.new(name: 'Vanessa and Chuck')
-file3 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/vanessaandchuck.jpg)
+pin3 = Pin.create(name: 'Vanessa and Chuck')
+file3 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/vanessaandchuck.jpg')
 pin3.photo.attach(io: file3, filename: 'vanessaandchuck.jpeg')
 
-pin4 = Pin.new(name: 'Serena and Tripp')
-file4 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/serenaandtripp.jpg)
+pin4 = Pin.create(name: 'Serena and Tripp')
+file4 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/serenaandtripp.jpg')
 pin4.photo.attach(io: file4, filename: 'serenaandtripp.jpeg')
 
-pin5 = Pin.new(name: 'Rufus and Ivy')
-file5 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/rufusandivy.jpg)
+pin5 = Pin.create(name: 'Rufus and Ivy')
+file5 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/rufusandivy.jpg')
 pin5.photo.attach(io: file5, filename: 'rufusandivy.jpeg')
 
-pin6 = Pin.new(name: 'Nate and Diana')
-file6 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/nateanddiana.jpg)
+pin6 = Pin.create(name: 'Nate and Diana')
+file6 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/nateanddiana.jpg')
 pin6.photo.attach(io: file6, filename: 'nateanddiana.jpeg')
 
-pin7 = Pin.new(name: 'Nate and Jenny')
-file7 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/jennyandnate.jpg)
+pin7 = Pin.create(name: 'Nate and Jenny')
+file7 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/jennyandnate.jpg')
 pin7.photo.attach(io: file7, filename: 'nateanddiana.jpeg')
 
-pin8 = Pin.new(name: 'Serena and Dan')
-file8 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/serenaanddan.jpg)
+pin8 = Pin.create(name: 'Serena and Dan')
+file8 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/serenaanddan.jpg')
 pin8.photo.attach(io: file8, filename: 'nateanddiana.jpeg')
 
-pin9 = Pin.new(name: 'Surprised Baby')
-file89 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/baby1.jpeg)
-pin89.photo.attach(io: file9, filename: 'baby1.jpeg')
+pin9 = Pin.create(name: 'Surprised Baby')
+file9 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/baby1.jpeg')
+pin9.photo.attach(io: file9, filename: 'baby1.jpeg')
 
-pin10 = Pin.new(name: 'Whiny Baby')
-file10 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/baby2.jpeg)
+pin10 = Pin.create(name: 'Whiny Baby')
+file10 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/baby2.jpeg')
 pin10.photo.attach(io: file10, filename: 'baby2.jpeg')
 
-pin11 = Pin.new(name: 'Gross Baby')
-file11 = open(https://pinthefail-seeds.s3.us-east-2.amazonaws.com/gross+baby.jpeg)
+pin11 = Pin.create(name: 'Gross Baby')
+file11 = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/gross+baby.jpeg')
 pin11.photo.attach(io: file11, filename: 'gross.jpeg')
 
 

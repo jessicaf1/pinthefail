@@ -11,9 +11,14 @@ class BoardCreateForm extends React.Component {
         this.state = {name:'', description:''}
     }
 
+// componentDidMount(){
+//     //do i need a component did mount here if i am just creating and not actually fetching anything
+// }
+
 handleSubmit(e){
     e.preventDefault();
-    this.props.createBoard(this.state).then(()=>this.props.closeModal)
+    this.props.createBoard(this.state)
+    //.then(()=>this.props.closeModal)
 }
 
 handleCancel(e){

@@ -1,7 +1,13 @@
-import Rect from 'react';
+import React from 'react';
  const PinIndexItem = props => {
+     debugger
+     return (
      <div>
-         I am a Pin
+         {props.pin.photoUrl}
      </div>
+     ) 
  }
  export default PinIndexItem;
+
+ //is this just one photo?
+ //
