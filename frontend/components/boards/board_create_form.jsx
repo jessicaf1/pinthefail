@@ -3,10 +3,12 @@ import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 
 class BoardCreateForm extends React.Component {
     constructor(props){
+        debugger
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
-        this.state = {name:''}
+        this.handleInput = this.handleInput.bind(this);
+        this.state = {name:'', description:''}
     }
 
 handleSubmit(e){
@@ -16,20 +18,32 @@ handleSubmit(e){
 
 handleCancel(e){
     e.preventDefault();
-    this.props.history.push(`/users/${this.props.currentUser.id}`);
+    this.props.closeModal;
 }
 
+
+handleInput(field){
+    return(e) => {
+        this.setState({[field]: e.target.value})
+    };
+}
 
 render(){
     return(
         <div>
+            <form>
             <div>Create Board</div>
             <label>
                 Name 
-                <input type="text" placeholder="Like 'Guys in tanktops' or 'Jim Carrey Movies'"/>
+                <input type="text" placeholder="Like 'Guys in tanktops' or 'Jim Carrey Movies'" value={this.state.name} onChange={this.handleInput('name')}/>
+            </label>
+            <label>
+                Description 
+                <input type="text" placeholder="A brief description" value={this.state.description} onChange={this.handleInput('description')}/>
             </label>
             <button onClick={this.handleCancel}>Cancel</button>
             <button onClick={this.handleSubmit}>Create</button>
+            </form>
         </div>
     )
 }

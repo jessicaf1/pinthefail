@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
       log_in_user(@user)
       render '/api/users/show'
     else
-      render json: @user.errors.full_messages, status: 422 
+      render json: ['invalid user']
     end 
   end
 
@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
     if @user && @user.update_attributes(user_params)
       debugger
       render :show 
-    elsif !@user 
+    else  
       render json: @user.errors.full_messages, status: 422 
     end 
   end

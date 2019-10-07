@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import {login} from '../../actions/session_actions';
+import {login, clearSessionErrors } from '../../actions/session_actions';
 import SessionForm from './sessionform';
 import { openModal, closeModal } from '../../actions/modal_actions'
 
@@ -18,6 +18,7 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
     debugger
     return {
+        clearSessionErrors: () => dispatch(clearSessionErrors()),
         processForm: (user) => dispatch(login(user)),
         otherForm: ()=> dispatch(openModal('signup')),
         closeModal: () => {

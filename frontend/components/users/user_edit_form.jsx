@@ -5,13 +5,14 @@ class UserEditForm extends React.Component {
     constructor(props){
         
         super(props);
-        
+        debugger
         // console.log(this.props.currentUser)
-        this.state = {...this.props.currentUser, photoFile:null, photoUrl: null};
+        this.state = {...this.props.currentUser, photoFile:null, photoUrl: null, email: '', f_name:'', l_name:'', location:'', description:''};
         debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.handleInput = this.handleInput.bind(this);
         
     }
 
@@ -35,9 +36,9 @@ class UserEditForm extends React.Component {
         formData.append('user[username]', this.state.username); 
         formData.append('user[description]', this.state.description); 
         formData.append('user[location]', this.state.location); 
-        // if (this.state.photoFile) {
-        //     formData.append('user[photo]', this.state.photoFile);
-        // }
+            if (this.state.photoFile) {
+                formData.append('user[photo]', this.state.photoFile);
+            }
      this.props.updateUser(formData).then(alert("saved!"))
        
     }

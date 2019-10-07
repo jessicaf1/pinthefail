@@ -1,2 +1,7 @@
 import Rect from 'react';
-import PinIndexItem from './'
+ const PinIndexItem = props => {
+     <div>
+         I am a Pin
+     </div>
+ }
+ export default PinIndexItem;

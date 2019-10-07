@@ -10,6 +10,7 @@ class BoardCreateForm extends React.Component {
     }
 
 componentDidMount(){
+    this.props.fetchBoard(this.props.match.params.boardId)
 }
 
 handleInput(field){
@@ -20,18 +21,19 @@ handleInput(field){
 
 handleSubmit(e){
     e.preventDefault();
-    this.props.updateBoard(this.state).then(()=>this.props.closeModal)
+    this.props.updateBoard(this.state)
 }
 
 handleCancel(e){
     e.preventDefault();
-    this.props.history.push(`/users/${this.props.currentUser.id}`);
+    this.props.closeModal
 }
 
 
 render(){
     return(
-        <div>
+        <div className="edit-board-form">
+         <form id="boardform">
             <div>Create Board</div>
             <label>
                 Name 
@@ -43,6 +45,7 @@ render(){
             </label>
             <button onClick={this.handleCancel}>Cancel</button>
             <button onClick={this.handleSubmit}>Save</button>
+            </form>
         </div>
     )
 }

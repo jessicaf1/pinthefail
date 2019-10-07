@@ -29,7 +29,7 @@ class UserDropDown extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="container">
         <div onClick={this.showMenu}>
           <img className="image-plus" id="showpage-button" src={window.plus} />
         </div>
@@ -42,7 +42,7 @@ class UserDropDown extends React.Component {
                   this.dropdownMenu = element;
                 }}>
                 <button onClick={this.props.openModal}>Create Board</button>
-                <button>Create Pin</button>
+                <button> Create Pin</button>
 
               </div>
             )

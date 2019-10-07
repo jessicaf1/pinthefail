@@ -61,10 +61,11 @@ export default ({ currentUser, logout, openModal }) => {
 
   const navbar = (currentUser, logout) => {
     return(
-      <div>
+      <div classname="nav">
+         <img className="image" id="spacethumb" src={window.logo}/>
         <form className="nav-bar">
-          <img className="image" id="spacethumb" src={window.logo}/>
-          <input className="btn spacebar" type="text" placeholder="search..."/>
+         
+          {/* <input className="btn spacebar" type="text" placeholder="search..."/> */}
           <button className="btn" type="submit">Home</button>
 
          
@@ -73,6 +74,7 @@ export default ({ currentUser, logout, openModal }) => {
           <button className="btn" type="submit">Following</button>
          <DropDownContainer/> 
         </form>
+       
       </div>
     ) 
     };

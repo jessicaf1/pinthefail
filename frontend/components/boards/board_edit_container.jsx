@@ -1,6 +1,6 @@
 import BoardEditForm from './board_edit_forn';
 import {connect} from 'react-redux';
-import { updateBoard } from '../../actions/board_actions';
+import { updateBoard, fetchBoard } from '../../actions/board_actions';
 import { openModal, closeModal } from '../../actions/modal_actions'
  
 const mapStateToProps = (state,ownProps) => {
@@ -14,7 +14,8 @@ const mapStateToProps = (state,ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-    createBoard: board => dispatch(updateBoard(board)),
+    updateBoard: board => dispatch(updateBoard(board)),
+    fetchBoard: id => dispatch(fetchBoard(id)),
     openModal: () => dispatch(openModal()),
     closeModal: () => dispatch(closeModal())
     }

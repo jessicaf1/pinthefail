@@ -1,6 +1,7 @@
 
 import React from 'react';
 import BoardIndexItem from './board_index_item';
+import NavBarContainer from '../navbar/nav_bar_container'; 
 
 class BoardIndex extends React.Component {
     constructor(props){

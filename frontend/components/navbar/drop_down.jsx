@@ -35,7 +35,7 @@ class DropDown extends React.Component{
   render(){
     
     return (
-      <div>
+      <div className="container">
         <div onClick={this.showMenu}>
            <img className="dropdown-menu-button image" src={window.dots}/>
         </div>

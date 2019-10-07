@@ -72,8 +72,11 @@ body {
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    right: 10px;
     height: 10%;
+    width: 300px;
+    align-items: center;
 }
 
 .btn {
@@ -103,6 +106,7 @@ body {
 
 .image {
     width: 30px;
+    border-radius: 90px;
 }
 
 .x {
@@ -165,7 +169,7 @@ body {
     color: black;
     padding: 5px;
     align-items: center;
-    margin: 5px;
+    margin-bottom: 9px;
     width: 260px;
     height: 30px;
     position: sticky;
@@ -219,6 +223,7 @@ body {
 #spacethumb {
     padding-top: 10px;
     margin: 5px;
+    float: left;
 }
 
 .spanner {
@@ -237,6 +242,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 5px;
+    position: relative;
 }
 
 .bottom {
@@ -247,21 +254,47 @@ body {
 }
 
 #dropdown-menu-button {
-    position: relative;
     border: none;
     background: none;
+    border-radius: 90px;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
 }
 
 .menubutton {
-    position: fixed;
-    background: lightgray;
+    background: white;
+    position: absolute;
     color: #8e8e8e;
     min-height: 50px;
     border: none;
+    font-size: 16px;
+    color: black;
+    right: 0;
+    height: 50px;
+    width: 105px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.menubuttonU {
+    background: white;
+    position: absolute;
+    color: #8e8e8e;
+    min-height: 50px;
+    border: none;
+    font-size: 16px;
+    color: black;
+    height: 200px;
+    width: 105px;
+    font-weight: bold;
+    border-radius: 8px;
 }
 
 .menubutton:hover {
-    background: darkgray;
+    background: lightgray;
 }
 
 .footer {
@@ -285,7 +318,8 @@ body {
 .err {
     font-size: 10px;
     color: red;
-    position: relative;
+    position: absolute;
+    margin: 0px;
 }
 
 .showpage {
@@ -445,6 +479,7 @@ body {
     text-decoration: none;
     color: gray;
     font-weight: bold;
+    padding-bottom: 2px;
 }
 
 .label {
@@ -490,4 +525,27 @@ body {
 
 #showpage-button {
     margin-top: 10px;
+}
+
+.edit-board-form {
+    width: 500px;
+    height: 200px;
+    background-color: white;
+}
+
+#boardform {
+    width: 500px;
+    height: 200px;
+    background-color: white;
+}
+
+.nav {
+    border-bottom: 1px solid lightgray;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }

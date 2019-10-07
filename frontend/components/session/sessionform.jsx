@@ -22,6 +22,10 @@ handleInput(field) {
     }
 }
 
+componentWillUnmount(){
+    this.props.clearSessionErrors();
+}
+
 handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state).then(this.props.closeModal);
@@ -89,7 +93,7 @@ componentDidMount(){
         if (this.props.errors.includes(error) && error === "Password is too short (minimum is 6 characters)" && this.props.formType === 'login') {
             return "The password you entered is incorrect."
         }
-        if (this.props.errors.includes(error) && error === "invalid Email and/or Password") {
+        if (this.props.errors.includes(error) && error === "invalid Email and/or Password" && this.props.formType === 'login') {
             return "Invalid login!"
         }
         if (this.props.errors.includes(error) && error === "Password is too short (minimum is 6 characters)" && this.props.formType === 'signup') {
@@ -141,8 +145,8 @@ componentDidMount(){
                      <div className="x" onClick={this.props.closeModal}>X</div>
 
            <div className="input-fields">
-                <label>
-                    <input type="text" className="field" placeholder="email" value={this.state.email} onChange={this.handleInput('email')}/>
+                <label className="slabel">
+                    <input type="email" className="field" placeholder="email" value={this.state.email} onChange={this.handleInput('email')}/>
                       <p className="err">{this.errorExists(emailError)}</p> 
                         <p className="err">{this.errorExists(genericError)}</p>
                 </label>

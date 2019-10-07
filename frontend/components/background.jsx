@@ -14,7 +14,7 @@ class Background extends React.Component {
 
   render() {
     return (
-    <img className="image" id="spacethumb" src={window.logo} />
+      <div></div>
     ) 
   }
 
