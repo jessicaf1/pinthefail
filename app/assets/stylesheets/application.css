@@ -552,7 +552,7 @@ hr {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-row-gap: 10px;
     grid-column-gap: 10px;
     align-items: center;
@@ -610,4 +610,82 @@ hr {
     border-radius: 5px;
     color: #8e8e88;
     height: 30px;
+}
+
+.pinsbuilder {
+    text-decoration: none;
+    color: black; 
+    font-weight: bold; 
+    /* position: absolute; */
+}
+
+.containerdd {
+    position: absolute;
+    background: white;
+    height: 80px;
+    width: 200x; 
+}
+
+.boards-index-item {
+    margin-top: 100px; 
+    width: 255px;
+    height: 220px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.index-list-item {
+    width: 109px;
+    height: 95px; 
+}
+
+.bi-title{
+    font-size: 15px;
+    font-weight: bold; 
+}
+
+.bi{
+    display: flex; 
+}
+
+.menu{
+    position: relative;
+}
+
+.board-index {
+    display: flex; 
+}
+
+.pin-cf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px; 
+}
+
+.pin-cf-t{
+    font-size: 30px;
+    color: gray; 
+}
+
+.pin-cf-tb {
+    width: 350px;
+    height: 50px; 
+}
+
+.pin-cf-input{
+    width: 100px; 
+}
+
+.pin-cf-tb::placeholder{
+    font-weight: bold; 
+    color:gray;    
+    font-size: 30px;
+}
+
+.pin-button {
+    background: red;
+    width: 50px;
+    height: 30px;
+    border-radius: 8px; 
 }

@@ -2,7 +2,8 @@ import * as APIUtil from '../util/board_pin_api_util';
 export const RECEIVE_BOARD_PIN = 'RECEIVE_BOARD_PIN';
 export const RECEIVE_BOARD_PINS = 'RECEIVE_BOARD_PINS';
 export const REMOVE_BOARD_PIN = 'REMOVE_BOARD_PIN';
-
+import { receivePin } from './pin_actions'
+ 
 const receiveBoardPin = board_pin => {
     return {
         type: RECEIVE_BOARD,
@@ -38,7 +39,7 @@ export const fetchBoardPin = (id) => {
 
 export const createBoardPin = (board_pin) => {
     return dispatch => {
-        return APIUtil.createBoardPin(board_pin).then(board_pin => dispatch(receiveBoard(board_pin)))
+        return APIUtil.createBoardPin(board_pin).then(pin => dispatch(receivePin(pin)))
     }
 }
 

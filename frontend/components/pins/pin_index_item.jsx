@@ -3,7 +3,8 @@ import React from 'react';
      debugger
      return (
      <div>
-         <img className="grid-item" src={props.pin.photoUrl} alt=""/>         
+         <img className="grid-item" src={props.pin.photoUrl} alt=""/>  
+            
      </div>
      ) 
  }

@@ -28,6 +28,9 @@ function Modal({modal, closeModal}) {
     case 'editPin':
       component = <PinEditFormContainer/>;
       break;  
+    case 'savePin':
+      component = <SavePinFormContainer/>;  
+      break; 
     default:
       return null;
   }

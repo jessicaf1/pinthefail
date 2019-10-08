@@ -4,8 +4,10 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions'
 const BoardsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_BOARDS:
+            debugger
             return Object.assign({}, action.boards)
         case RECEIVE_BOARD:
+            debugger
             return Object.assign({}, state, {
                 [action.board.id]: action.board
             })

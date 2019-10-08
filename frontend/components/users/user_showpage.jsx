@@ -15,10 +15,10 @@ class UserShowPage extends React.Component {
         this.state = this.props.user 
     }
 
-componentDidMount(){
-    debugger
-    this.props.fetchUser(this.props.match.params.userId)
-}
+// componentDidMount(){
+//     debugger
+//     this.props.fetchUser(this.props.match.params.userId)
+// }
 
 sendToEdit(e){
     e.preventDefault();
@@ -39,6 +39,7 @@ sendToEdit(e){
 
 render(){
     debugger 
+    let path = this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split.length);
 return(
     <div>
         <div className="showpage">
@@ -58,7 +59,7 @@ return(
         </div>
     <img className="showpage-image" src={window.pinface} />
     {/* <img src={this.props.user.photoUrl} alt=""/> */}
-    <BoardIndexContainer/>
+    {path === 'pins' ?  <PinsIndexContainer/> : <BoardIndexContainer/>} 
    
     </div>
 )
@@ -68,4 +69,4 @@ return(
 
 }
 
-export default UserShowPage
+export default withRouter(UserShowPage) 

@@ -2,6 +2,7 @@
 import React from 'react';
 import SignupContainer from './session/signup_container';
 import Modal from './modal'
+import PinsIndexContainer from '../components/pins/pin_index_container'
 
 class Background extends React.Component {
   constructor(props){
@@ -14,7 +15,9 @@ class Background extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <PinsIndexContainer/> 
+      </div>
     ) 
   }
 

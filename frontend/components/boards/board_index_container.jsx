@@ -3,15 +3,17 @@ import BoardIndex from './board_index';
 import { fetchBoard } from '../../actions/board_actions';
 import {fetchBoards} from '../../actions/board_actions';
 import {openModal} from '../../actions/modal_actions';
+import { fetchPin, fetchPins } from '../../actions/pin_actions'
 
 const mapStateToProps = state => {
    let boards = Object.values(state.entities.boards);
-   let pins = Object.values(state.entities.pins)
+   let currentUser = state.entities.users[state.session.currentUser]
+//    let pins = Object.values(state.entities.pins)
    debugger
     return {
-        pins,
-        boards,
-        currentUser: state.entities.users[state.session.currentUser]
+        currentUser,
+        boards
+        
     } 
 }
 
@@ -19,7 +21,9 @@ const mapDispatchToProps = dispatch => {
     return {
     fetchBoard: id => dispatch(fetchBoard(id)),
     fetchBoards: () => dispatch(fetchBoards()),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: modal => dispatch(openModal(modal)),
+    fetchPin: id => dispatch(fetchPin(id)),
+    fetchPins: () => dispatch(fetchPins())
     } 
 }
 

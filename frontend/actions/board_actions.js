@@ -4,6 +4,7 @@ export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
 
 const receiveBoard = board => {
+    debugger
     return {
         type: RECEIVE_BOARD,
         board
@@ -11,6 +12,7 @@ const receiveBoard = board => {
 }
 
 const receiveBoards = boards => {
+    debugger
     return {
         type: RECEIVE_BOARDS,
         boards
@@ -26,7 +28,11 @@ const removeBoard = boardId => {
 
 export const fetchBoards = () => {
     return dispatch => {
-        return APIUtil.fetchBoards().then(boards => dispatch(receiveBoards(boards)))
+        return APIUtil.fetchBoards().then(boards => {
+            debugger
+            return dispatch(receiveBoards(boards));
+        },
+        res => console.log(res))
     }
 }
 

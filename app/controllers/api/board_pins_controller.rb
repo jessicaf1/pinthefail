@@ -16,7 +16,9 @@ class Api::BoardPinsController < ApplicationController
     def create
         @board_pin = BoardPin.new(params[:id])
         if @board_pin.save
-            render :show
+            render :show 
+            @pin = Pin.find_by(id: @board_id.pin_id)
+            # render :show //save pin as instance variable, render pin's show 
         else
             render json: @board_pin.errors.full_messages, status: 422
         end 

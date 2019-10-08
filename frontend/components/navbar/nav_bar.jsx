@@ -61,7 +61,7 @@ export default ({ currentUser, logout, openModal }) => {
 
   const navbar = (currentUser, logout) => {
     return(
-      <div classname="nav">
+      <div className="nav">
          <img className="image" id="spacethumb" src={window.logo}/>
         <form className="nav-bar">
          

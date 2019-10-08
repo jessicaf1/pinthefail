@@ -24,10 +24,11 @@ const App = () => (
     <Switch>
        <Route exact path="/" component={Background}/> 
         <Route path="/users/pinBuilder" component={PinsCreateFormContainer} /> 
-        <Route path="/users/:userId/edit" component={EditFormContainer} />
+      
         <Route path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
         <Route path="/users/:userId/boards" component={BoardIndexContainer}/>
             <Route path="/users/:userId/pins" component={PinsIndexContainer} />
+            <Route path="/users/:userId/edit" component={EditFormContainer} />
         <Route path="/users/:userId/:boardId" component={BoardShowContainer}/>
        
         <Route path="/users/:userId" component={UserShowContainer} />
