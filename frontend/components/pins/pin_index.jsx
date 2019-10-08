@@ -20,9 +20,11 @@ render(){
     debugger 
     return(
         <div>
-            <NavBarContainer/>
+           
             <ul>
+                <div className="grid-container">
                 {pins}
+                </div>
             </ul>
         </div>
     )

@@ -13,10 +13,10 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
-        debugger
+        # debugger
         @board = Board.new(board_params)
         @board.user_id = current_user.id 
-        debugger
+        # debugger
         if @board.save
             render '/api/boards/show' 
         else

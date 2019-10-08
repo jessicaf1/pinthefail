@@ -6,6 +6,7 @@ import BoardIndexItem from './board_index_item';
 class BoardIndex extends React.Component {
     constructor(props){
         super(props)
+        debugger
     }
 
 componentDidMount(){
@@ -14,9 +15,9 @@ componentDidMount(){
 
 
 render(){
-
+    debugger
     let boards = this.props.boards.map(board=> {
-        return <BoardIndexItem board={board} key={board.id} openModal={this.props.openModal}/>
+        return <BoardIndexItem board={board} key={board.id} pinIds={board.pin_ids} pins={this.props.pins} openModal={this.props.openModal}/>
     })
 
     return(

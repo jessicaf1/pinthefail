@@ -94,7 +94,7 @@ class UserEditForm extends React.Component {
        
     <form>
         <label className="edit-photo">
-            <div id="edit-photo-text"> Photo</div>
+            <div id="edit-photo-text"> </div>
             <br/> 
             <img className="showpage-image" id="edit-pinface" src={window.pinface} />
             <input type="file" onChange={this.handleFile}/>

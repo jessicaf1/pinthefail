@@ -5,9 +5,11 @@ import {fetchBoards} from '../../actions/board_actions';
 import {openModal} from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
-   let boards = Object.values(state.entities.boards)
+   let boards = Object.values(state.entities.boards);
+   let pins = Object.values(state.entities.pins)
    debugger
     return {
+        pins,
         boards,
         currentUser: state.entities.users[state.session.currentUser]
     } 
