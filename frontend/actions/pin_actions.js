@@ -3,7 +3,7 @@ export const RECEIVE_PIN = 'RECEIVE_PIN';
 export const RECEIVE_PINS = 'RECEIVE_PINS';
 export const REMOVE_PIN = 'REMOVE_PIN';
 
-const receivePin = pin => {
+export const receivePin = pin => {
     debugger
     return {
         type: RECEIVE_PIN,

@@ -61,14 +61,13 @@ class CreatePinForm extends React.Component {
         return(
         <div>   
             <form className="pin-cf">
-
+                    <div className="box"></div>
                     <button className="pin-button" onClick={this.handleSubmit}>Save</button>
-                    <label className="pin-cf-t">
-                    <input placeholder="Add Your Title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>
-                </label>
+                        <label className="pin-cf-t">
+                        <input placeholder="Add Your Title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>
+                        </label>
                     <input type="file" onChange={this.handleFile}/>
                     <img src={this.state.photoUrl} alt=""/>
-         
             </form>
         </div>
         ) 

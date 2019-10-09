@@ -59,6 +59,7 @@ return(
         </div>
     <img className="showpage-image" src={window.pinface} />
     {/* <img src={this.props.user.photoUrl} alt=""/> */}
+    
     {path === 'pins' ?  <PinsIndexContainer/> : <BoardIndexContainer/>} 
    
     </div>

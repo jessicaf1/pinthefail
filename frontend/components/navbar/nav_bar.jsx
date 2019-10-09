@@ -66,9 +66,9 @@ export default ({ currentUser, logout, openModal }) => {
         <form className="nav-bar">
          
           {/* <input className="btn spacebar" type="text" placeholder="search..."/> */}
-          <button className="btn" type="submit">Home</button>
+          {/* <button className="btn" onClick={} type="submit">Home</button> */}
 
-         
+         <Link className="navLink" to={`/users/${currentUser.id}/pins`}>Home</Link>
           <Link className="navLink" to={`/users/${currentUser.id}`}>{currentUser.email.split("@")[0]}</Link>
           
           <button className="btn" type="submit">Following</button>

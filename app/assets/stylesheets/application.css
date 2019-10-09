@@ -74,7 +74,6 @@ body {
     justify-content: space-between;
     position: fixed;
     right: 10px;
-    height: 10%;
     width: 300px;
     align-items: center;
 }
@@ -475,6 +474,12 @@ body {
     border-radius: 4px;
 }
 
+.nav {
+    position: sticky;
+    top: 0;
+    height: 20px;
+}
+
 .navLink {
     text-decoration: none;
     color: gray;
@@ -539,29 +544,18 @@ body {
     background-color: white;
 }
 
-.nav {
-    border-bottom: 1px solid lightgray;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
-}
-
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
-    align-items: center;
-    margin-top: 50px;
+    column-count: 4;
+    column-gap: 1em;
+    margin-top: 65px;
+    margin-right: 40px;
 }
 
 .grid-item {
-    width: 280px;
-    border-radius: 12px;
+    width: 100%;
+    display: inline-block;
+    border-radius: 9px;
+    margin: 0 0 1em;
 }
 
 .board-form {
@@ -614,8 +608,8 @@ hr {
 
 .pinsbuilder {
     text-decoration: none;
-    color: black; 
-    font-weight: bold; 
+    color: black;
+    font-weight: bold;
     /* position: absolute; */
 }
 
@@ -623,11 +617,11 @@ hr {
     position: absolute;
     background: white;
     height: 80px;
-    width: 200x; 
+    width: 200x;
 }
 
 .boards-index-item {
-    margin-top: 100px; 
+    margin-top: 100px;
     width: 255px;
     height: 220px;
     display: grid;
@@ -636,50 +630,50 @@ hr {
 
 .index-list-item {
     width: 109px;
-    height: 95px; 
+    height: 95px;
 }
 
-.bi-title{
+.bi-title {
     font-size: 15px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-.bi{
-    display: flex; 
+.bi {
+    display: flex;
 }
 
-.menu{
+.menu {
     position: relative;
 }
 
 .board-index {
-    display: flex; 
-}
-
-.pin-cf{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 150px; 
 }
 
-.pin-cf-t{
+.pin-cf {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.pin-cf-t {
     font-size: 30px;
-    color: gray; 
+    color: gray;
 }
 
 .pin-cf-tb {
     width: 350px;
-    height: 50px; 
+    height: 50px;
 }
 
-.pin-cf-input{
-    width: 100px; 
+.pin-cf-input {
+    width: 100px;
 }
 
-.pin-cf-tb::placeholder{
-    font-weight: bold; 
-    color:gray;    
+.pin-cf-tb::placeholder {
+    font-weight: bold;
+    color: gray;
     font-size: 30px;
 }
 
@@ -687,5 +681,13 @@ hr {
     background: red;
     width: 50px;
     height: 30px;
-    border-radius: 8px; 
+    border-radius: 8px;
+}
+
+.box {
+    height: 500px;
+    width: 400px;
+    cursor: pointer;
+    background: lightgray;
+    border-radius: 12px;
 }
