@@ -26,7 +26,9 @@ class Api::BoardsController < ApplicationController
 
     def update
         @board = Board.find(params[:id])
+        debugger
         if @board.user_id === current_user.id && @board.update(board_params)
+            debugger
             render '/api/boards/show' 
         else
             render json: @board.errors.full_messages 

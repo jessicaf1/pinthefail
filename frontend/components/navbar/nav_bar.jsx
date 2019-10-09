@@ -62,19 +62,21 @@ export default ({ currentUser, logout, openModal }) => {
   const navbar = (currentUser, logout) => {
     return(
       <div className="nav">
-         <img className="image" id="spacethumb" src={window.logo}/>
-        <form className="nav-bar">
-         
+                
+                <form className="nav-bar">
+                <img className="image" id="spacethumb" src={window.logo}/>
           {/* <input className="btn spacebar" type="text" placeholder="search..."/> */}
           {/* <button className="btn" onClick={} type="submit">Home</button> */}
-
-         <Link className="navLink" to={`/users/${currentUser.id}/pins`}>Home</Link>
-          <Link className="navLink" to={`/users/${currentUser.id}`}>{currentUser.email.split("@")[0]}</Link>
-          
-          <button className="btn" type="submit">Following</button>
-         <DropDownContainer/> 
+            <Link className="navLink" to={`/users/${currentUser.id}/pins`}>Home</Link>
+            &nbsp;
+            &nbsp; 
+            <Link className="navLink" to={`/users/${currentUser.id}`}>{currentUser.email.split("@")[0]}</Link>
+            &nbsp;
+            <button className="btn" type="submit">Following</button>
+            &nbsp;
+          <DropDownContainer/> 
         </form>
-       
+       <div className="tryRect"></div>
       </div>
     ) 
     };

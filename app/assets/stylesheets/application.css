@@ -71,11 +71,15 @@ body {
 
 .nav-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: fixed;
     right: 10px;
-    width: 300px;
+    width: 100%;
     align-items: center;
+    height: 60px;
+    background: white;
+    top: 0;
+    border-bottom: 1px solid lightgray;
 }
 
 .btn {
@@ -221,8 +225,11 @@ body {
 
 #spacethumb {
     padding-top: 10px;
-    margin: 5px;
+    margin: -1px;
     float: left;
+    position: absolute;
+    left: 5%;
+    position: absolute;
 }
 
 .spanner {
@@ -326,6 +333,7 @@ body {
     flex-direction: column;
     color: #2e2b2b;
     margin-left: 100px;
+    margin-top: 6%;
 }
 
 .showpage-clickable {
@@ -610,6 +618,7 @@ body {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    height: 60px;
     /* position: absolute; */
 }
 
@@ -617,7 +626,9 @@ body {
     position: absolute;
     background: white;
     height: 80px;
-    width: 200x;
+    width: 200px;
+    box-shadow: 2px 2px 2px 2px lightgray;
+    border-radius: 6px;
 }
 
 .boards-index-item {
@@ -648,6 +659,7 @@ body {
 
 .board-index {
     display: flex;
+    margin-top: -6%;
 }
 
 .pin-cf {

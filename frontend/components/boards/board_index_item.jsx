@@ -17,18 +17,18 @@ const BoardIndexItem = props => {
   //   return ''
   // }
   //let arr = Array.from(props.fetchPins().filter(pin => props.pinIds.includes(pin.id)) )
-  debugger
+  // debugger
   if(props.board.pinPhotos === undefined){
     return null 
   }
   let arr = props.board.pinPhotos.map(pinPhoto => {
-    debugger
+    // debugger
     return <img className="index-list-item" src={pinPhoto} alt="" />
     }) 
 
    const sendToBoardShow = e => {
         e.preventDefault();
-        this.props.history.push(`/users/${props.currentUser.id}/${props.board.id}`)
+        props.history.push(`/users/${props.currentUser.id}/${props.board.id}`)
     }
 
   return (
@@ -38,7 +38,7 @@ const BoardIndexItem = props => {
               <div className="boards-index-item">
                   {arr}
                 </div>
-              <div className="bi-title">{props.board.name}</div>
+              <div className="bi-title" onClick={sendToBoardShow}>{props.board.name}</div>
               {props.board.pin_ids.length} <span> Pins </span>
         </div>
 
