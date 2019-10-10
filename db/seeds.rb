@@ -78,7 +78,7 @@ pin10.photo.attach(io: file10, filename: 'baby2.jpeg')
 
 pin8 = Pin.create(name: 'Serena and Dan')
 file8 = open('https://pinthefail-seeds2.s3.amazonaws.com/serenaanddan.jpg')
-pin8.photo.attach(io: file8, filename: 'nateanddiana.jpg')
+pin8.photo.attach(io: file8, filename: 'serenaanddan.jpg')
 
 
 pin14 = Pin.create(name: 'CrossFit Bro')
