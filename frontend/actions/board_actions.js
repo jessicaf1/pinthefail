@@ -4,7 +4,7 @@ export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
 
 const receiveBoard = board => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_BOARD,
         board
@@ -12,7 +12,7 @@ const receiveBoard = board => {
 }
 
 const receiveBoards = boards => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_BOARDS,
         boards
@@ -29,7 +29,7 @@ const removeBoard = boardId => {
 export const fetchBoards = () => {
     return dispatch => {
         return APIUtil.fetchBoards().then(boards => {
-            debugger
+            // debugger
             return dispatch(receiveBoards(boards));
         },
         res => console.log(res))
@@ -49,7 +49,7 @@ export const createBoard = (board) => {
 }
 
 export const updateBoard = (board) => {
-    debugger
+    // debugger
     return dispatch => {
         return APIUtil.updateBoard(board).then(board => dispatch(receiveBoard(board)))
     }
@@ -57,7 +57,7 @@ export const updateBoard = (board) => {
 
 
 export const deleteBoard = (id) => {
-    debugger
+    // debugger
     return dispatch => {
         return APIUtil.deleteBoard(id).then(board => dispatch(removeBoard(board)))
     }

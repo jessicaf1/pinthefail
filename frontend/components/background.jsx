@@ -29,7 +29,7 @@ import { openModal, closeModal } from '../actions/modal_actions';
 import { signup } from '../actions/session_actions'
 
 export const mapStateToProps = (state) => {
-  debugger
+  // debugger
   return {
     errors: state.errors.session,
     formType: 'signup',
@@ -44,7 +44,7 @@ export const mapDispatchToProps = (dispatch) => {
     processForm: (user) => dispatch(signup(user)),
     otherForm: () => dispatch(openModal('login')),
     openModal: (modal) => {
-      debugger
+      // debugger
       return dispatch(openModal(modal))
     }
   };

@@ -11,18 +11,18 @@ function Modal({modal, closeModal}) {
     return null;
   }
   let component;
-  debugger
+  // debugger
   switch (modal) {
     case 'login':
-      debugger
+      // debugger
       component = <LoginContainer />;
       break;
     case 'signup':
-      debugger
+      // debugger
       component = <SignupContainer />;
       break;
     case 'createBoard':
-      debugger
+      // debugger
       component = <BoardCreateFormContainer/>;
       break; 
     case 'editPin':
@@ -44,17 +44,17 @@ function Modal({modal, closeModal}) {
 }
 
 const mapStateToProps = state => {
-  debugger
+  // debugger
   return {
     modal: state.ui.modal
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
+  // debugger
   return {
     closeModal: () => {
-      debugger 
+      // debugger 
       return dispatch(closeModal())
     }
   };

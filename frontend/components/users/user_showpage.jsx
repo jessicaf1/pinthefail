@@ -26,13 +26,18 @@ sendToEdit(e){
 }
 
     sendToBoards(e) {
-        e.preventDefault();
+        
+        // e.preventDefault();
         this.props.history.push(`/users/${this.props.user.id}/boards`)
+        debugger
     }
 
     sendToPins(e) {
-        e.preventDefault();
+        debugger
+        // e.preventDefault();
+        debugger
         this.props.history.push(`/users/${this.props.user.id}/pins`)
+        debugger
     }
 
 
@@ -54,7 +59,7 @@ return(
             <div className="showpage-bps">
             <div id="showpage-boards" onClick={this.sendToBoards}>Boards</div> 
                 &nbsp; 
-            <div id="shoage-pins" onClick={this.sendToPins}>Pins</div>
+            <div id="showpage-pins" onClick={this.sendToPins}>Pins</div>
             </div>
         </div>
     <img className="showpage-image" src={window.pinface} />

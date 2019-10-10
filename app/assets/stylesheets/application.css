@@ -673,7 +673,7 @@ body {
 .pin-cf {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin-top: 150px;
 }
@@ -718,16 +718,18 @@ body {
 } */
 
 .file {
-    background: lightgray;
+    background: white;
     height: 400px;
     width: 300px;
+    
+    content: 'click to upload'
 }
 
-.file::before {
+/* .file::before {
     content: 'Upload Picture';
     font-size: 15px;
     border-radius: 8px;
-}
+} */
 
 .input[type='file'] {
     opacity: 0;
@@ -751,4 +753,23 @@ body {
 .board-show-header {
     font-size: 24px;
     margin-top: 57px;
+}
+
+.uploadpic {
+    border: 2px dashed lightgray;
+    padding: 155px; 
+    position: absolute; 
+    left: 20%; 
+}
+
+.uploadpic::after{
+    content: hello
+}
+
+.file-pic{
+    box-sizing: border-box;
+    width: 300px; 
+    position: absolute;
+    left: 25%; 
+    z-index: 90; 
 }

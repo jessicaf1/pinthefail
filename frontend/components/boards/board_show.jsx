@@ -7,10 +7,14 @@ class BoardShow extends React.Component {
   }
 
 componentDidMount(){
-  //this.props.fetchBoard(this.props.match.params.boardId) this doesn't work, only thing params will get me userId 
+  this.props.fetchBoard(this.props.match.params.boardId) 
 
 }
 render(){
+  debugger
+  if (this.props.board === undefined) {
+    return null
+  }
   if(this.props.board.pinPhotos === undefined){
     return null 
   }

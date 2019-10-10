@@ -36,7 +36,7 @@ export const fetchUser = (id) => {
 // }
 
 export const updateUser = (user) => {
-    debugger
+    // debugger
     return dispatch => {
         return APIUtil.updateUser(user).then(user => dispatch(receiveCurrentUser(user)))
     }

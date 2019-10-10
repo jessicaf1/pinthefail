@@ -28,7 +28,7 @@ const BoardIndexItem = props => {
 
    const sendToBoardShow = e => {
         e.preventDefault();
-        props.history.push(`/users/${props.currentUser.id}/${props.board.id}`)
+        props.history.push(`/users/${props.currentUser.id}/boards/${props.board.id}`)
     }
 
   return (

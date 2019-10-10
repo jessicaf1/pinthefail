@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
 return {
     board: state.entities.boards[ownProps.match.params.boardId] 
 }
@@ -15,7 +15,7 @@ return {
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
+    // debugger
 return {
     fetchBoard: id => dispatch(fetchBoard(id))
 }
