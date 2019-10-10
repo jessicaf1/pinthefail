@@ -6,9 +6,10 @@ import { fetchBoards } from '../../actions/board_actions'
 const mapStateToProps = state => {
     debugger
     let pins = Object.values(state.entities.pins); 
-    let boards = Object.values(state.entities.boards)
+    let boards = Object.values(state.entities.boards);
+    let user = state.entities.users[state.session.currentUser];
     return {
-        pins, boards 
+        pins, boards, user 
     }
 }
 

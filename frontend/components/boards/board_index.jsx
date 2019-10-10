@@ -3,6 +3,8 @@ import React from 'react';
 import BoardIndexItem from './board_index_item';
 import { withRouter } from 'react-router-dom';
 // import BoardShowContainer from './board_show_container'
+import UserShowContainer from '../../components/users/user_showpage_container'
+
 
 class BoardIndex extends React.Component {
     constructor(props){
@@ -30,6 +32,7 @@ render(){
 
     return(
         <div>
+            <UserShowContainer/> 
             <ul>
                
                 <div className="board-index">

@@ -686,6 +686,8 @@ body {
 .pin-cf-tb {
     width: 350px;
     height: 50px;
+    border: none;
+    border-bottom: 1px solid lightgray; 
 }
 
 .pin-cf-input {
@@ -700,12 +702,14 @@ body {
 
 .pin-button {
     background: red;
-    width: 50px;
-    height: 30px;
+    width: 85px;
+    height: 53px;
     border-radius: 8px;
     position: absolute;
     top: 10%;
-    right: 5%
+    right: 20%;
+    color:  white;
+    font-size: 23px; 
 }
 
 
@@ -759,7 +763,7 @@ body {
     border: 2px dashed lightgray;
     padding: 155px; 
     position: absolute; 
-    left: 20%; 
+    left: 18%; 
 }
 
 .uploadpic::after{
@@ -770,6 +774,6 @@ body {
     box-sizing: border-box;
     width: 300px; 
     position: absolute;
-    left: 25%; 
+    left: 23%; 
     z-index: 90; 
 }

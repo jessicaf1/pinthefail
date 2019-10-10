@@ -64,7 +64,7 @@ class CreatePinForm extends React.Component {
                     {/* <div className="box"></div> */}
                     <button className="pin-button" onClick={this.handleSubmit}>Save</button>
                         <label className="pin-cf-t">
-                        <input placeholder="Add Your Title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>
+                        <input placeholder="Add your title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>
                         </label>
                     <input type="file" className="file" onChange={this.handleFile}/>
                     <div className="uploadpic">Upload picture here</div>

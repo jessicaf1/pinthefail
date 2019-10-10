@@ -2,6 +2,8 @@ import React from 'react';
 import PinIndexItem from './pin_index_item';
 import NavBarContainer from '../navbar/nav_bar_container';
 // import UserShowContainer from '../users/user_showpage_container'
+import UserShowContainer from '../../components/users/user_showpage_container'
+import { withRouter } from 'react-router-dom';
 
 class PinIndex extends React.Component {
     constructor(props){
@@ -21,6 +23,7 @@ render(){
     debugger 
     return(
         <div> 
+            {this.props.user? <UserShowContainer /> : null} 
             <ul>
                 <div className="grid-container">
                 {pins}
@@ -31,4 +34,4 @@ render(){
     }
 }
 
-export default PinIndex; 
+export default withRouter(PinIndex); 

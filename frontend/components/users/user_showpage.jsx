@@ -44,7 +44,7 @@ sendToEdit(e){
 
 render(){
     debugger 
-    let path = this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split.length + 1).toString();
+    // let path = this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split.length + 1).toString();
 return(
     <div>
         <div className="showpage">
@@ -57,15 +57,17 @@ return(
         </div>   
             <h1 id="showpage-header">{this.props.user.f_name} <span>   </span>{ this.props.user.l_name}</h1>
             <div className="showpage-bps">
-            <div id="showpage-boards" onClick={this.sendToBoards}>Boards</div> 
+                <Link to={`/users/${this.props.user.id}/boards`}>Boards</Link>
+                <Link to={`/users/${this.props.user.id}/pins`}>Pins</Link>
+            {/* <div id="showpage-boards" onClick={this.sendToBoards}>Boards</div>  */}
                 &nbsp; 
-            <div id="showpage-pins" onClick={this.sendToPins}>Pins</div>
+            {/* <div id="showpage-pins" onClick={this.sendToPins}>Pins</div> */}
             </div>
         </div>
     <img className="showpage-image" src={window.pinface} />
     {/* <img src={this.props.user.photoUrl} alt=""/> */}
     
-    {path === 'pins' ?  <PinsIndexContainer/> : <BoardIndexContainer/>} 
+    {/* {path === 'pins' ?  <PinsIndexContainer/> : <BoardIndexContainer/>}  */}
    
     </div>
 )
