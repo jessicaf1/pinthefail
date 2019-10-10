@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 //    let pins = Object.values(state.entities.pins)
    debugger
     return {
-        user_id: currentUser.id, 
+        currentUser, 
         boards
         
     } 

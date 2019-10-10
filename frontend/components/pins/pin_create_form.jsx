@@ -31,7 +31,7 @@ class CreatePinForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('pin[photo]', this.state.photoFile);
         }
-     this.props.createPin(formData).then(alert("saved!"))
+     this.props.createPin(formData).then(alert("pin saved!"))
     }
 
     handleFile(e){
@@ -61,12 +61,12 @@ class CreatePinForm extends React.Component {
         return(
         <div>   
             <form className="pin-cf">
-                    <div className="box"></div>
+                    {/* <div className="box"></div> */}
                     <button className="pin-button" onClick={this.handleSubmit}>Save</button>
                         <label className="pin-cf-t">
                         <input placeholder="Add Your Title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>
                         </label>
-                    <input type="file" onChange={this.handleFile}/>
+                    <input type="file" className="file" onChange={this.handleFile}/>
                     <img src={this.state.photoUrl} alt=""/>
             </form>
         </div>

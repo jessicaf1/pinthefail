@@ -7,7 +7,7 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 export const mapStateToProps = state => {
     debugger
     return {
-    // currentUser: state.users[state.session.currentUser],
+    currentUser: state.entities.users[state.session.currentUser],
     board: {name:'', description: ''}
     }
 }

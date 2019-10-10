@@ -1,7 +1,8 @@
 
 import React from 'react';
 import BoardIndexItem from './board_index_item';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+// import BoardShowContainer from './board_show_container'
 
 class BoardIndex extends React.Component {
     constructor(props){
@@ -24,7 +25,7 @@ componentDidMount(){
 render(){
     debugger
     let boards = this.props.boards.map(board=> {
-        return <BoardIndexItem className="bi" board={board} key={board.id}/>
+        return <BoardIndexItem className="bi" board={board} key={board.id} currentUser={this.props.currentUser}/>
     })
 
     return(
@@ -33,6 +34,7 @@ render(){
                
                 <div className="board-index">
                 {boards}
+                {/* <BoardShowContainer/> */}
                 </div>
             </ul>
         </div>

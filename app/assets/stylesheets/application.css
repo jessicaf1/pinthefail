@@ -587,6 +587,10 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    justify-content: center;
 }
 
 .board-form label {
@@ -612,6 +616,8 @@ body {
     border-radius: 5px;
     color: #8e8e88;
     height: 30px;
+    font-weight: bold;
+    font-size: 17px;
 }
 
 .pinsbuilder {
@@ -619,6 +625,7 @@ body {
     color: black;
     font-weight: bold;
     height: 60px;
+    cursor: pointer;
     /* position: absolute; */
 }
 
@@ -659,11 +666,13 @@ body {
 
 .board-index {
     display: flex;
+    flex-wrap: wrap;
     margin-top: -6%;
 }
 
 .pin-cf {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
     margin-top: 150px;
@@ -694,12 +703,52 @@ body {
     width: 50px;
     height: 30px;
     border-radius: 8px;
+    position: absolute;
+    top: 10%;
+    right: 5%
 }
 
-.box {
+
+/* .box {
     height: 500px;
     width: 400px;
     cursor: pointer;
     background: lightgray;
     border-radius: 12px;
+} */
+
+.file {
+    background: lightgray;
+    height: 400px;
+    width: 300px;
+}
+
+.file::before {
+    content: 'Upload Picture';
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.input[type='file'] {
+    opacity: 0;
+    color: red;
+}
+
+.board-show-pics {
+    column-count: 4;
+    column-gap: 1em;
+    margin-top: 65px;
+    margin-right: 40px;
+}
+
+.board-show-item {
+    width: 100%;
+    display: inline-block;
+    border-radius: 9px;
+    margin: 0 0 1em;
+}
+
+.board-show-header {
+    font-size: 24px;
+    margin-top: 57px;
 }

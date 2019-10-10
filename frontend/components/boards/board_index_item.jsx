@@ -35,10 +35,10 @@ const BoardIndexItem = props => {
   
     
       <div className="boards-total">
-              <div className="boards-index-item">
-                  {arr}
+              <div onClick={sendToBoardShow} className="boards-index-item">
+                  {arr.slice(0,3)}
                 </div>
-              <div className="bi-title" onClick={sendToBoardShow}>{props.board.name}</div>
+              <div className="bi-title">{props.board.name}</div>
               {props.board.pin_ids.length} <span> Pins </span>
         </div>
 

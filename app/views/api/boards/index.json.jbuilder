@@ -10,7 +10,7 @@
                 end 
                 # debugger
          json.pinPhotos do 
-            json.array! arr[0..2] 
+            json.array! arr
         end  
     end 
 end 

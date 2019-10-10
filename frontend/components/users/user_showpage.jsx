@@ -39,7 +39,7 @@ sendToEdit(e){
 
 render(){
     debugger 
-    let path = this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split.length);
+    let path = this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split.length + 1).toString();
 return(
     <div>
         <div className="showpage">
@@ -54,7 +54,7 @@ return(
             <div className="showpage-bps">
             <div id="showpage-boards" onClick={this.sendToBoards}>Boards</div> 
                 &nbsp; 
-            <div id="showpage-pins" onClick={this.sendToPins}>Pins</div>
+            <div id="shoage-pins" onClick={this.sendToPins}>Pins</div>
             </div>
         </div>
     <img className="showpage-image" src={window.pinface} />
