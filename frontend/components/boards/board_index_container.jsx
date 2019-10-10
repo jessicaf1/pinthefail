@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import BoardIndex from './board_index';
 import { fetchBoard } from '../../actions/board_actions';
-import {fetchBoards} from '../../actions/board_actions';
+import {fetchBoards, updateBoard } from '../../actions/board_actions';
 import {openModal} from '../../actions/modal_actions';
 import { fetchPin, fetchPins } from '../../actions/pin_actions'
 
@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => {
     return {
     fetchBoard: id => dispatch(fetchBoard(id)),
     fetchBoards: () => dispatch(fetchBoards()),
-    openModal: modal => dispatch(openModal(modal)),
+    openModal: () => dispatch(openModal('updateBoard')),
     fetchPin: id => dispatch(fetchPin(id)),
     fetchPins: () => dispatch(fetchPins())
     } 

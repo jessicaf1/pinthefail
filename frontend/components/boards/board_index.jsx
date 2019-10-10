@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 // import BoardShowContainer from './board_show_container'
 import UserShowContainer from '../../components/users/user_showpage_container'
 
-
 class BoardIndex extends React.Component {
     constructor(props){
         super(props)
@@ -27,7 +26,7 @@ componentDidMount(){
 render(){
     debugger
     let boards = this.props.boards.map(board=> {
-        return <BoardIndexItem className="bi" board={board} key={board.id} currentUser={this.props.currentUser}/>
+        return <BoardIndexItem className="bi" board={board} key={board.id} currentUser={this.props.currentUser} openModal={this.props.openModal}/>
     })
 
     return(

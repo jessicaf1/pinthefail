@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 
-class BoardCreateForm extends React.Component {
+class BoardEditForm extends React.Component {
     constructor(props){
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -11,7 +11,7 @@ class BoardCreateForm extends React.Component {
     }
 
 componentDidMount(){
-    this.props.fetchBoard(this.props.match.params.boardId)
+    this.props.fetchBoard(this.props.match.params.boardId) //there is no boardId here
 }
 
 handleInput(field){
@@ -23,6 +23,7 @@ handleInput(field){
 handleSubmit(e){
     e.preventDefault();
     this.props.updateBoard(this.state)
+        .then(() => this.props.closeModal())
 }
 
 handleCancel(e){

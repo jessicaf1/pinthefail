@@ -8,6 +8,6 @@ json.pins do
     @board.pins.each do |pin|
         debugger
         json.partial! 'api/pins/pin', pin: pin
-        debugger
+        # debugger
     end 
 end

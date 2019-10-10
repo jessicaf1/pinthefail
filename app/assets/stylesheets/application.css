@@ -349,12 +349,20 @@ body {
 
 #showpage-boards {
     margin-left: 5px;
+    text-decoration: none;
+    color: gray;
 }
 
 #showpage-boards:hover {
     text-decoration: underline;
     color: black;
 }
+
+#showpage-pins {
+    text-decoration: none;
+    color: gray;
+}
+
 
 #showpage-pins:hover {
     text-decoration: underline;
@@ -552,19 +560,7 @@ body {
     background-color: white;
 }
 
-.grid-container {
-    column-count: 4;
-    column-gap: 1em;
-    margin-top: 65px;
-    margin-right: 40px;
-}
 
-.grid-item {
-    width: 100%;
-    display: inline-block;
-    border-radius: 9px;
-    margin: 0 0 1em;
-}
 
 .board-form {
     width: 520px;
@@ -608,6 +604,7 @@ body {
 
 .form-input::placeholder {
     font-size: 14px;
+    color:#303030;
 }
 
 .b-f-button {
@@ -776,4 +773,38 @@ body {
     position: absolute;
     left: 23%; 
     z-index: 90; 
+}
+
+.grid-container {
+    column-count: 4;
+    column-gap: 1em;
+    margin-top: 65px;
+    margin-right: 40px;
+}
+
+.grid-item {
+    width: 100%;
+    display: inline-block;
+    border-radius: 9px;
+    margin: 0 0 1em;
+}
+
+#grid-item-image{
+    display: none;
+    position: absolute;
+    width: 40px; 
+    height: 33px; 
+    top: 0; 
+    border-radius: 5px;
+    padding: 10px;
+    background: red; 
+}
+
+.grid-div {
+    position: relative;
+}
+
+
+.grid-item:hover + img#grid-item-image {
+    display: block;
 }

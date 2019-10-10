@@ -5,6 +5,7 @@ import LoginContainer from '../components/session/login_container';
 import SignupContainer from '../components/session/signup_container';
 import BoardCreateFormContainer from '../components/boards/board_create_form_container';
 import PinEditFormContainer from '../components/pins/pin_edit_form_container'
+import BoardEditFormContainer from '../components/boards/board_edit_container'
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -27,6 +28,9 @@ function Modal({modal, closeModal}) {
       break; 
     case 'editPin':
       component = <PinEditFormContainer/>;
+      break;  
+    case 'updateBoard':
+      component = <BoardEditFormContainer/>;
       break;  
     case 'savePin':
       component = <SavePinFormContainer/>;  

@@ -31,6 +31,10 @@ const BoardIndexItem = props => {
         props.history.push(`/users/${props.currentUser.id}/boards/${props.board.id}`)
     }
 
+    const openModal = () => {
+      props.openModal(props.board)
+    }
+
   return (
   
     
@@ -40,6 +44,8 @@ const BoardIndexItem = props => {
                 </div>
               <div className="bi-title">{props.board.name}</div>
               {props.board.pin_ids.length} <span> Pins </span>
+              <br/> 
+          {/* <img className="showpage-pencil" src={window.pencil} alt="" onClick={openModal}/> */}
         </div>
 
 

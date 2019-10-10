@@ -2,9 +2,9 @@ import React from 'react';
  const PinIndexItem = props => {
      debugger
      return (
-     <div>
+     <div className="grid-div">
          <img className="grid-item" src={props.pin.photoUrl} alt=""/>  
-            
+             <img id="grid-item-image" src={window.logo} />
      </div>
      ) 
  }

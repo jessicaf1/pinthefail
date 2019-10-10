@@ -57,8 +57,10 @@ return(
         </div>   
             <h1 id="showpage-header">{this.props.user.f_name} <span>   </span>{ this.props.user.l_name}</h1>
             <div className="showpage-bps">
-                <Link to={`/users/${this.props.user.id}/boards`}>Boards</Link>
-                <Link to={`/users/${this.props.user.id}/pins`}>Pins</Link>
+                <Link id="showpage-boards" to={`/users/${this.props.user.id}/boards`}>Boards</Link>
+                &nbsp;
+                &nbsp; 
+                <Link id="showpage-pins" to={`/users/${this.props.user.id}/pins`}>Pins</Link>
             {/* <div id="showpage-boards" onClick={this.sendToBoards}>Boards</div>  */}
                 &nbsp; 
             {/* <div id="showpage-pins" onClick={this.sendToPins}>Pins</div> */}
