@@ -3,6 +3,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 const BoardIndexItem = props => {
+  debugger
   // let pinsArr; 
   // debugger
   // if(props.pinIds.length > 0){
@@ -21,9 +22,9 @@ const BoardIndexItem = props => {
   if(props.board.pinPhotos === undefined){
     return null 
   }
-  let arr = props.board.pinPhotos.map(pinPhoto => {
+  let arr = props.board.pinPhotos.map((pinPhoto, i) => {
     // debugger
-    return <img className="index-list-item" src={pinPhoto} alt="" />
+    return <img key={i} className="index-list-item" src={pinPhoto} alt="" />
     }) 
 
    const sendToBoardShow = e => {
@@ -32,7 +33,7 @@ const BoardIndexItem = props => {
     }
 
     const openModal = () => {
-      props.openModal(props.board)
+      props.openModal()
     }
 
   return (

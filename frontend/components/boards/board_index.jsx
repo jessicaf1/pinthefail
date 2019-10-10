@@ -22,13 +22,21 @@ componentDidMount(){
     //     this.props.history.push(`/users/${this.props.currentUser.id}/${board.id}`)
     // }
 
+    componentDidUpdate(prevProps){
+        if (prevProps.boards.length !== this.props.boards.length){
+            this.props.fetchBoards();
+        }
+    }
+
 
 render(){
-    debugger
+    
     let boards = this.props.boards.map(board=> {
+        debugger
+        board 
         return <BoardIndexItem className="bi" board={board} key={board.id} currentUser={this.props.currentUser} openModal={this.props.openModal}/>
     })
-
+    debugger
     return(
         <div>
             <UserShowContainer/> 
