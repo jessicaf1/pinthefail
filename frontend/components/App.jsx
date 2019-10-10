@@ -27,7 +27,7 @@ const App = () => (
         <Route path="/users/:userId/boards/:boardId" component={BoardShowContainer}/>
         <Route path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
         <Route path="/users/:userId/boards" component={BoardIndexContainer}/>
-            {/* <Route path="/users/:userId/pins" component={PinsIndexContainer} /> */}
+            <Route path="/users/:userId/pins" component={PinsIndexContainer} />
             <Route path="/users/:userId/edit" component={EditFormContainer} />
         <Route path="/users/:userId" component={BoardIndexContainer} />
        

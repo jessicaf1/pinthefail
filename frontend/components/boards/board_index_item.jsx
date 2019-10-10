@@ -41,10 +41,12 @@ const BoardIndexItem = props => {
     
       <div className="boards-total">
               <div onClick={sendToBoardShow} className="boards-index-item">
-                  {arr.slice(0,3)}
+                  {arr.slice(0,4)}
                 </div>
               <div className="bi-title">{props.board.name}</div>
+              <div className="bi-title-sub">
               {props.board.pin_ids.length} <span> Pins </span>
+           </div>
               <br/> 
           {/* <img className="showpage-pencil" src={window.pencil} alt="" onClick={openModal}/> */}
         </div>

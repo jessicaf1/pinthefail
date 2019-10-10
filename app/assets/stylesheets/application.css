@@ -76,10 +76,11 @@ body {
     right: 10px;
     width: 100%;
     align-items: center;
-    height: 60px;
+    height: 70px;
     background: white;
     top: 0;
     border-bottom: 1px solid lightgray;
+
 }
 
 .btn {
@@ -495,6 +496,7 @@ body {
     position: sticky;
     top: 0;
     height: 20px;
+    z-index: 90;
 }
 
 .navLink {
@@ -642,16 +644,20 @@ body {
     height: 220px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding: 11px; 
 }
 
 .index-list-item {
-    width: 109px;
-    height: 95px;
+    width: 124px;
+    height: 107px;
+    border-radius: 8px; 
 }
 
 .bi-title {
     font-size: 15px;
     font-weight: bold;
+    margin-left: 11px; 
+
 }
 
 .bi {
@@ -783,6 +789,7 @@ body {
     column-gap: 1em;
     margin-top: 65px;
     margin-right: 40px;
+    padding-left: 60px; 
 }
 
 .grid-item {
@@ -810,4 +817,8 @@ body {
 
 .grid-item:hover + img#grid-item-image {
     display: block;
+}
+
+.bi-title-sub {
+    margin-left: 11px; 
 }
