@@ -64,7 +64,7 @@ export default ({ currentUser, logout, openModal }) => {
       <div className="nav">
                 
                 <form className="nav-bar">
-                <img className="image" id="spacethumb" src={window.logo}/>
+          <Link className="navLink" to={`/users/${currentUser.id}/pins`}><img className="image" id="spacethumb" src={window.logo} /></Link>
           {/* <input className="btn spacebar" type="text" placeholder="search..."/> */}
           {/* <button className="btn" onClick={} type="submit">Home</button> */}
             <Link className="navLink" to={`/users/${currentUser.id}/pins`}>Home</Link>

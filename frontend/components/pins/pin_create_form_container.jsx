@@ -8,7 +8,8 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 const mapStateToProps = state => {
     debugger
     return {
-        pin: {name: '', link_url:''}
+        pin: {name: '', link_url:''}, 
+        user: state.entities.users[state.session.currentUser]
     }
 }
 

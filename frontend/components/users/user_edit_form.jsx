@@ -40,7 +40,8 @@ class UserEditForm extends React.Component {
             if (this.state.photoFile) {
                 formData.append('user[photo]', this.state.photoFile);
             }
-     this.props.updateUser(formData).then(alert("saved!"))
+        this.props.updateUser(formData).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`))
+     //then(alert("saved!"))
        
     }
 

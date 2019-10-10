@@ -12,11 +12,13 @@ componentDidMount(){
 
 }
 render(){
-  debugger
+  // debugger
   if (this.props.board === undefined) {
+    debugger
     return null
   }
   if(this.props.board.pinPhotos === undefined){
+    debugger
     return null 
   }
   let arr = this.props.board.pinPhotos.map(pinPhoto => {

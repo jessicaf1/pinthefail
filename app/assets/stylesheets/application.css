@@ -230,6 +230,7 @@ body {
     position: absolute;
     left: 5%;
     position: absolute;
+    top: 5px; 
 }
 
 .spanner {
