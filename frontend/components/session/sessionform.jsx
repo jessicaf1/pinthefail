@@ -65,6 +65,8 @@ handleSubmit(e) {
         this.props.processForm(this.props.demouser).then(this.props.closeModal);
     }
 
+  
+
 componentDidMount(){
     document.getElementById('modal-background').removeEventListener('click', this.props.closeModal)
     //remove event listener for class of modal background 

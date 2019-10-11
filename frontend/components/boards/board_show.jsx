@@ -30,8 +30,10 @@ render(){
    <div>
      <UserShowContainer /> 
      <ul>
-      <div className="board-show-header">{this.props.board.name}</div>
-      {this.props.board.pin_ids.length} <span> Pins </span>
+     <div className="board-show-header-container">
+          <div className="board-show-header">{this.props.board.name}</div>
+          {this.props.board.pin_ids.length} <span> Pins </span>
+      </div>
       <div className="board-show-pics">
       {arr}
       </div>

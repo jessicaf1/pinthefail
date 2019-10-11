@@ -56,6 +56,7 @@ return(
             </Link>
         </div>   
             <h1 id="showpage-header">{this.props.user.f_name} <span>   </span>{ this.props.user.l_name}</h1>
+            <img className="showpage-image" src={window.pinface} />
             <div className="showpage-bps">
                 <Link id="showpage-boards" to={`/users/${this.props.user.id}/boards`}>Boards</Link>
                 &nbsp;
@@ -66,7 +67,7 @@ return(
             {/* <div id="showpage-pins" onClick={this.sendToPins}>Pins</div> */}
             </div>
         </div>
-    <img className="showpage-image" src={window.pinface} />
+   
     {/* <img src={this.props.user.photoUrl} alt=""/> */}
     
     {/* {path === 'pins' ?  <PinsIndexContainer/> : <BoardIndexContainer/>}  */}
