@@ -34,7 +34,6 @@ handleSubmit(e) {
 handledemoUser(e){
     e.preventDefault();
     this.setState({ email:'', password:''} )
-
     let demoUserEmail = 'bwaldorf@aol.com'.split("");
     let demoPassword = 'nancy5'.split("")
 
@@ -42,13 +41,16 @@ handledemoUser(e){
         const int = setInterval(()=> {
             let email = this.state.email;
             let password = this.state.password;
-
-            if (demoUserEmail.length > 0){
+            let times = 0;
+            
+            if (times < demoUserEmail.length){
                 email += demoUserEmail.shift();
-                this.setState({email})
-            } else if (demoPassword.length > 0){
+                times += 1;
+                this.setState({email: email})
+            } else if (times < (demoPassword.length + demoUserEmail.length)){
                 password += demoPassword.shift();
-                this.setState({password});
+                times += 1;
+                this.setState({password: password});
             } else {
                 clearInterval(int);
                 this.props.processForm({email: 'bwaldorf@aol.com', password: 'nancy5'}).then(this.props.closeModal)
