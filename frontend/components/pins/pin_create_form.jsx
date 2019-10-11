@@ -32,12 +32,9 @@ class CreatePinForm extends React.Component {
             formData.append('pin[photo]', this.state.photoFile);
         }
      this.props.createPin(formData).then(() => this.props.history.push(`/users/${this.props.user.id}/pins`))
-     //(alert("pin saved!"))
     }
 
     handleFile(e){
-        // e.preventDefault; 
-        //photoFile - file //photo_url - reader reading file for us 
 
         const reader = new FileReader();
         const file = e.currentTarget.files[0];

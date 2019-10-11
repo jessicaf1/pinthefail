@@ -10,9 +10,9 @@ class SessionForm extends React.Component {
             password: ''
         };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleSubmitdemoUser = this.handleSubmitdemoUser.bind(this);
+    // this.handleSubmitdemoUser = this.handleSubmitdemoUser.bind(this);
     //this.renderEmailblank = this.renderEmailblank.bind(this)
-    // this.handledemoUser = this.handledemoUser.bind(this)
+    this.handledemoUser = this.handledemoUser.bind(this)
     }
 
 handleInput(field) {
@@ -31,32 +31,32 @@ handleSubmit(e) {
     this.props.processForm(this.state).then(this.props.closeModal);
 }
 
-// handledemoUser(e){
-//     e.preventDefault();
-//     this.setState({ email:'', password:''} )
+handledemoUser(e){
+    e.preventDefault();
+    this.setState({ email:'', password:''} )
 
-//     let demoUserEmail = 'bwaldorf@aol.com'.split("");
-//     let demoPassword = 'nancy5'.split("")
+    let demoUserEmail = 'bwaldorf@aol.com'.split("");
+    let demoPassword = 'nancy5'.split("")
 
-//     const animateLogin = () => {
-//         const int = setInterval(()=> {
-//             let email = this.state.email;
-//             let password = this.state.password;
+    const animateLogin = () => {
+        const int = setInterval(()=> {
+            let email = this.state.email;
+            let password = this.state.password;
 
-//             if (demoUserEmail.length > 0){
-//                 email += demoUserEmail.shift();
-//                 this.setState({email})
-//             } else if (demoPassword.length > 0){
-//                 password += demoPassword.shift();
-//                 this.setState({password});
-//             } else {
-//                 clearInterval(int);
-//                 this.props.processForm({email: 'bwaldorf@aol.com', password: 'nancy5'}).then(this.props.closeModal)
-//             }
-//         }, 30);
-//     }
-// animateLogin();
-// }
+            if (demoUserEmail.length > 0){
+                email += demoUserEmail.shift();
+                this.setState({email})
+            } else if (demoPassword.length > 0){
+                password += demoPassword.shift();
+                this.setState({password});
+            } else {
+                clearInterval(int);
+                this.props.processForm({email: 'bwaldorf@aol.com', password: 'nancy5'}).then(this.props.closeModal)
+            }
+        }, 30);
+    }
+animateLogin();
+}
 
     handleSubmitdemoUser(e) {
         debugger
@@ -133,7 +133,7 @@ componentDidMount(){
 
       let demoU;
       if (this.props.formType === 'login') {
-          demoU = <input className="session-button" type="submit" value="demo user login" onClick={this.handleSubmitdemoUser} />
+          demoU = <input className="session-button" type="submit" value="demo user login" onClick={this.handledemoUser} />
       }
     return(
        
