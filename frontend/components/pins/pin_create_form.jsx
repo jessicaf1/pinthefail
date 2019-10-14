@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
+import PinDropDownContainer from './pin_drop_down_form_container';
+
 
 class CreatePinForm extends React.Component {
     constructor(props){
@@ -60,6 +62,7 @@ class CreatePinForm extends React.Component {
         <div>   
             <form className="pin-cf">
                     {/* <div className="box"></div> */}
+                    <PinDropDownContainer/> 
                     <button className="pin-button" onClick={this.handleSubmit}>Save</button>
                         <label className="pin-cf-t">
                         <input placeholder="Add your title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>
