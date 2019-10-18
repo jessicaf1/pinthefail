@@ -7,7 +7,7 @@ import { fetchPin, fetchPins } from '../../actions/pin_actions'
 
 const mapStateToProps = state => {
    let boards = Object.values(state.entities.boards);
-   let currentUser = state.entities.users[state.session.currentUser]
+   let currentUser = state.entities.users[state.session.currentUser] 
 //    let pins = Object.values(state.entities.pins)
    debugger
     return {

@@ -323,10 +323,12 @@ body {
 }
 
 .err {
-    font-size: 10px;
+    font-size: 12px;
     color: red;
     position: absolute;
     margin: 0px;
+    bottom: -14%;
+    z-index: 100; 
 }
 
 .showpage {
@@ -632,6 +634,10 @@ body {
     width: 200px;
     box-shadow: 2px 2px 2px 2px lightgray;
     border-radius: 6px;
+}
+
+.boards-total{
+    margin-top: 60px; 
 }
 
 .boards-index-item {

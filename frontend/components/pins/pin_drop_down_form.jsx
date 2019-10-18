@@ -10,6 +10,18 @@ class PinDropDown extends React.Component {
     this.closeMenu = this.closeMenu.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchBoards()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.boards.length !== this.props.boards.length) {
+      this.props.fetchBoards();
+    }
+  }
+
+
+
   showMenu(e) {
     e.preventDefault();
     this.setState({ showMenu: true }, () => {
@@ -46,13 +58,15 @@ class PinDropDown extends React.Component {
                   this.dropdownMenu = element;
                 }}>
                 <div className="containerdd">
-                <div className="pinsbuilder" onClick={this.props.openModal}>Board 1</div>
-                <Link className="pinsbuilder" to="/users/pinBuilder">Board 2</Link>
-                {this.props.board ? 
+                {/* <div className="pinsbuilder" onClick={this.props.openModal}>Board 1</div>
+                <Link className="pinsbuilder" to="/users/pinBuilder">Board 2</Link> */}
+                {/* <button>Board 3</button> */}
+                <ul>{arr}</ul>
+                {/* {this.props.board ? 
                 this.props.board.map(board => {
                     return <li>{board.name}</li>
                 }) : null 
-                }
+                } */}
                 </div>
                
 

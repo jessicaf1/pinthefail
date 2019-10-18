@@ -10,7 +10,15 @@ class Background extends React.Component {
   }
 
   componentDidMount(){
-    this.props.openModal('login'); 
+    if (!this.props.loggedin) {
+      this.props.openModal('login')
+    }
+  }
+
+  componentDidUpdate(prevProps){
+    if (prevProps.loggedin && !this.props.loggedin){
+      this.props.openModal('login')
+    }
   }
 
   render() {

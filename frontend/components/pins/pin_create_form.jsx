@@ -9,7 +9,7 @@ class CreatePinForm extends React.Component {
         super(props);
         
         // console.log(this.props.currentUser)
-        this.state = {...this.props.pin, photoFile:null, photoUrl: null};
+        this.state = {...this.props.pin, photoFile:null, photoUrl: null, boardId: null};
         debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
@@ -24,6 +24,10 @@ class CreatePinForm extends React.Component {
         };
     }
 
+    chooseBoard(board){
+        this.setState({ boardId: board.id })
+    }
+
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
@@ -33,7 +37,7 @@ class CreatePinForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('pin[photo]', this.state.photoFile);
         }
-     this.props.createPin(formData).then(() => this.props.history.push(`/users/${this.props.user.id}/pins`))
+     this.props.createPin(formData, boardId).then(() => this.props.history.push(`/users/${this.props.user.id}/pins`))
     }
 
     handleFile(e){
@@ -62,7 +66,7 @@ class CreatePinForm extends React.Component {
         <div>   
             <form className="pin-cf">
                     {/* <div className="box"></div> */}
-                    <PinDropDownContainer/> 
+                    <PinDropDownContainer chooseBoard={this.chooseBoard}/> 
                     <button className="pin-button" onClick={this.handleSubmit}>Save</button>
                         <label className="pin-cf-t">
                         <input placeholder="Add your title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>

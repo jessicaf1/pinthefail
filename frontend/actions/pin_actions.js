@@ -38,10 +38,10 @@ export const fetchPin = (id) => {
     }
 }
 
-export const createPin = (pin) => {
+export const createPin = (pin, boardId) => {
     debugger
     return dispatch => {
-        return APIUtil.createPin(pin).then(pin => dispatch(receivePin(pin)))
+        return APIUtil.createPin(pin), boardId.then(pin => dispatch(receivePin(pin)))
     }
 }
 

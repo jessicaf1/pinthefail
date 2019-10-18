@@ -9,7 +9,7 @@ const mapStateToProps = state => {
     debugger
     return {
         pin: {name: '', link_url:''}, 
-        user: state.entities.users[state.session.currentUser]
+        user: state.entities.users[state.session.currentUser] || -0
     }
 }
 

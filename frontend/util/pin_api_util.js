@@ -12,11 +12,11 @@ export const fetchPin = id => {
     });
 };
 
-export const createPin = pin => {
+export const createPin = (pin, boardId) => {
     debugger
     return $.ajax({
         method: "POST",
-        url: "/api/pins",
+        url: `/api/boards/${id}/pins`,
         data: pin, 
         contentType: false, 
         processData: false  
