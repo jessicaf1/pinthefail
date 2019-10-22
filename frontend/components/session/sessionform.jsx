@@ -103,13 +103,17 @@ componentDidMount(){
         if (this.props.errors.includes(error) && error === "Password is too short (minimum is 6 characters)" && this.props.formType === 'signup') {
             return "Your password is too short! You need 6+ characters."
         }
+        if (this.props.errors.includes(error) && error === "invalid user") {
+            return "Your password is too short! You need 6+ characters"
+        }
     }
 
    render(){
        const emailError = "Email can't be blank";
        const passwordError = "Password is too short (minimum is 6 characters)"
        const genericError = "invalid Email and/or Password"
-    
+       const genericError2 = "invalid user"
+
        let disp;
        let buttontext; 
        if (this.props.formType === 'login'){
@@ -157,6 +161,7 @@ componentDidMount(){
                 <label>
                     <input type="password" className="field" placeholder="password" value={this.state.password} onChange={this.handleInput('password')}/>
                         <p className="err">{this.errorExists(passwordError)}</p> 
+                        <p className="err">{this.errorExists(genericError2)}</p>
                 </label>
             </div>
             <div className="bottom">

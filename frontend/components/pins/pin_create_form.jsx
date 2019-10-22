@@ -15,6 +15,7 @@ class CreatePinForm extends React.Component {
         this.handleCancel = this.handleCancel.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.chooseBoard = this.chooseBoard.bind(this);
         
     }
 
@@ -24,22 +25,26 @@ class CreatePinForm extends React.Component {
         };
     }
 
-    chooseBoard(board){
-        this.setState({ boardId: board.id })
+    chooseBoard(boardId){
+        return e => {
+        e.preventDefault;
+        this.setState({ boardId })
+        } 
     }
 
-    handleSubmit(e){
+    handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
         formData.append('pin[name]', this.state.name); 
         formData.append('pin[id]', this.state.id); 
-        formData.append('pin[link_url]', this.state.name); 
+        formData.append('pin[link_url]', this.state.link_url); 
+        
         if (this.state.photoFile) {
             formData.append('pin[photo]', this.state.photoFile);
         }
-     this.props.createPin(formData, boardId).then(() => this.props.history.push(`/users/${this.props.user.id}/pins`))
-    }
-
+        debugger
+        this.props.createPin(formData, this.state.boardId).then(() => this.props.history.push(`/users/${this.props.user.id}/pins`))
+    } 
     handleFile(e){
 
         const reader = new FileReader();

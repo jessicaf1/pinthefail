@@ -4,7 +4,8 @@ class Api::PinsController < ApplicationController
         @pin = Pin.new(pin_params)
         # debugger
         if @pin.save 
-            # debugger
+            @pin.board_pins.create(board_id: params[:board_id]) if params[:board_id]   
+            debugger
             render :show 
         else
             render json: ['invalid pin'], status: 422 

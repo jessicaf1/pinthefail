@@ -3,11 +3,11 @@ export const RECEIVE_PIN = 'RECEIVE_PIN';
 export const RECEIVE_PINS = 'RECEIVE_PINS';
 export const REMOVE_PIN = 'REMOVE_PIN';
 
-export const receivePin = pin => {
+export const receivePin = payload => {
     debugger
     return {
         type: RECEIVE_PIN,
-        pin
+        payload
     }
 }
 
@@ -41,7 +41,7 @@ export const fetchPin = (id) => {
 export const createPin = (pin, boardId) => {
     debugger
     return dispatch => {
-        return APIUtil.createPin(pin), boardId.then(pin => dispatch(receivePin(pin)))
+        return APIUtil.createPin(pin, boardId).then(payload => dispatch(receivePin(payload)))
     }
 }
 

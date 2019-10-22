@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     debugger
     return {
-        createPin: pin => dispatch(createPin(pin)),
+        createPin: (pin, boardId) => dispatch(createPin(pin, boardId)),
         fetchBoards: () => dispatch(fetchBoards()),
         openModal: () => dispatch(openModal()),
         closeModal: () => dispatch(closeModal())

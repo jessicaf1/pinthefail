@@ -268,7 +268,9 @@ body {
 }
 
 .container {
-    position: relative;
+    position: absolute;
+    top: 20%;
+    right: 33%
 }
 
 .menubutton {
@@ -327,7 +329,7 @@ body {
     color: red;
     position: absolute;
     margin: 0px;
-    bottom: -14%;
+    bottom: -12%;
     z-index: 100; 
 }
 
@@ -634,6 +636,7 @@ body {
     width: 200px;
     box-shadow: 2px 2px 2px 2px lightgray;
     border-radius: 6px;
+    z-index: 100;
 }
 
 .boards-total{
@@ -844,4 +847,33 @@ body {
     border-radius: 50%;
     width: 10em;
     height: 10em;
+}
+
+.containerdd-p{
+    width: 200px;
+    font-weight: bold;
+    min-height: 250px;
+    justify-content: space-around;
+}
+
+.board-list {
+    width: 140px; 
+}
+
+#selectButton {
+    border-radius: 1px solid black;
+    background: lightgray;
+    width: 260px;
+    height: 53px; 
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    padding-top: 17px;
+    padding-bottom: 5px;
+    height: 31px; 
+}
+
+#selectButton:hover {
+    border: 1px solid black; 
 }

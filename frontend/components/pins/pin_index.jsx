@@ -17,10 +17,10 @@ componentDidMount(){
 
 render(){
     let pins = this.props.pins.map(pin => {
-        debugger
+        // debugger
         return <PinIndexItem pin={pin} key={pin.id}/>
     })
-    debugger 
+    // debugger 
     return(
         <div> 
             {this.props.user? <UserShowContainer /> : null} 

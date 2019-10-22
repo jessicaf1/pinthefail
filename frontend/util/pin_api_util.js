@@ -16,7 +16,7 @@ export const createPin = (pin, boardId) => {
     debugger
     return $.ajax({
         method: "POST",
-        url: `/api/boards/${id}/pins`,
+        url: `/api/boards/${boardId}/pins`,
         data: pin, 
         contentType: false, 
         processData: false  

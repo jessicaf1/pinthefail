@@ -8,6 +8,7 @@ class PinDropDown extends React.Component {
     this.state = { showMenu: false }
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+    this.combo = this.combo.bind(this)
   }
 
   componentDidMount(){
@@ -37,17 +38,26 @@ class PinDropDown extends React.Component {
       });
     }
   }
+  // handleSubmit(){
+  //   this.props.handleSubmit
+  // }
+
+  combo(){
+
+  }
+
 
   render() {
       debugger
       let arr = this.props.boards.map(board => { 
-          return <div>{board.name}</div>
+        debugger
+        return <li><a className="board-list" onClick={this.props.chooseBoard(board.id)}>{board.name}</a></li>
       })
   debugger
     return (
       <div className="container">
         <div onClick={this.showMenu}>
-          Select 
+          <div id="selectButton">Select Board</div>
         </div>
         {
           this.state.showMenu
@@ -57,7 +67,7 @@ class PinDropDown extends React.Component {
                 ref={(element) => {
                   this.dropdownMenu = element;
                 }}>
-                <div className="containerdd">
+                <div className="containerdd containerdd-p">
                 {/* <div className="pinsbuilder" onClick={this.props.openModal}>Board 1</div>
                 <Link className="pinsbuilder" to="/users/pinBuilder">Board 2</Link> */}
                 {/* <button>Board 3</button> */}
