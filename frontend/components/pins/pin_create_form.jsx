@@ -26,10 +26,9 @@ class CreatePinForm extends React.Component {
     }
 
     chooseBoard(boardId){
-        return e => {
-        e.preventDefault;
+       debugger
         this.setState({ boardId })
-        } 
+  
     }
 
     handleSubmit(e) {

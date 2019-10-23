@@ -45,10 +45,10 @@ export const createPin = (pin, boardId) => {
     }
 }
 
-export const updatePin = (pin) => {
+export const updatePin = (pin, boardId) => {
     debugger
     return dispatch => {
-        return APIUtil.updatePin(pin).then(pin => dispatch(receivePin(pin)))
+        return APIUtil.updatePin(pin, boardId).then(payload => dispatch(receivePin(payload)))
     }
 }
 

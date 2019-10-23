@@ -5,10 +5,10 @@ import { Route, Redirect, Link, HashRouter, Switch } from 'react-router-dom';
 class PinDropDown extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { showMenu: false }
+    this.state = { showMenu: false, board: null }
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
-    this.combo = this.combo.bind(this)
+    this.combo = this.combo.bind(this);
   }
 
   componentDidMount(){
@@ -42,22 +42,27 @@ class PinDropDown extends React.Component {
   //   this.props.handleSubmit
   // }
 
-  combo(){
-
+  combo(board){
+    return(e) => {
+      debugger
+      e.preventDefault();
+    this.setState({ board: board })
+    this.props.chooseBoard(board.id)
+    } 
   }
 
 
   render() {
-      debugger
+      // debugger
       let arr = this.props.boards.map(board => { 
         debugger
-        return <li><a className="board-list" onClick={this.props.chooseBoard(board.id)}>{board.name}</a></li>
+        return <li><a className="board-list" onClick={this.combo(board)}>{board.name}</a></li>
       })
-  debugger
+  // debugger
     return (
-      <div className="container">
+      <div className="pincontainer">
         <div onClick={this.showMenu}>
-          <div id="selectButton">Select Board</div>
+          <div id="selectButton">{ this.state.board ? this.state.board.name : "Select Board"}</div>
         </div>
         {
           this.state.showMenu

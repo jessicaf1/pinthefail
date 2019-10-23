@@ -6,6 +6,7 @@ import SignupContainer from '../components/session/signup_container';
 import BoardCreateFormContainer from '../components/boards/board_create_form_container';
 import PinEditFormContainer from '../components/pins/pin_edit_form_container'
 import BoardEditFormContainer from '../components/boards/board_edit_container'
+import PinToBoardContainer from '../components/pins/pin_to_board_container'
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -34,6 +35,9 @@ function Modal({modal, closeModal}) {
       break;  
     case 'savePin':
       component = <SavePinFormContainer/>;  
+      break; 
+    case 'savePinToBoard':
+      component = <PinToBoardContainer/>; 
       break; 
     default:
       return null;

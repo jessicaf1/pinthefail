@@ -267,10 +267,14 @@ body {
     box-sizing: border-box;
 }
 
-.container {
+.pincontainer {
     position: absolute;
-    top: 20%;
+    top: 17%;
     right: 33%
+}
+
+.container {
+    position: relative;
 }
 
 .menubutton {
@@ -632,7 +636,7 @@ body {
 .containerdd {
     position: absolute;
     background: white;
-    height: 80px;
+    height: 94px;
     width: 200px;
     box-shadow: 2px 2px 2px 2px lightgray;
     border-radius: 6px;
@@ -720,7 +724,7 @@ body {
     height: 53px;
     border-radius: 8px;
     position: absolute;
-    top: 20%;
+    top: 17%;
     right: 27%;
     color: white;
     font-size: 23px;
