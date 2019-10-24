@@ -25,11 +25,14 @@ class PinToBoard extends React.Component {
     };
   }
 
+  componentDidMount(){
+    this.props.fetchPin(this.props.props)
+  }
+
   chooseBoard(boardId) {
-    return e => {
-      e.preventDefault;
-      this.setState({ boardId })
-    }
+    debugger
+    this.setState({ boardId })
+
   }
 
   handleSubmit(e) {
@@ -43,7 +46,7 @@ class PinToBoard extends React.Component {
       formData.append('pin[photo]', this.state.photoFile);
     }
     debugger
-    this.props.updatePin(formData, this.state.boardId).then(() => this.props.history.push(`/users/${this.props.user.id}/pins`))
+    this.props.updatePin(formData, this.state.boardId).then(() => this.props.closeModal())
   }
   handleFile(e) {
 
@@ -71,14 +74,10 @@ class PinToBoard extends React.Component {
       <div>
         <form className="pin-cf">
           {/* <div className="box"></div> */}
+          <div>Choose Board </div>
           <PinDropDownContainer chooseBoard={this.chooseBoard} />
           <button className="pin-button" onClick={this.handleSubmit}>Save</button>
-          <label className="pin-cf-t">
-            <input placeholder="Add your title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')} />
-          </label>
-          <input type="file" className="file" onChange={this.handleFile} />
-          <div className="uploadpic">Upload picture here</div>
-          <img className="file-pic" src={this.state.photoUrl} alt="" />
+
         </form>
       </div>
     )
@@ -86,4 +85,4 @@ class PinToBoard extends React.Component {
 
 }
 
-export default CreatePinForm;
+export default PinToBoard;

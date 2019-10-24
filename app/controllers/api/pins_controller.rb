@@ -25,7 +25,10 @@ class Api::PinsController < ApplicationController
 
     def update
         @pin = Pin.find(params[:id])
+        debugger
         if @pin.update(pin_params)
+            debugger
+             @pin.board_pins.create(board_id: params[:board_id]) if params[:board_id]   
             render :show
         else 
             render json: @pin.errors.full_messages, status: 422

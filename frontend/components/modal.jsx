@@ -8,13 +8,13 @@ import PinEditFormContainer from '../components/pins/pin_edit_form_container'
 import BoardEditFormContainer from '../components/boards/board_edit_container'
 import PinToBoardContainer from '../components/pins/pin_to_board_container'
 
-function Modal({modal, closeModal}) {
+function Modal({modal, props, closeModal}) {
   if (!modal) {
     return null;
   }
   let component;
   // debugger
-  switch (modal) {
+  switch (modal.type) {
     case 'login':
       // debugger
       component = <LoginContainer />;
@@ -37,7 +37,8 @@ function Modal({modal, closeModal}) {
       component = <SavePinFormContainer/>;  
       break; 
     case 'savePinToBoard':
-      component = <PinToBoardContainer/>; 
+      debugger
+      component = <PinToBoardContainer props={modal.props}/>; 
       break; 
     default:
       return null;

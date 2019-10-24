@@ -5,7 +5,7 @@ import PinDropDown from './pin_drop_down_form';
 import {fetchBoards} from '../../actions/board_actions'
 
 export const mapStateToProps = state => {
-  debugger
+  // debugger
   return {
     currentUser: state.entities.users[state.session.currentUser],
     boards: Object.values(state.entities.boards)
