@@ -9,7 +9,7 @@ class PinToBoard extends React.Component {
     super(props);
 
     // console.log(this.props.currentUser)
-    this.state = { ...this.props.pin, photoFile: null, photoUrl: null, boardId: null };
+    this.state = { ...this.props.pin };
     debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);

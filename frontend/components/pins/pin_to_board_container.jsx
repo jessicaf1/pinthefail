@@ -7,7 +7,7 @@ import { withRouter, Route, Redirect, Link, HashRouter, Switch } from 'react-rou
 export const mapStateToProps = (state, ownProps) => {
   debugger
   return {
-  // pin: state.entities.pins[ownProps.match.params.pinId]
+    pin: state.entities.pins[ownProps.props]
   } 
 }
 
