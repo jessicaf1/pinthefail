@@ -1,17 +1,17 @@
 class Api::BoardPinsController < ApplicationController
 
-    # def index
-    #     @board_pins = BoardPin.all 
-    # end 
+    def index
+        @board_pins = BoardPin.all 
+    end 
 
-    # def show
-    #     @board_pin = BoardPin.find(params[:id])
-    #     if @board_pin
-    #         render :show
-    #     else
-    #         render json: ['no board_pin relationship'], status: 422
-    #     end 
-    # end
+    def show
+        @board_pin = BoardPin.find(params[:id])
+        if @board_pin
+            render :show
+        else
+            render json: ['no board_pin relationship'], status: 422
+        end 
+    end
 
     def create
         @board_pin = BoardPin.new(board_pin_params)
