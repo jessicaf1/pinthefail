@@ -69,13 +69,14 @@ class PinToBoard extends React.Component {
           {/* <div className="box"></div> */}
           
             <div className="save-form-header">
-              <div>Choose Board </div>
+              <div id="save-form-text">Choose Board </div>
               <PinDropDownContainer chooseBoard={this.chooseBoard} />
             </div>
 
+            <div className="save-form-bottom">
             <img className="grid-item" src={this.props.pin.photoUrl} id="save-pic" alt="" />  
-
             <button className="pin-button" onClick={this.handleSubmit}>Save</button>
+            </div>
 
         </form>
       </div>

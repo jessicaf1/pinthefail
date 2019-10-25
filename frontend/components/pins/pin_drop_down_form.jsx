@@ -37,6 +37,11 @@ class PinDropDown extends React.Component {
         document.removeEventListener('click', this.closeMenu)
       });
     }
+    else if (this.combo) {
+      this.setState({ showMenu: false }, () => {
+        document.removeEventListener('click', this.closeMenu)
+      });
+    }
   }
   // handleSubmit(){
   //   this.props.handleSubmit
