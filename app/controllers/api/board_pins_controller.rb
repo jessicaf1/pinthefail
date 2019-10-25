@@ -14,10 +14,12 @@ class Api::BoardPinsController < ApplicationController
     # end
 
     def create
-        @board_pin = BoardPin.new(params[:id])
+        @board_pin = BoardPin.new(board_pin_params)
+        debugger
         if @board_pin.save
+            debugger
             render :show 
-            @pin = Pin.find_by(id: @board_id.pin_id)
+            # @pin = Pin.find_by(id: @board_id.pin_id)
             # render :show //save pin as instance variable, render pin's show 
         else
             render json: @board_pin.errors.full_messages, status: 422
@@ -43,7 +45,7 @@ class Api::BoardPinsController < ApplicationController
     end
 
     def board_pin_params
-        params.require(:boardpin).permit(:board_id, :pin_id)
+        params.require(:board_pin).permit(:pin_id, :board_id)
     end 
 
 end

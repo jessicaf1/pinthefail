@@ -6,21 +6,21 @@ import { receivePin } from './pin_actions'
  
 const receiveBoardPin = board_pin => {
     return {
-        type: RECEIVE_BOARD,
+        type: RECEIVE_BOARD_PIN,
         board_pin
     }
 }
 
 const receiveBoardPins = board_pins => {
     return {
-        type: RECEIVE_BOARDS,
+        type: RECEIVE_BOARD_PINS,
         board_pins
     }
 }
 
 const removeBoardPin = board_pinId => {
     return {
-        type: REMOVE_BOARD,
+        type: REMOVE_BOARD_PIN,
         board_pinId
     }
 }
@@ -38,15 +38,18 @@ export const fetchBoardPin = (id) => {
 }
 
 export const createBoardPin = (board_pin) => {
+    debugger
     return dispatch => {
-        return APIUtil.createBoardPin(board_pin).then(pin => dispatch(receivePin(pin)))
+        return APIUtil.createBoardPin(board_pin).then(board_pin =>
+          dispatch(receiveBoardPin(board_pin))
+        );
     }
 }
 
 export const updateBoardPin = (board_pin) => {
 
     return dispatch => {
-        return APIUtil.updateBoardPin(board_pin).then(board_pin => dispatch(receiveBoard(board_pin)))
+        return APIUtil.updateBoardPin(board_pin).then(board_pin => dispatch(receiveBoardPin(board_pin)))
     }
 }
 

@@ -23,11 +23,13 @@ export const createPin = (pin, boardId) => {
     });
 };
 
-export const updatePin = (pin, boardId) => {
+export const updatePin = (pin) => {
+    debugger
     return $.ajax({
       method: "PATCH",
-      url: `/api/boards/${boardId}/${pin.id}`,
+      url: `/api/boards/${pin.boardId}/pins/${pin.id}`,
       data: pin,
+      
       contentType: false,
       processData: false
     });

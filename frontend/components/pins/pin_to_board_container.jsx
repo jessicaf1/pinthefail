@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPin, updatePin } from '../../actions/pin_actions';
+import { createBoardPin } from '../../actions/board_pin_actions'
 import PinToBoard from './pin_to_board';
 import { closeModal } from '../../actions/modal_actions';
 import { withRouter, Route, Redirect, Link, HashRouter, Switch } from 'react-router-dom';
@@ -7,15 +8,14 @@ import { withRouter, Route, Redirect, Link, HashRouter, Switch } from 'react-rou
 export const mapStateToProps = (state, ownProps) => {
   debugger
   return {
-    pin: state.entities.pins[ownProps.props]
+    pin: state.entities.pins[ownProps.pinId]
   } 
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    updatePin: (pin, id) => dispatch(updatePin(pin, id)),
+    createBoardPin: (board_pin) => dispatch(createBoardPin(board_pin)),
     fetchPin: id => dispatch(fetchPin(id)),
-    openModal: () => dispatch(openModal()),
     closeModal: () => dispatch(closeModal())
   }
 }

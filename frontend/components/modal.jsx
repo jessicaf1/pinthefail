@@ -38,7 +38,7 @@ function Modal({modal, props, closeModal}) {
       break; 
     case 'savePinToBoard':
       debugger
-      component = <PinToBoardContainer props={modal.props}/>; 
+      component = <PinToBoardContainer pinId={modal.props}/>; 
       break; 
     default:
       return null;
