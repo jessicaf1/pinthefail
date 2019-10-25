@@ -14,6 +14,7 @@ import PinsIndexContainer from './pins/pin_index_container'
 import BoardShowContainer from './boards/board_show_container'
 import BoardCreateFormContainer from './boards/board_create_form_container'
 import PinsCreateFormContainer from './pins/pin_create_form_container'
+import PinShowContainer from './pins/pin_show_container'
 
 const App = () => (
  <div>
@@ -27,6 +28,7 @@ const App = () => (
         <Route path="/users/:userId/boards/:boardId" component={BoardShowContainer}/>
         <Route path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
         <Route path="/users/:userId/boards" component={BoardIndexContainer}/>
+            <Route path="/users/:userId/pins/:pinId" component={PinShowContainer} />
             <Route path="/users/:userId/pins" component={PinsIndexContainer} />
             <Route path="/users/:userId/edit" component={EditFormContainer} />
         <Route path="/users/:userId" component={BoardIndexContainer} />

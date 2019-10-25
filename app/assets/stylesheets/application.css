@@ -804,23 +804,26 @@ body {
 }
 
 #grid-item-image {
-    display: none;
+    /* display: none; */
     position: absolute;
     width: 40px;
     height: 33px;
-    top: 0;
+    right: 1%; 
+    /* top: 0; */
     border-radius: 5px;
     padding: 10px;
     background: red;
+    z-index: 90; 
+
 }
 
 .grid-div {
     position: relative;
 }
-
+/* 
 .grid-item:hover+img#grid-item-image {
     display: block;
-}
+} */
 
 .bi-title-sub {
     margin-left: 11px;
