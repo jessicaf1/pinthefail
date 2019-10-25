@@ -65,11 +65,17 @@ class PinToBoard extends React.Component {
   render() {
     return (
       <div>
-        <form className="pin-cf">
+        <form className="save-form">
           {/* <div className="box"></div> */}
-          <div>Choose Board </div>
-          <PinDropDownContainer chooseBoard={this.chooseBoard} />
-          <button className="pin-button" onClick={this.handleSubmit}>Save</button>
+          
+            <div className="save-form-header">
+              <div>Choose Board </div>
+              <PinDropDownContainer chooseBoard={this.chooseBoard} />
+            </div>
+
+            <img className="grid-item" src={this.props.pin.photoUrl} id="save-pic" alt="" />  
+
+            <button className="pin-button" onClick={this.handleSubmit}>Save</button>
 
         </form>
       </div>

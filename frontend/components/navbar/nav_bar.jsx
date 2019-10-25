@@ -57,11 +57,19 @@ export default ({ currentUser, logout, openModal }) => {
       
     }
 
+  // const pickClass = () => {
+  //   if (document.getElementById('modal-background') === null){
+  //     return 'nav'
+  //   }
+  //   else {
+  //     return 'hidden'
+  //   }
+  // }
 
 
   const navbar = (currentUser, logout) => {
     return(
-      <div className="nav">
+      <div className={ (document.getElementById('modal-background') === null) ? "nav" : "hidden"}>
                 
                 <form className="nav-bar">
           <Link className="navLink" to={`/users/${currentUser.id}/pins`}><img className="image" id="spacethumb" src={window.logo} /></Link>

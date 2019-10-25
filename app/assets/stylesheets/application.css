@@ -14,15 +14,6 @@
  *= require_self
  */
 
-#modal-background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 12;
-}
 
 .modal-child {
     position: absolute;
@@ -502,7 +493,7 @@ body {
     position: sticky;
     top: 0;
     height: 20px;
-    z-index: 90;
+    z-index: 40;
 }
 
 .navLink {
@@ -880,4 +871,36 @@ body {
 
 #selectButton:hover {
     border: 1px solid black; 
+}
+
+.save-form {
+    display: flex;
+    height: 600px;
+    width: 600px;
+    background: white;
+    border-radius: 12px;
+}
+
+.save-form-header {
+    display: flex;
+    flex-direction: column;
+}
+
+#save-pic {
+    width: 50%;
+    height: 50%
+}
+
+.hidden {
+    z-index: 0; 
+}
+
+#modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 60;
 }
