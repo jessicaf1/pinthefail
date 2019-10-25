@@ -31,7 +31,7 @@ import PinDropDownContainer from './pin_drop_down_form_container'
     }
     
     stopModal(e) {
-        e.stopPropagation()
+        // e.stopPropagation()
         this.props.openModal(this.props.pin.id)
         debugger
        
@@ -45,7 +45,11 @@ import PinDropDownContainer from './pin_drop_down_form_container'
              onMouseLeave={this.MouseHover} className="grid-div">
          
              
-             <img onClick={() => this.props.history.push(`/users/${this.props.currentUser.id}/pins/${this.props.pin.id}`)}
+             <img onClick={() => {
+                
+                this.props.history.push(`/users/${this.props.currentUser.id}/pins/${this.props.pin.id}`)
+                } 
+            }
                      className="grid-item" src={this.props.pin.photoUrl} alt="" />  
                  {this.state.isHovering && <img img id="grid-item-image" src={window.logo} onClick={this.stopModal}/>}
                 
