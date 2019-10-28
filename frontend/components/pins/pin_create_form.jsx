@@ -71,7 +71,9 @@ class CreatePinForm extends React.Component {
             <form className="pin-cf">
                     {/* <div className="box"></div> */}
                     <PinDropDownContainer chooseBoard={this.chooseBoard}/> 
+                    
                     <button className="pin-button" onClick={this.handleSubmit}>Save</button>
+                    <button id="pin-button-empty"></button>
                         <label className="pin-cf-t">
                         <input placeholder="Add your title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>
                         </label>

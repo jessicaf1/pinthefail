@@ -998,3 +998,8 @@ body {
     background: white;
     border: none;
 }
+
+#pin-button-empty{
+    width: 300px; 
+    border: none;
+}

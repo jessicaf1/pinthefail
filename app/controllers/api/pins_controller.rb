@@ -2,10 +2,10 @@ class Api::PinsController < ApplicationController
     def create
          
         @pin = Pin.new(pin_params)
-        debugger
+        # debugger
         if @pin.save 
             @pin.board_pins.create(board_id: params[:board_id]) if params[:board_id]   
-            debugger
+            # debugger
             render :show 
         else
             render json: ['invalid pin'], status: 422 
@@ -25,9 +25,9 @@ class Api::PinsController < ApplicationController
 
     def update
         @pin = Pin.find(params[:id])
-        debugger
+        # debugger
         if @pin && @pin.update(pin_params)
-            debugger
+            # debugger
             #  @pin.board_pins.create(board_id: params[:board_id]) if params[:board_id]   
             render :show
         else 
