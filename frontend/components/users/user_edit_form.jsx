@@ -87,13 +87,15 @@ class UserEditForm extends React.Component {
         <div id="edit-sub">People on pinthefail will get to know you with the info below</div>
         <div className="edit-and-span">
                 <div className="edit-top-button" >
-                    <button className="edit-button" onClick={this.handleCancel}>Cancel</button>
-                    <button className="edit-button" onClick={this.handleSubmit}>Done</button>
+                   
                    
                 </div>
                 </div>
        
     <form>
+    <button className="edit-button" onClick={this.handleCancel}>Cancel</button>
+                    <button className="edit-button" onClick={this.handleSubmit}>Done</button>
+                    
         <label className="edit-photo">
             <div id="edit-photo-text"> </div>
             <br/> 

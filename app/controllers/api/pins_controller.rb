@@ -26,9 +26,9 @@ class Api::PinsController < ApplicationController
     def update
         @pin = Pin.find(params[:id])
         debugger
-        if @pin.update(pinboard_params)
+        if @pin && @pin.update(pin_params)
             debugger
-             @pin.board_pins.create(board_id: params[:board_id]) if params[:board_id]   
+            #  @pin.board_pins.create(board_id: params[:board_id]) if params[:board_id]   
             render :show
         else 
             render json: @pin.errors.full_messages, status: 422
@@ -37,19 +37,17 @@ class Api::PinsController < ApplicationController
 
     def destroy
         @pin = Pin.find(params[:id])
-        if @pin.destroy 
-            render :index 
-        else 
-            render json: @pin.errors.full_messages, status: 422 
-        end 
+        @pin.destroy 
+             
+        # else 
+        #     render json: @pin.errors.full_messages, status: 422 
+        # end 
     end
 
     def pin_params
         params.require(:pin).permit(:name, :link_url, :photo)
     end
 
-    # def pinboard_params
-    #     params.require(:id).permit(:board_id)
-    # end
+
 
 end

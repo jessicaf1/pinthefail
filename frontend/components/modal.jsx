@@ -26,10 +26,7 @@ function Modal({modal, props, closeModal}) {
     case 'createBoard':
       // debugger
       component = <BoardCreateFormContainer/>;
-      break; 
-    case 'editPin':
-      component = <PinEditFormContainer/>;
-      break;  
+      break;
     case 'updateBoard':
       component = <BoardEditFormContainer/>;
       break;  
@@ -39,6 +36,9 @@ function Modal({modal, props, closeModal}) {
     case 'savePinToBoard':
       debugger
       component = <PinToBoardContainer pinId={modal.props}/>; 
+      break; 
+    case 'editPin':
+      component = <PinEditFormContainer pinId={modal.props}/>;
       break; 
     default:
       return null;

@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
 .modal-child {
     position: absolute;
     top: 50%;
@@ -318,8 +317,8 @@ body {
     color: red;
     position: absolute;
     margin: 0px;
-    bottom: -12%;
-    z-index: 100; 
+    bottom: -20%;
+    z-index: 100;
 }
 
 .showpage {
@@ -441,6 +440,38 @@ body {
     font-size: 16px;
     color: grey;
     font-weight: 500;
+}
+
+.pin-edit-button-1 {
+    width: 80px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(80, 80, 80);
+    background: lightgray;
+    font-weight: 500;
+}
+
+.pin-edit-button {
+    width: 80px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: red;
+    font-weight: 500;
+}
+
+.pin-edit-button-1:hover {
+    background: rgba(71, 71, 71, 0.842);
+}
+
+.pin-edit-button:hover {
+    background: darkred;
 }
 
 .edit-button:hover {
@@ -628,8 +659,8 @@ body {
     z-index: 100;
 }
 
-.boards-total{
-    margin-top: 60px; 
+.boards-total {
+    margin-top: 60px;
 }
 
 .boards-index-item {
@@ -808,22 +839,21 @@ body {
     position: absolute;
     width: 40px;
     height: 33px;
-    right: 1%; 
-    /* top: 0; */
+    right: 1%;
+    top: 0;
     border-radius: 5px;
     padding: 10px;
     background: red;
-    z-index: 12; 
-
+    /* z-index: 92; */
 }
 
 .grid-div {
     position: relative;
 }
-/* 
+
 .grid-item:hover+img#grid-item-image {
     display: block;
-} */
+}
 
 .bi-title-sub {
     margin-left: 11px;
@@ -841,7 +871,7 @@ body {
     height: 10em;
 }
 
-.containerdd-p{
+.containerdd-p {
     width: 200px;
     font-weight: bold;
     min-height: 250px;
@@ -849,25 +879,31 @@ body {
 }
 
 .board-list {
-    width: 140px; 
+    width: 140px;
+}
+
+.board-list:hover {
+    background: gray;
+    opacity: .5;
+    border-radius: 6px;
 }
 
 #selectButton {
     border-radius: 1px solid black;
     background: lightgray;
     width: 260px;
-    height: 53px; 
+    height: 53px;
     border-radius: 8px;
     text-align: center;
     font-size: 16px;
     vertical-align: middle;
     padding-top: 17px;
     padding-bottom: 5px;
-    height: 31px; 
+    height: 31px;
 }
 
 #selectButton:hover {
-    border: 1px solid black; 
+    border: 1px solid black;
 }
 
 .save-form {
@@ -883,12 +919,11 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 6%;
-    padding-right: 1%; 
+    padding-right: 1%;
 }
 
-
 .hidden {
-    z-index: 0; 
+    z-index: 0;
 }
 
 #modal-background {
@@ -901,16 +936,65 @@ body {
     z-index: 60;
 }
 
-#save-form-text{
+#save-form-text {
     font-size: 24px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(51, 51, 51);
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-.save-form-bottom{
-   display: flex;
-   flex-direction: column;
-   margin-top: 10%; 
-   padding-right: 7%;
+.save-form-bottom {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    padding-right: 7%;
+}
+
+#pin-show {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+#pin-edit {
+    position: absolute;
+    top: 15%;
+    width: 60px;
+    left: 10%;
+}
+
+#pin-name {
+    position: absolute;
+    top: 15%;
+    left: 16%;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#pin-description {
+    position: absolute;
+    top: 20%;
+    left: 16%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.edit-pin {
+    width: 500px;
+    height: 400px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 6%;
+}
+
+.pin-edit-buttons {
+    display: flex;
+}
+
+.hiddenpin {
+    width: 100px;
+    background: white;
+    border: none;
 }

@@ -10,14 +10,16 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 const mapStateToProps = (state, ownProps) => {
   // debugger
   return {
-    pin: state.entities.pins[ownProps.match.params.pinId]
+    pin: state.entities.pins[ownProps.match.params.pinId],
+    user: state.entities.users[state.session.currentUser]
   }
 }
 
 const mapDispatchToProps = dispatch => {
   // debugger
   return {
-    fetchPin: id => dispatch(fetchPin(id))
+    fetchPin: id => dispatch(fetchPin(id)),
+    openModal: id => dispatch(openModal('editPin', id))
   }
 }
 

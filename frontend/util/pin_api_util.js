@@ -17,21 +17,18 @@ export const createPin = (pin, boardId) => {
     return $.ajax({
         method: "POST",
         url: `/api/boards/${boardId}/pins`,
-        data: pin, 
-        contentType: false, 
-        processData: false  
+        data: pin,
+        contentType: false,
+        processData: false
     });
 };
 
 export const updatePin = (pin) => {
     debugger
     return $.ajax({
-      method: "PATCH",
-      url: `/api/boards/${pin.boardId}/pins/${pin.id}`,
-      data: pin,
-      
-      contentType: false,
-      processData: false
+        method: "PATCH",
+        url: `/api/pins/${pin.id}`,
+        data: { pin }
     });
 };
 

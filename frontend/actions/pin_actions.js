@@ -20,6 +20,7 @@ const receivePins = pins => {
 }
 
 const removePin = pinId => {
+    debugger
     return {
         type: REMOVE_PIN,
         pinId
