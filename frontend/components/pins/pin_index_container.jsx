@@ -7,7 +7,7 @@ const mapStateToProps = state => {
     debugger
     let pins = Object.values(state.entities.pins); 
     let boards = Object.values(state.entities.boards);
-    let user = state.entities.users[state.session.currentUser];
+    let user = state.entities.users[state.session.currentUser] || -0;
     return {
         pins, boards, user 
     }

@@ -8,9 +8,12 @@ import PinDropDownContainer from './pin_drop_down_form_container'
          super(props)
 
          this.stopModal = this.stopModal.bind(this);
-         this.MouseHover = this.MouseHover.bind(this);
+         this.MouseHoverIn = this.MouseHoverIn.bind(this);
+         this.MouseHoverOut = this.MouseHoverOut.bind(this);
+         this.MouseImageHover = this.MouseImageHover.bind(this)
          this.state = {
-             isHovering: false 
+             isHovering: false, 
+             isHoveringOnThumb: false
          }
         //  this.sendToPinShow = this.sendToPinShow.bind(this);
      }
@@ -21,8 +24,36 @@ import PinDropDownContainer from './pin_drop_down_form_container'
          };
      }
 
-     MouseHover() {
-         this.setState(this.toggleHoverState);
+     toggleHoverStateOff() {
+         return {
+             isHovering: false,
+         };
+     }
+
+     MouseHoverIn(e) {
+        // debugger
+        // console.log(e.relatedTarget)
+            this.setState({isHovering: true})
+     }
+
+     MouseHoverOut() {
+         if (this.state.isHoveringOnThumb === false){
+         this.setState({isHovering: false})
+         } 
+         else {
+             this.setState({isHovering: true}); 
+         }
+     }
+
+     MouseImageHover(state){
+         debugger
+         this.setState({isHoveringOnThumb: true})
+        //  if (state.isHovering === true){
+        //  this.setState({isHovering: true})
+        //  } 
+        //  else {
+        //      this.setState({isHovering: false})
+        //  }
      }
 
      sendToPinShow(e) {
@@ -31,7 +62,7 @@ import PinDropDownContainer from './pin_drop_down_form_container'
     }
     
     stopModal(e) {
-        // e.stopPropagation()
+        e.stopPropagation()
         this.MouseHover();
         this.props.openModal(this.props.pin.id)
         debugger
@@ -40,15 +71,21 @@ import PinDropDownContainer from './pin_drop_down_form_container'
   
     }
 
+
      render() {
      return (
-         <div className="grid-div">
+         <div  
+         onMouseEnter={this.MouseHoverIn}
+             onMouseOut={this.MouseHoverOut} 
+             className="grid-div">
          
              
-             <img onMouseEnter={this.MouseHover}
-             onMouseLeave={this.MouseHover} 
+             <img 
+            
+                 onMouseEnter={this.MouseImageHover}
              onClick={() => {
-                this.toggleHoverState(this.state)
+                
+                // this.toggleHoverState(this.state)
                 this.props.history.push(`/users/${this.props.currentUser.id}/pins/${this.props.pin.id}`)
                 } 
             }
