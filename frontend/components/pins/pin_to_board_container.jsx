@@ -8,7 +8,8 @@ import { withRouter, Route, Redirect, Link, HashRouter, Switch } from 'react-rou
 export const mapStateToProps = (state, ownProps) => {
   debugger
   return {
-    pin: state.entities.pins[ownProps.pinId]
+    pin: state.entities.pins[ownProps.pinId],
+    user: state.entities.users[state.session.currentUser] || -0 
   } 
 }
 

@@ -10,7 +10,8 @@ import PinDropDownContainer from './pin_drop_down_form_container'
          this.stopModal = this.stopModal.bind(this);
          this.MouseHoverIn = this.MouseHoverIn.bind(this);
          this.MouseHoverOut = this.MouseHoverOut.bind(this);
-         this.MouseImageHover = this.MouseImageHover.bind(this)
+         this.MouseImageHover = this.MouseImageHover.bind(this);
+        this.MouseImageHoverOut = this.MouseImageHoverOut.bind(this)
          this.state = {
              isHovering: false, 
              isHoveringOnThumb: false
@@ -31,21 +32,29 @@ import PinDropDownContainer from './pin_drop_down_form_container'
      }
 
      MouseHoverIn(e) {
-        // debugger
+        debugger
         // console.log(e.relatedTarget)
+
             this.setState({isHovering: true})
      }
 
      MouseHoverOut() {
-         if (this.state.isHoveringOnThumb === false){
-         this.setState({isHovering: false})
+         debugger
+         if (this.state.isHoveringOnThumb === true){
+         this.setState({isHovering: true})
          } 
-         else {
-             this.setState({isHovering: true}); 
+        //  else {
+             this.setState({isHovering: false}); 
          }
+    
+// if ! (hovering on image && hovering on icon): dont show the icon
+//  if hovering on icon but not image: then allow click action to open modal
+     MouseImageHoverOut() {
+         debugger
+         this.setState({isHoveringOnThumb: false});
      }
 
-     MouseImageHover(state){
+     MouseImageHover(){
          debugger
          this.setState({isHoveringOnThumb: true})
         //  if (state.isHovering === true){
@@ -63,8 +72,10 @@ import PinDropDownContainer from './pin_drop_down_form_container'
     
     stopModal(e) {
         e.stopPropagation()
-        this.MouseHover();
+        this.MouseImageHover();
         this.props.openModal(this.props.pin.id)
+
+        this.setState({ isHovering: false })
         debugger
        
         this.props.history.push("/")
@@ -82,7 +93,7 @@ import PinDropDownContainer from './pin_drop_down_form_container'
              
              <img 
             
-                 onMouseEnter={this.MouseImageHover}
+                 
              onClick={() => {
                 
                 // this.toggleHoverState(this.state)
@@ -90,7 +101,9 @@ import PinDropDownContainer from './pin_drop_down_form_container'
                 } 
             }
                      className="grid-item" src={this.props.pin.photoUrl} alt="" />  
-                 {this.state.isHovering && <img img id="grid-item-image" src={window.logo} onClick={this.stopModal}/>}
+             { (this.state.isHovering || this.state.isHoveringOnThumb) ?  <img img id="grid-item-image"  src={window.logo}  onMouseEnter={this.MouseImageHover} 
+                                                                                        onMouseOut={this.MouseImageHoverOut} 
+                                                                                        onClick={this.stopModal}/> : null } 
                 
 
                

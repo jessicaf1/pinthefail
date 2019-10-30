@@ -81,7 +81,7 @@ class PinDropDown extends React.Component {
                 {/* <div className="pinsbuilder" onClick={this.props.openModal}>Board 1</div>
                 <Link className="pinsbuilder" to="/users/pinBuilder">Board 2</Link> */}
                 {/* <button>Board 3</button> */}
-                <ul>{arr}</ul>
+                <ul className="board-list-items">{arr}</ul>
                 {/* {this.props.board ? 
                 this.props.board.map(board => {
                     return <li>{board.name}</li>

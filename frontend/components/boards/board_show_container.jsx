@@ -10,7 +10,8 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 const mapStateToProps = (state, ownProps) => {
     // debugger
 return {
-    board: state.entities.boards[ownProps.match.params.boardId] 
+    board: state.entities.boards[ownProps.match.params.boardId],
+    
 }
 
 }

@@ -36,9 +36,15 @@ class PinToBoard extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     let board_pin = {pin_id: this.props.pinId, board_id: this.state.boardId} 
+    debugger
     this.props.createBoardPin(board_pin).then(() => this.props.closeModal())
+    if (this.props.history.location.pathname.split('/').length > 4) {
+      alert('saved!')
+      this.props.history.push(`/users/${this.props.user.id}/pins`)
+    }
   } 
 
   // handleFile(e) {
@@ -69,7 +75,7 @@ class PinToBoard extends React.Component {
           {/* <div className="box"></div> */}
           
             <div className="save-form-header">
-              <div id="save-form-text">Choose Board </div>
+              <div id="save-form-text">Select Board </div>
               <PinDropDownContainer chooseBoard={this.chooseBoard} />
             </div>
 
@@ -85,4 +91,4 @@ class PinToBoard extends React.Component {
 
 }
 
-export default PinToBoard;
+export default withRouter(PinToBoard);

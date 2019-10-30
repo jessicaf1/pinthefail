@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import PinBoardContainer from './pin_to_board_container'
 
 class PinShow extends React.Component {
   constructor(props){
@@ -13,9 +14,11 @@ class PinShow extends React.Component {
 
   }
 
+  
 
 
   render(){
+
     if (this.props.pin === undefined) {
       debugger
       return null
@@ -24,12 +27,29 @@ class PinShow extends React.Component {
       debugger
       return null 
     }
+
+
+    if (this.props.boards === undefined) {
+      debugger
+      return null
+    }
+    let arr = this.props.boards.map(board => {
+      // debugger
+      return <li>{board.name}</li>
+    }) 
+
     return(
       <div>
         <img id="pin-edit" src={window.pencil} onClick={()=> {this.props.openModal(this.props.pin.id)}} alt=""/>
-        <img id="pin-show" src={this.props.pin.photoUrl} alt=""/>
+       
         <div id="pin-name">{this.props.pin.name}</div>
+
         <div id="pin-description">{this.props.pin.link_url}</div>
+        <div id="pin-user">{this.props.user.f_name ? 'uploaded by ' + this.props.user.f_name + " " + this.props.user.l_name : null } </div>
+        <div id="pin-dd">
+          <PinBoardContainer pinId={this.props.pin.id}/> 
+          </div>
+          <div id="pin-boards">{arr}</div>
       </div>
     )
   }
