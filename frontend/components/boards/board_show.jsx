@@ -1,5 +1,6 @@
 import React from 'react';
 import UserShowContainer from '../../components/users/user_showpage_container'
+import {Link} from 'react-router-dom'
 
 class BoardShow extends React.Component {
   constructor(props){
@@ -13,18 +14,30 @@ componentDidMount(){
 }
 render(){
   // debugger
-  if (this.props.board === undefined) {
+  // if (this.props.board === undefined) {
+  //   debugger
+  //   return null
+  // }
+  // if(this.props.board.pinPhotos === undefined){
+  //   debugger
+  //   return null 
+  // }
+  // let arr = this.props.board.pinPhotos.map(pinPhoto => {
+  //   // debugger
+  //   return <img className="board-show-item" src={pinPhoto} alt="" />
+  //   }) 
+
+  if (this.props.pins === undefined) {
     debugger
     return null
   }
-  if(this.props.board.pinPhotos === undefined){
-    debugger
-    return null 
-  }
-  let arr = this.props.board.pinPhotos.map(pinPhoto => {
+   
+  let array = this.props.pins.map(pin => {
     // debugger
-    return <img className="board-show-item" src={pinPhoto} alt="" />
-    }) 
+
+    return <Link to={`/users/${this.props.user.id}/pins/${pin.id}`}><img className="board-show-item" src={pin.photoUrl} alt="" /></Link>
+  }) 
+  
 
  return  (
    <div>
@@ -35,7 +48,8 @@ render(){
           {this.props.board.pin_ids.length} <span> Pins </span>
       </div>
       <div className="board-show-pics">
-      {arr}
+    
+      {array}
       </div>
     </ul>
     </div>

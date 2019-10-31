@@ -9,9 +9,11 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
+    let pins = (Object.getOwnPropertyNames(state.entities.boards).length !== 0) ? state.entities.boards[ownProps.match.params.boardId].pin_ids.map(pinId => state.entities.pins[pinId]) : -0;
 return {
     board: state.entities.boards[ownProps.match.params.boardId],
-    
+    pins: pins,
+    user: state.entities.users[state.session.currentUser] || -0
 }
 
 }
