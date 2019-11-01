@@ -31,7 +31,6 @@ render(){
     debugger
     return null
   }
-   
   let array = this.props.pins.map(pin => {
     // debugger
 
