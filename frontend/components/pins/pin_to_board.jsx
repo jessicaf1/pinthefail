@@ -41,8 +41,16 @@ class PinToBoard extends React.Component {
     let board_pin = {pin_id: this.props.pinId, board_id: this.state.boardId} 
     debugger
     this.props.createBoardPin(board_pin).then(() => this.props.closeModal())
+  
     if (this.props.history.location.pathname.split('/').length > 4) {
+      debugger
+      if (this.props.errors) {
+       
+        alert('pin already pinned to board!')
+      }
+      else {
       alert('saved!')
+      } 
       this.props.history.push(`/users/${this.props.user.id}/pins`)
     }
   } 

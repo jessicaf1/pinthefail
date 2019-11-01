@@ -15,14 +15,14 @@ class Api::BoardPinsController < ApplicationController
 
     def create
         @board_pin = BoardPin.new(board_pin_params)
-        debugger
+        # debugger
         if @board_pin.save
-            debugger
+            # debugger
             render :show 
             # @pin = Pin.find_by(id: @board_id.pin_id)
             # render :show //save pin as instance variable, render pin's show 
         else
-            debugger
+            # debugger
             render json: ['already saved to board!'], status: 422
         end 
     end
