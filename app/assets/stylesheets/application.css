@@ -457,6 +457,13 @@ body {
 #pin-boards {
     position: absolute;
     top: 40%; 
+    list-style-type: none;
+}
+
+#pin-boards-title {
+    position: absolute;
+    top: 34%; 
+    list-style-type: none;
 }
 
 .pin-edit-button {

@@ -29,21 +29,69 @@ class PinShow extends React.Component {
     }
 
 
-  //   if (this.props.boards.name === undefined) {
+  //   if (this.props.boards === undefined) {
   //     debugger
   //     return null
   //   }
-  //   else { 
+  // //   else { 
      
-  // } 
+  // // }
+  //   let arr2 = [];
+  //   let arr = this.props.boards.forEach(board => {
+  //     if (!arr2.includes(board)){
+  //       arr2.push(board)
+  //     }
+  //   });
+
+  //    const arr3 = arr2.map(board => {
+  //     // debugger
+  //     return <li>{board.name}</li>
+  //   }) 
+  
+
+    //   if (this.props.boards.name === undefined) {
+    //     debugger
+    //     return null
+    //   }
+    //   else { 
+
+    // } 
+    //WORKING
+    // let arr2 = []
+
     let arr = this.props.boards.map(board => {
       // debugger
       return <li>{board.name}</li>
     }) 
+
+  //  const arrfill = () => {
+  //  for (let i = 0; i < arr.length; i++){
+  //    if (!arr2.includes(arr[i])){
+  //      arr2.push(arr[i])
+  //     } 
+  //   }
+  //   debugger
+  //   return arr2
+  // } 
+  // arrfill()
+  //END
+
+    // let arr3 = []
+    // let arr = this.props.boards.forEach(board => {
+    //    arr3.push(board)
+    // })
+
+    // arr3.map(board =>
+    //   {
+    //     return <li>{board.name}</li>
+    //   })
+
+
     return(
-    
+
 
       <div>
+        
         <img id="pin-edit" src={window.pencil} onClick={()=> {this.props.openModal(this.props.pin.id)}} alt=""/>
        
         <div id="pin-name">{this.props.pin.name}</div>
@@ -53,6 +101,7 @@ class PinShow extends React.Component {
         <div id="pin-dd">
           <PinBoardContainer pinId={this.props.pin.id}/> 
           </div>
+          <div id="pin-boards-title">Saved boards:</div>
           <div id="pin-boards">{this.props.boards === undefined ?  null : arr }</div>
       </div>
     )
