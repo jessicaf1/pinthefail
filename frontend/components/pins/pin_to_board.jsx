@@ -80,7 +80,7 @@ class PinToBoard extends React.Component {
             </div>
 
             <div className="save-form-bottom">
-            <img className="grid-item" src={this.props.pin.photoUrl} id="save-pic" alt="" />  
+            <img className="grid-item-pb" src={this.props.pin.photoUrl} id="save-pic" alt="" />  
             <button className="pin-button" onClick={this.handleSubmit}>Save</button>
             </div>
 

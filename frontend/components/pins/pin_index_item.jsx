@@ -32,14 +32,14 @@ import PinDropDownContainer from './pin_drop_down_form_container'
      }
 
      MouseHoverIn(e) {
-        debugger
+        // debugger
         // console.log(e.relatedTarget)
 
             this.setState({isHovering: true})
      }
 
      MouseHoverOut() {
-         debugger
+        //  debugger
          if (this.state.isHoveringOnThumb === true){
          this.setState({isHovering: true})
          } 
@@ -50,12 +50,12 @@ import PinDropDownContainer from './pin_drop_down_form_container'
 // if ! (hovering on image && hovering on icon): dont show the icon
 //  if hovering on icon but not image: then allow click action to open modal
      MouseImageHoverOut() {
-         debugger
+        //  debugger
          this.setState({isHoveringOnThumb: false});
      }
 
      MouseImageHover(){
-         debugger
+        //  debugger
          this.setState({isHoveringOnThumb: true})
         //  if (state.isHovering === true){
         //  this.setState({isHovering: true})
@@ -78,7 +78,7 @@ import PinDropDownContainer from './pin_drop_down_form_container'
         this.setState({ isHovering: false })
         debugger
        
-        this.props.history.push("/")
+        // this.props.history.push("/")
   
     }
 

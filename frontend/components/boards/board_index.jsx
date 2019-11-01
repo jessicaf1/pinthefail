@@ -43,6 +43,7 @@ render(){
             <ul>
                
                 <div className="board-index">
+
                 {boards}
                 {/* <BoardShowContainer/> */}
                 </div>

@@ -3,7 +3,7 @@ import NavBarContainer from './navbar/nav_bar_container';
 //import SignupContainer from './session/signup_container';
 //import LoginContainer from './session/login_container';
 import { Route, Redirect, Link, HashRouter, Switch } from 'react-router-dom';
-//import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from '../components/modal';
 //import DropDownContainer from './navbar/drop_down_container'
 import Background from './background'
@@ -23,16 +23,16 @@ const App = () => (
         <NavBarContainer/>
     </header>
     <Switch>
-       <Route exact path="/" component={Background}/> 
-        <Route path="/users/pinBuilder" component={PinsCreateFormContainer} /> 
-        <Route path="/users/:userId/boards/:boardId" component={BoardShowContainer}/>
-        <Route path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
-        <Route path="/users/:userId/boards" component={BoardIndexContainer}/>
-            <Route path="/users/:userId/pins/:pinId" component={PinShowContainer} />
-            <Route path="/users/:userId/pins" component={PinsIndexContainer} />
-            <Route path="/users/:userId/edit" component={EditFormContainer} />
-        <Route path="/users/:userId" component={BoardIndexContainer} />
-       
+       <AuthRoute exact path="/" component={Background}/> 
+        
+        <ProtectedRoute path="/users/:userId/boards/:boardId" component={BoardShowContainer}/>
+        <ProtectedRoute path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
+        <ProtectedRoute path="/users/:userId/boards" component={BoardIndexContainer}/>
+            <ProtectedRoute path="/users/:userId/pins/:pinId" component={PinShowContainer} />
+            <ProtectedRoute path="/users/:userId/pins" component={PinsIndexContainer} />
+            <ProtectedRoute path="/users/:userId/edit" component={EditFormContainer} />
+        <ProtectedRoute path="/users/:userId" component={BoardIndexContainer} />
+            <ProtectedRoute path="/users/pinBuilder" component={PinsCreateFormContainer} /> 
        
     </Switch>
 </div>

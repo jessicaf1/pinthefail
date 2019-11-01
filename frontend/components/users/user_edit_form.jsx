@@ -30,22 +30,29 @@ class UserEditForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         debugger
+        this.state.f_name === null || this.state.f_name === "null" ?
+        formData.append('user[f_name]', '') : 
         formData.append('user[f_name]', this.state.f_name); 
+
         formData.append('user[id]', this.state.id); 
+
         debugger
-        this.props.currentUser.l_name === null || this.props.currentUser.l_name === "null" ?
-        formData.append('user[l_name]', null) : 
+        this.state.l_name === null || this.state.l_name === "null" ?
+        formData.append('user[l_name]', '') : 
         formData.append('user[l_name]', this.state.l_name);    
         
-        this.props.currentUser.username === null || this.props.currentUser.username === "null" ?
+        this.state.username === null || this.state.username === "null" ?
         formData.append('user[username]', ' ') : 
         formData.append('user[username]', this.state.username); 
 
-        this.props.currentUser.description === "null" ?
+        this.state.description === "null" || this.state.description === null ?
         formData.append('user[description]', '') : 
         formData.append('user[description]', this.state.description); 
-    
+        
+        this.state.location === "null" || this.state.location === null ?
+        formData.append('user[location]', '') : 
         formData.append('user[location]', this.state.location); 
+
             if (this.state.photoFile) {
                 formData.append('user[photo]', this.state.photoFile);
             }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_05_212436) do
+ActiveRecord::Schema.define(version: 2019_11_01_160738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_10_05_212436) do
   create_table "board_pins", force: :cascade do |t|
     t.integer "board_id", null: false
     t.integer "pin_id", null: false
+    t.index ["board_id", "pin_id"], name: "index_board_pins_on_board_id_and_pin_id", unique: true
   end
 
   create_table "boards", force: :cascade do |t|
