@@ -50,8 +50,12 @@ import PinDropDownContainer from './pin_drop_down_form_container'
 // if ! (hovering on image && hovering on icon): dont show the icon
 //  if hovering on icon but not image: then allow click action to open modal
      MouseImageHoverOut() {
-        //  debugger
+         debugger
          this.setState({isHoveringOnThumb: false});
+         if(this.state.isHovering === true){
+             this.setState({isHovering: true})
+         }
+         debugger
      }
 
      MouseImageHover(){
@@ -101,7 +105,8 @@ import PinDropDownContainer from './pin_drop_down_form_container'
                 } 
             }
                      className="grid-item" src={this.props.pin.photoUrl} alt="" />  
-             { (this.state.isHovering || this.state.isHoveringOnThumb) ?  <img img id="grid-item-image"  src={window.logo}  onMouseEnter={this.MouseImageHover} 
+          
+             { (this.state.isHovering || this.state.isHoveringOnThumb) ? <img img id="grid-item-image"  src={window.logo}  onMouseEnter={this.MouseImageHover} 
                                                                                         onMouseOut={this.MouseImageHoverOut} 
                                                                                         onClick={this.stopModal}/> : null } 
                 

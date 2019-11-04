@@ -62,20 +62,19 @@ class UserEditForm extends React.Component {
     }
 
     handleFile(e){
-        // e.preventDefault; 
-        //photoFile - file //photo_url - reader reading file for us 
 
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        reader.onloadend = () =>
+        reader.onloadend = () => {
             this.setState({ photoUrl: reader.result, photoFile: file });
-
+        };
         if (file) {
             reader.readAsDataURL(file);
         } else {
             this.setState({ photoUrl: "", photoFile: null });
         }
     }
+    
 
   //this.props.updateUser
     
@@ -115,7 +114,10 @@ class UserEditForm extends React.Component {
         <label className="edit-photo">
             <div id="edit-photo-text"> </div>
             <br/> 
+            { this.state.photoUrl !== "" ? 
+            <img src={this.state.photoURL}/> :
             <img className="showpage-image" id="edit-pinface" src={window.pinface} />
+            } 
             <input type="file" onChange={this.handleFile}/>
         </label>
         <div className="names">

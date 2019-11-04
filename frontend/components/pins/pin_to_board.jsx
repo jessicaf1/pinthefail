@@ -9,14 +9,17 @@ class PinToBoard extends React.Component {
     super(props);
 
     // console.log(this.props.currentUser)
-    this.state = { ...this.props.pin };
+    this.state = { ...this.props.pin, alert: false };
     debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     // this.handleFile = this.handleFile.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.chooseBoard = this.chooseBoard.bind(this);
-
+    this.catchErrors = this.catchErrors.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.sendToBadPinBoard = this.sendToBadPinBoard.bind(this);
+    this.sendToPins = this.sendToPins.bind(this)
   }
 
   handleInput(field) {
@@ -35,24 +38,47 @@ class PinToBoard extends React.Component {
 
   }
 
+  sendToBadPinBoard(){
+    this.props.openModal('badPinBoard')
+  }
+
+  sendToPins(){
+    this.props.history.push(`/users/${this.props.user.id}/pins`)
+  }
+
+  catchErrors(){
+    if (this.props.errors.length === 0) {
+      debugger 
+    this.sendToPins()
+   }
+   else {
+      this.sendToBadPinBoard()
+   } 
+  }
+
+  closeModal(){
+    debugger
+    this.catchErrors()
+    // this.props.closeModal()
+    this.props.history.push(`/users/${this.props.user.id}/pins`)
+  }
+
   handleSubmit(e) {
     debugger
     e.preventDefault();
     let board_pin = {pin_id: this.props.pinId, board_id: this.state.boardId} 
     debugger
-    this.props.createBoardPin(board_pin).then(() => this.props.closeModal())
-  
-    if (this.props.history.location.pathname.split('/').length > 4) {
-      debugger
-      if (this.props.errors) {
-       
-        alert('pin already pinned to board!')
-      }
-      else {
-      alert('saved!')
-      } 
-      this.props.history.push(`/users/${this.props.user.id}/pins`)
-    }
+    this.props.createBoardPin(board_pin).then(
+      () => this.closeModal(),
+      () => this.closeModal()
+    )
+ 
+
+    // if (this.props.history.location.pathname.split('/').length > 4) {
+    //   debugger
+    //   this.props.history.push(`/users/${this.props.user.id}/pins`)
+      
+    // }
   } 
 
   // handleFile(e) {

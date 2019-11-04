@@ -16,7 +16,8 @@ const mapDispatchToProps = dispatch => {
     updatePin: pin => dispatch(updatePin(pin)),
     deletePin: id => dispatch(deletePin(id)),
     fetchPin: id => dispatch(fetchPin(id)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    openModal: (id) => dispatch(openModal('deletePin', id))
   }
 }
 

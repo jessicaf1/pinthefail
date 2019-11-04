@@ -42,12 +42,16 @@ handleSubmit(e){
     this.props.closeModal()
   }
 
+  // handleDelete(e){
+  //   debugger
+  //   e.preventDefault();
+  //   this.props.deletePin(this.state.pin.id)
+  //   .then(this.props.closeModal())
+  //   .then(()=> this.props.history.push(`/users/${this.props.user.id}/pins`));
+  // }
+
   handleDelete(e){
-    debugger
-    e.preventDefault();
-    this.props.deletePin(this.state.pin.id)
-    .then(this.props.closeModal())
-    .then(()=> this.props.history.push(`/users/${this.props.user.id}/pins`));
+    this.props.openModal(this.state.pin.id)
   }
 
   render(){

@@ -11,7 +11,7 @@ class PinShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchPin(this.props.match.params.pinId) 
-
+    window.scrollTo(0,0)
   }
 
   
@@ -61,7 +61,7 @@ class PinShow extends React.Component {
 
     let arr = this.props.boards.map(board => {
       // debugger
-      return <li>{board.name}</li>
+      return board ? <li>{board.name}</li> : null 
     }) 
 
   //  const arrfill = () => {
@@ -97,10 +97,12 @@ class PinShow extends React.Component {
         <div id="pin-name">{this.props.pin.name}</div>
 
         <div id="pin-description">{this.props.pin.link_url}</div>
-        <div id="pin-user">{this.props.user.f_name ? 'uploaded by ' + this.props.user.f_name + " " + this.props.user.l_name : null } </div>
+     
         <div id="pin-dd">
           <PinBoardContainer pinId={this.props.pin.id}/> 
           </div>
+          
+          {/* <div id="pin-user">{this.props.user.f_name ? 'uploaded by ' + this.props.user.f_name + " " + this.props.user.l_name : null } </div> */}
           <div id="pin-boards-title">Saved boards:</div>
           <div id="pin-boards">{this.props.boards === undefined ?  null : arr }</div>
       </div>

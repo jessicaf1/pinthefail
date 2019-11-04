@@ -26,13 +26,14 @@ const App = () => (
        <AuthRoute exact path="/" component={Background}/> 
         
         <ProtectedRoute path="/users/:userId/boards/:boardId" component={BoardShowContainer}/>
+        <ProtectedRoute path="/users/pinBuilder" component={PinsCreateFormContainer} /> 
         <ProtectedRoute path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
         <ProtectedRoute path="/users/:userId/boards" component={BoardIndexContainer}/>
             <ProtectedRoute path="/users/:userId/pins/:pinId" component={PinShowContainer} />
             <ProtectedRoute path="/users/:userId/pins" component={PinsIndexContainer} />
             <ProtectedRoute path="/users/:userId/edit" component={EditFormContainer} />
         <ProtectedRoute path="/users/:userId" component={BoardIndexContainer} />
-            <ProtectedRoute path="/users/pinBuilder" component={PinsCreateFormContainer} /> 
+            
        
     </Switch>
 </div>

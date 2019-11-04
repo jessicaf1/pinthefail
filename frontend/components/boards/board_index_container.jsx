@@ -4,6 +4,8 @@ import { fetchBoard } from '../../actions/board_actions';
 import {fetchBoards, updateBoard } from '../../actions/board_actions';
 import {openModal} from '../../actions/modal_actions';
 import { fetchPin, fetchPins } from '../../actions/pin_actions'
+import { fetchBoardPins } from '../../actions/board_pin_actions';
+
 
 const mapStateToProps = state => {
    let boards = Object.values(state.entities.boards);
@@ -23,7 +25,8 @@ const mapDispatchToProps = dispatch => {
     fetchBoards: () => dispatch(fetchBoards()),
     openModal: () => dispatch(openModal('updateBoard')),
     fetchPin: id => dispatch(fetchPin(id)),
-    fetchPins: () => dispatch(fetchPins())
+    fetchPins: () => dispatch(fetchPins()),
+    fetchbBoardPins: () => dispatch(fetchBoardPins())
     } 
 }
 

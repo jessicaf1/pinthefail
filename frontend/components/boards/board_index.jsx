@@ -14,7 +14,7 @@ class BoardIndex extends React.Component {
 
 componentDidMount(){
     this.props.fetchBoards();
-    //this.props.fetchPins()
+    this.props.fetchPins();
 }
 
     // sendToBoardShow(e, board) {

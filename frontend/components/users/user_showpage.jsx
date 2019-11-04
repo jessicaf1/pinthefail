@@ -56,7 +56,9 @@ return(
             </Link>
         </div>   
             <h1 id="showpage-header">{this.props.user.f_name} <span>   </span>{ this.props.user.l_name}</h1>
-            <img className="showpage-image" src={window.pinface} />
+            {this.props.user.photoUrl !== "" ? 
+            <div className="showpage-image2"><img id="user-pic" src={this.props.user.photoUrl}/></div> 
+            : <img className="showpage-image" src={window.pinface} />}
             <div className="showpage-bps">
                 <Link id="showpage-boards" to={`/users/${this.props.user.id}/boards`}>Boards</Link>
                 &nbsp;

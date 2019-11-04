@@ -7,6 +7,8 @@ import BoardCreateFormContainer from '../components/boards/board_create_form_con
 import PinEditFormContainer from '../components/pins/pin_edit_form_container'
 import BoardEditFormContainer from '../components/boards/board_edit_container'
 import PinToBoardContainer from '../components/pins/pin_to_board_container'
+import PinDeleteContainer from '../components/pins/pin_delete_container'
+import BadPinBoard from '../components/pins/bad_pin_board'
 
 function Modal({modal, props, closeModal}) {
   if (!modal) {
@@ -39,6 +41,12 @@ function Modal({modal, props, closeModal}) {
       break; 
     case 'editPin':
       component = <PinEditFormContainer pinId={modal.props}/>;
+      break; 
+    case 'deletePin':
+      component = <PinDeleteContainer pinId={modal.props}/>;
+      break; 
+    case 'badPinBoard':
+      component = <BadPinBoard/>
       break; 
     default:
       return null;

@@ -31,12 +31,13 @@ render(){
     debugger
     return null
   }
+ 
   let array = this.props.pins.map(pin => {
     // debugger
 
     return <Link to={`/users/${this.props.user.id}/pins/${pin.id}`}><img className="board-show-item" src={pin.photoUrl} alt="" /></Link>
   }) 
-  
+ 
 
  return  (
    <div>
