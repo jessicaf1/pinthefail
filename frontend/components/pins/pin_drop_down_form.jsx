@@ -92,7 +92,7 @@ class PinDropDown extends React.Component {
                 <Link className="pinsbuilder" to="/users/pinBuilder">Board 2</Link> */}
                 {/* <button>Board 3</button> */}
                 <ul className="board-list-items">{arr}</ul>
-                {this.state.thumb === true ? <img id="thumb-dd" src={window.logo}></img> : null}
+                {/* {this.state.thumb === true ? <img id="thumb-dd" src={window.logo}></img> : null} */}
                 {/* {this.props.board ? 
                 this.props.board.map(board => {
                     return <li>{board.name}</li>

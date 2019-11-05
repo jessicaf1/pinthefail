@@ -931,6 +931,7 @@ body {
     display: block;
     width: 140px;
     margin-bottom: 9px;
+    position: relative;
 }
 
 .board-list-items {
@@ -938,12 +939,27 @@ body {
     display: inline-block;
 }
 
+
+/* 
 .board-list:hover {
     background: gray;
     opacity: 1;
     border-radius: 6px;
     width: 140px;
     color: white;
+} */
+
+.board-list:hover::after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-image: url("../images/logo.png");
+    /* background: image-set('../assets/images/logo.png'); */
+    position: absolute;
+    z-index: 12;
+    background: purple;
+    right: 0;
+    top: 0;
 }
 
 #selectButton {
