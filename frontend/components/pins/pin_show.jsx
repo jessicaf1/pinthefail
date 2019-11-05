@@ -95,7 +95,6 @@ class PinShow extends React.Component {
         <img id="pin-edit" src={window.pencil} onClick={()=> {this.props.openModal(this.props.pin.id)}} alt=""/>
        
         <div id="pin-name">{this.props.pin.name}</div>
-
         <div id="pin-description">{this.props.pin.link_url}</div>
      
         <div id="pin-dd">
