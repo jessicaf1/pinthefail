@@ -39,7 +39,8 @@ class PinToBoard extends React.Component {
   }
 
   sendToBadPinBoard(){
-    this.props.openModal('badPinBoard')
+    this.props.openModal('badPinBoard'),
+    setTimeout(this.props.closeModal, 1500)
   }
 
   sendToPins(){
@@ -49,7 +50,7 @@ class PinToBoard extends React.Component {
   catchErrors(){
     if (this.props.errors.length === 0) {
       debugger 
-    this.sendToPins()
+    this.sendToBadPinBoard()
    }
    else {
       this.sendToBadPinBoard()

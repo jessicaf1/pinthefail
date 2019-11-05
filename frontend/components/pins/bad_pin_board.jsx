@@ -8,9 +8,9 @@ class BadPinBoard extends React.Component{
     return (
         <div className="badpinboard">
             <div id="badpinboard-h">
-                Pin already attached to board! 
+                Saved!
             </div>
-            <button id="badpinboard-b" onClick={this.props.closeModal}>back to pins</button>
+            {/* <button id="badpinboard-b" onClick={this.props.closeModal}>back to pins</button> */}
         </div>
     )
     } 

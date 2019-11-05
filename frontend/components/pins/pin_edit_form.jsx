@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
+import PinBoardContainer from './pin_to_board_container'
 
 class EditPinForm extends React.Component {
   constructor(props){
@@ -59,6 +60,9 @@ handleSubmit(e){
     if (pin) {
     return(
       <form className="edit-pin">
+           <div id="pin-dd">
+          <PinBoardContainer pinId={this.state.pin.id}/> 
+          </div>
         <label>
           Title
           <input className="edit-name" type="text" value={this.state.pin.name} onChange={this.handleInput('name')}/>

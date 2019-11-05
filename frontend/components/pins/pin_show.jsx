@@ -96,10 +96,10 @@ class PinShow extends React.Component {
        
         <div id="pin-name">{this.props.pin.name}</div>
         <div id="pin-description">{this.props.pin.link_url}</div>
-     
-        <div id="pin-dd">
+        <img id="pin-photo" src={this.props.pin.photoUrl} alt=""/>
+        {/* <div id="pin-dd">
           <PinBoardContainer pinId={this.props.pin.id}/> 
-          </div>
+          </div> */}
           
           {/* <div id="pin-user">{this.props.user.f_name ? 'uploaded by ' + this.props.user.f_name + " " + this.props.user.l_name : null } </div> */}
           <div id="pin-boards-title">Saved boards:</div>

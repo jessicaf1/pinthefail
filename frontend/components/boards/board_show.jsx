@@ -9,8 +9,8 @@ class BoardShow extends React.Component {
   }
 
 componentDidMount(){
-  this.props.fetchBoard(this.props.match.params.boardId) 
-
+  this.props.fetchBoard(this.props.match.params.boardId), 
+  this.props.fetchPins()
 }
 render(){
   // debugger
@@ -26,18 +26,24 @@ render(){
   //   // debugger
   //   return <img className="board-show-item" src={pinPhoto} alt="" />
   //   }) 
-
-  if (this.props.pins === undefined) {
+  if (this.props.board === undefined) {
     debugger
     return null
   }
- 
-  let array = this.props.pins.map(pin => {
+ let array; 
+  if (this.props.pins.length === 0 || this.props.pins[0] === undefined) {
+    debugger
+    array = <div></div>
+  }
+
+   else {
+     debugger
+  array = this.props.pins.map(pin => {
     // debugger
 
     return <Link to={`/users/${this.props.user.id}/pins/${pin.id}`}><img className="board-show-item" src={pin.photoUrl} alt="" /></Link>
   }) 
- 
+} 
 
  return  (
    <div>

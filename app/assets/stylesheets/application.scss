@@ -483,6 +483,11 @@ body {
     z-index: 10;
 }
 
+#pin-photo {
+    position: absolute;
+    top: 35%;
+}
+
 #pin-boards-title {
     position: absolute;
     font-weight: bold;
@@ -953,7 +958,8 @@ body {
     content: '';
     width: 18px;
     height: 18px;
-    background-image: url("../images/logo.png");
+    background-image: image-url("logo.png");
+    background-size: cover;
     /* background: image-set('../assets/images/logo.png'); */
     position: absolute;
     z-index: 12;
@@ -1184,8 +1190,8 @@ body {
 .badpinboard {
     width: 400px;
     height: 200px;
-    background: white;
-    color: #888888;
+    background: #616060;
+    color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 24px;
     font-weight: bold;
@@ -1194,17 +1200,14 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border-radius: 40px;
 }
 
-#badpinboard-b {
-    height: 40px;
-    width: 80px;
-    background: red;
+#badpinboard-h {
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px;
+    font-size: 24px;
     font-weight: bold;
-    border-radius: 8px;
 }
 
 #badpinboard-b:hover {
