@@ -981,11 +981,13 @@ body {
 }
 
 .board-list:hover {
-    background: gray;
-    opacity: 1;
     border-radius: 6px;
     width: 100%;
-    color: white;
+    cursor: pointer;
+}
+
+.boardlist1:hover {
+    cursor: pointer;
 }
 
 
@@ -1022,6 +1024,7 @@ body {
     top: 0;
     z-index: 90;
     padding-left: 20px;
+    cursor: pointer;
 }
 
 #selectButton {
@@ -1037,9 +1040,9 @@ body {
     padding-bottom: 5px;
     height: 31px;
     margin-right: 9%;
-    position: absolute;
+    /* position: absolute;
     top: 12%;
-    left: 54%;
+    left: 54%; */
 }
 
 #selectButton:hover {
@@ -1150,8 +1153,8 @@ body {
 #pin-description {
     position: absolute;
     z-index: 1;
-    top: 20%;
-    left: 16%;
+    top: 23%;
+    left: 19%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -1167,12 +1170,20 @@ body {
     box-shadow: 4px 4px #303030;
 }
 
+#edit-photo {
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    border-radius: 6px;
+    margin-left: 11%;
+}
+
 .pin-edit-buttons {
     display: flex;
 }
 
 .hiddenpin {
-    width: 100px;
+    width: 200px;
     background: white;
     border: none;
 }
@@ -1270,7 +1281,7 @@ body {
     justify-content: space-around;
     align-items: center;
     border-radius: 40px;
-    animation: .5s ease 0s 1 movenow;
+    animation: .8s ease 0s 1 movenow;
 }
 
 #badpinboard-h {
@@ -1305,4 +1316,8 @@ body {
     left: 5%;
     box-shadow: 8px 8px 8px 8px rgb(112, 112, 112);
     border-radius: 16px;
+}
+
+.edit-pin-top {
+    display: flex;
 }

@@ -6,13 +6,14 @@ class PinDeleteForm extends React.Component {
         debugger
         super(props)
         this.handleDelete = this.handleDelete.bind(this)
+        this.state = {...this.props.pin}
     }
 
 
 
 handleDelete(e){
     debugger
-    this.props.deletePin(this.props.pin.id)
+    this.props.deletePin(this.state.id)
     .then(this.props.closeModal(),
     this.props.history.push(`/users/${this.props.user.id}/pins`));
 }

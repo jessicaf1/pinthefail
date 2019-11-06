@@ -14,6 +14,7 @@ class EditPinForm extends React.Component {
         board_id: pin.board_id, 
         name: pin.name,
         link_url: pin.link_url || '',
+        photoUrl: pin.photoUrl, 
       }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,6 +22,7 @@ class EditPinForm extends React.Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.chooseBoard = this.chooseBoard.bind(this);
+    this.sendToBadPinBoard = this.sendToBadPinBoard.bind(this)
   }
 
 
@@ -34,11 +36,17 @@ class EditPinForm extends React.Component {
     this.props.fetchPin(this.props.pin.id)
   }
 
+ sendToBadPinBoard(){
+    this.props.openModal2(),
+    setTimeout(this.props.closeModal, 1200)
+  }
+
 handleSubmit(e){
   debugger
   e.preventDefault();
   let payload = {pin: this.state.pin, boardId: this.state.boardId}
   this.props.updatePin(payload).then(()=> this.props.closeModal())
+  .then(()=>this.sendToBadPinBoard())
 }
 
   handleInput(field) {
@@ -70,9 +78,12 @@ handleSubmit(e){
     if (pin) {
     return(
       <form className="edit-pin">
+        <div className="edit-pin-top">
            <div id="pin-dd-e">
               Board 
               <PinDropDownContainer chooseBoard={this.chooseBoard}/> 
+           </div>
+           <img id="edit-photo" src={this.state.pin.photoUrl} alt=""/>
            </div>
         <label>
           Title
@@ -85,6 +96,7 @@ handleSubmit(e){
         <div className="pin-edit-buttons">
             <button className="pin-edit-button-1" onClick={this.handleDelete}>Delete</button>
             <button className="hiddenpin"></button>
+            
               <button className="pin-edit-button-1" onClick={this.handleCancel}>Cancel</button>
                
                

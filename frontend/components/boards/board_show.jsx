@@ -1,6 +1,7 @@
 import React from 'react';
 import UserShowContainer from '../../components/users/user_showpage_container'
 import {Link} from 'react-router-dom'
+import PinIndexItem from '../pins/pin_index_item'
 
 class BoardShow extends React.Component {
   constructor(props){
@@ -40,8 +41,8 @@ render(){
      debugger
   array = this.props.pins.map(pin => {
     // debugger
-
-    return <Link to={`/users/${this.props.user.id}/pins/${pin.id}`}><img className="board-show-item" src={pin.photoUrl} alt="" /></Link>
+    return <PinIndexItem pin={pin} />
+    // return <Link to={`/users/${this.props.user.id}/pins/${pin.id}`}><img className="board-show-item" src={pin.photoUrl} alt="" /></Link>
   }) 
 } 
 
