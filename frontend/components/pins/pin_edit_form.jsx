@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
-import PinBoardContainer from './pin_to_board_container'
+import PinBoardContainer from './pin_to_board_container';
+import PinDropDownContainer from './pin_drop_down_form_container';
 
 class EditPinForm extends React.Component {
   constructor(props){
@@ -19,6 +20,14 @@ class EditPinForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.chooseBoard = this.chooseBoard.bind(this);
+  }
+
+
+  chooseBoard(boardId) {
+    debugger
+    this.setState({ boardId })
+
   }
 
   componentDidMount() {
@@ -28,7 +37,8 @@ class EditPinForm extends React.Component {
 handleSubmit(e){
   debugger
   e.preventDefault();
-  this.props.updatePin(this.state.pin).then(()=> this.props.closeModal())
+  let payload = {pin: this.state.pin, boardId: this.state.boardId}
+  this.props.updatePin(payload).then(()=> this.props.closeModal())
 }
 
   handleInput(field) {
@@ -60,9 +70,10 @@ handleSubmit(e){
     if (pin) {
     return(
       <form className="edit-pin">
-           <div id="pin-dd">
-          <PinBoardContainer pinId={this.state.pin.id}/> 
-          </div>
+           <div id="pin-dd-e">
+              Board 
+              <PinDropDownContainer chooseBoard={this.chooseBoard}/> 
+           </div>
         <label>
           Title
           <input className="edit-name" type="text" value={this.state.pin.name} onChange={this.handleInput('name')}/>

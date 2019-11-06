@@ -430,6 +430,12 @@ body {
     width: 100%
 }
 
+
+/* #pin-dd-e {
+    position: absolute;
+    top: 20%
+} */
+
 .edit-name {
     height: 40px;
     border-radius: 3px;
@@ -477,24 +483,28 @@ body {
 
 #pin-boards {
     position: absolute;
-    top: 55%;
+    top: 20%;
     list-style-type: none;
-    left: 39%;
+    left: 48%;
     z-index: 10;
 }
 
 #pin-photo {
     position: absolute;
     top: 35%;
+    left: 10%;
+    border-radius: 12px;
+    max-height: 400px;
 }
 
 #pin-boards-title {
     position: absolute;
     font-weight: bold;
-    top: 49%;
-    left: 39%;
+    top: 17%;
+    left: 48%;
     list-style-type: none;
     z-index: 10;
+    font-size: 20px;
 }
 
 .pin-edit-button {
@@ -635,7 +645,7 @@ body {
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: #333;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, "\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3", Hiragino Kaku Gothic Pro, "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33 \FF30\30B4\30B7\30C3\30AF", Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
@@ -763,8 +773,8 @@ body {
     border: none;
     border-bottom: 1px solid lightgray;
     position: absolute;
-    top: 33%;
-    left: 59%;
+    top: 5%;
+    left: 45%;
     font-size: 20px;
 }
 
@@ -786,6 +796,19 @@ body {
     /* position: absolute;
     top: 17%;
     right: 27%; */
+    color: white;
+    font-size: 23px;
+    margin-left: 9%;
+}
+
+.pin-button-cf {
+    background: red;
+    width: 85px;
+    height: 53px;
+    border-radius: 8px;
+    position: absolute;
+    top: 12%;
+    right: 44%;
     color: white;
     font-size: 23px;
     margin-left: 9%;
@@ -882,10 +905,10 @@ body {
 #grid-item-image {
     /* display: none; */
     position: absolute;
-    width: 40px;
-    height: 33px;
+    width: 32px;
+    height: 26px;
     right: 7%;
-    top: 5%;
+    top: 20px;
     border-radius: 5px;
     padding: 10px;
     background: red;
@@ -893,16 +916,25 @@ body {
 }
 
 #grid-item-image2 {
-    width: 40px;
-    height: 33px;
-    color: red;
+    width: 50px;
+    height: 43px;
+    border-radius: 12px;
     position: absolute;
-    right: 9%;
-    top: 10%;
+    left: 9%;
+    top: 20px;
+    z-index: 18;
 }
 
 .grid-div {
     position: relative;
+}
+
+.grid-item:hover {
+    cursor: pointer;
+}
+
+.grid-div:hover {
+    cursor: pointer;
 }
 
 .grid-item:hover+img#grid-item-image {
@@ -926,7 +958,7 @@ body {
 }
 
 .containerdd-p {
-    width: 200px;
+    width: 220px;
     font-weight: bold;
     min-height: 250px;
     justify-content: space-around;
@@ -934,9 +966,13 @@ body {
 
 .board-list {
     display: block;
-    width: 140px;
     margin-bottom: 9px;
+    /* position: relative; */
+}
+
+.boardlist1 {
     position: relative;
+    width: 140px;
 }
 
 .board-list-items {
@@ -944,28 +980,48 @@ body {
     display: inline-block;
 }
 
-
-/* 
 .board-list:hover {
     background: gray;
     opacity: 1;
     border-radius: 6px;
-    width: 140px;
+    width: 100%;
     color: white;
-} */
+}
 
-.board-list:hover::after {
-    content: '';
+
+/* .board-list:hover::after {
+    /* content: '';
     width: 18px;
     height: 18px;
-    background-image: image-url("logo.png");
+    background: url(pencil.png) no-repeat center center fixed;
     background-size: cover;
     /* background: image-set('../assets/images/logo.png'); */
-    position: absolute;
-    z-index: 12;
-    background: purple;
-    right: 0;
+
+
+/* position: absolute; */
+
+
+/* z-index: 12; */
+
+
+/* background: purple; */
+
+
+/* right: 0;
     top: 0;
+    */
+
+
+/* } */
+
+#thumb-dd {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -40px;
+    top: 0;
+    z-index: 90;
+    padding-left: 20px;
 }
 
 #selectButton {
@@ -981,6 +1037,9 @@ body {
     padding-bottom: 5px;
     height: 31px;
     margin-right: 9%;
+    position: absolute;
+    top: 12%;
+    left: 54%;
 }
 
 #selectButton:hover {
@@ -1058,7 +1117,7 @@ body {
 
 #pin-edit {
     position: absolute;
-    top: 15%;
+    top: 16%;
     width: 60px;
     left: 10%;
     z-index: 10;
@@ -1067,7 +1126,8 @@ body {
 #pin-name {
     position: absolute;
     top: 17%;
-    left: 16%;
+    left: 19%;
+    font-size: 26px;
     font-weight: bold;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -1187,9 +1247,18 @@ body {
     padding-bottom: 2%;
 }
 
+@keyframes movenow {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .badpinboard {
-    width: 400px;
-    height: 200px;
+    width: 300px;
+    height: 100px;
     background: #616060;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1201,6 +1270,7 @@ body {
     justify-content: space-around;
     align-items: center;
     border-radius: 40px;
+    animation: .5s ease 0s 1 movenow;
 }
 
 #badpinboard-h {
@@ -1208,13 +1278,31 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 24px;
     font-weight: bold;
+    transition: width 2s;
 }
 
 #badpinboard-b:hover {
     background: darkred;
 }
 
-#thumb-dd {
-    width: 30px;
-    height: 30px;
+.pin-show-big {
+    background: white;
+    height: 900px;
+    width: 900px;
+    box-shadow: 8px 8px 8px 8px rgb(112, 112, 112);
+    border-radius: 16px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.pin-cf-big {
+    background: white;
+    width: 800px;
+    height: 900px;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    box-shadow: 8px 8px 8px 8px rgb(112, 112, 112);
+    border-radius: 16px;
 }

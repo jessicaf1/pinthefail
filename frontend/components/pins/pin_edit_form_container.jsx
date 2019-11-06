@@ -13,7 +13,7 @@ export const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updatePin: pin => dispatch(updatePin(pin)),
+    updatePin: (payload) => dispatch(updatePin(payload)),
     deletePin: id => dispatch(deletePin(id)),
     fetchPin: id => dispatch(fetchPin(id)),
     closeModal: () => dispatch(closeModal()),

@@ -91,7 +91,7 @@ class PinShow extends React.Component {
 
 
       <div>
-        
+        <div className="pin-show-big">
         <img id="pin-edit" src={window.pencil} onClick={()=> {this.props.openModal(this.props.pin.id)}} alt=""/>
        
         <div id="pin-name">{this.props.pin.name}</div>
@@ -104,6 +104,7 @@ class PinShow extends React.Component {
           {/* <div id="pin-user">{this.props.user.f_name ? 'uploaded by ' + this.props.user.f_name + " " + this.props.user.l_name : null } </div> */}
           <div id="pin-boards-title">Saved boards:</div>
           <div id="pin-boards">{this.props.boards === undefined ?  null : arr }</div>
+      </div>
       </div>
     )
   }

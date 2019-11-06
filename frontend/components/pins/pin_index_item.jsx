@@ -8,6 +8,7 @@ import PinDropDownContainer from './pin_drop_down_form_container'
          super(props)
 
          this.stopModal = this.stopModal.bind(this);
+         this.stopModal2 = this.stopModal2.bind(this);
          this.MouseHoverIn = this.MouseHoverIn.bind(this);
          this.MouseHoverOut = this.MouseHoverOut.bind(this);
          this.MouseImageHover = this.MouseImageHover.bind(this);
@@ -86,6 +87,18 @@ import PinDropDownContainer from './pin_drop_down_form_container'
   
     }
 
+    stopModal2(e) {
+        e.stopPropagation()
+        this.MouseImageHover();
+        this.props.openModal2(this.props.pin.id)
+
+        this.setState({ isHovering: false })
+        debugger
+       
+        // this.props.history.push("/")
+  
+    }
+
 
      render() {
      return (
@@ -110,7 +123,9 @@ import PinDropDownContainer from './pin_drop_down_form_container'
                                                                                         onMouseOut={this.MouseImageHoverOut} 
                                                                                         onClick={this.stopModal}/> : null } 
                 
-
+                { (this.state.isHovering || this.state.isHoveringOnThumb) ? <img img id="grid-item-image2"  src={window.pencil}  onMouseEnter={this.MouseImageHover} 
+                                                                                        onMouseOut={this.MouseImageHoverOut} 
+                                                                                        onClick={this.stopModal2}/> : null } 
                
              {/* <PinDropDownContainer />  */}
             
@@ -132,7 +147,8 @@ import { withRouter } from 'react-router-dom';
 
  export const mapDispatchToProps = dispatch => {
      return {
-         openModal: (id) => dispatch(openModal('savePinToBoard', id))
+         openModal: (id) => dispatch(openModal('savePinToBoard', id)),
+         openModal2: (id) => dispatch(openModal('editPin', id))
      }
  }
 

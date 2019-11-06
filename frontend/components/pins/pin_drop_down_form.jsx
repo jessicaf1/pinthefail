@@ -58,19 +58,23 @@ class PinDropDown extends React.Component {
     } 
   }
 
-  showThumb(){
-    this.setState({thumb: true})
+  showThumb(id){
+    return () => {
+    this.setState({thumb: id})
+    } 
   }
 
   noThumb(){
-    this.setState({thumb: false})
+    this.setState({thumb: null})
   }
 
   render() {
       // debugger
       let arr = this.props.boards.map(board => { 
         debugger
-        return <li><a className="board-list" onMouseEnter={this.showThumb} onMouseLeave={this.noThumb} onClick={this.combo(board)}>{board.name}</a></li>
+        return <div className="boardlist1"><li><a className="board-list" onMouseEnter={this.showThumb(board.id)} onMouseLeave={this.noThumb} onClick={this.combo(board)}>{board.name}</a>
+         {this.state.thumb === board.id ? <img id="thumb-dd" src={window.logo}></img> : null}
+        </li></div>
         
       })
   // debugger
@@ -92,7 +96,7 @@ class PinDropDown extends React.Component {
                 <Link className="pinsbuilder" to="/users/pinBuilder">Board 2</Link> */}
                 {/* <button>Board 3</button> */}
                 <ul className="board-list-items">{arr}</ul>
-                {/* {this.state.thumb === true ? <img id="thumb-dd" src={window.logo}></img> : null} */}
+               
                 {/* {this.props.board ? 
                 this.props.board.map(board => {
                     return <li>{board.name}</li>
