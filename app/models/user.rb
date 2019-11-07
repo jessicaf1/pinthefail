@@ -19,6 +19,22 @@ has_many :pins,
 through: :board_pins, 
 source: :pin 
 
+has_many :follows, as: :followable
+
+has_many :followers,
+  through: :follows,
+  source: :follower 
+
+has_many :followed_users, 
+  through: :follows,
+  source: :follower, 
+  source_type: :'User'
+
+has_many :followed_boards,
+  through: :follows,
+  source: :board, 
+  source_type: :'Board' 
+
 def self.find_by_credentials(email, password)
   user = User.find_by(email: email)
   return user if user && user.is_password?(password)

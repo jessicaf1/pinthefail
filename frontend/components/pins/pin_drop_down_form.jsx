@@ -69,7 +69,7 @@ class PinDropDown extends React.Component {
   }
 
   render() {
-      // debugger
+      debugger
       let arr = this.props.boards.map(board => { 
         debugger
         return <div className="boardlist1"><li><a className="board-list" onMouseEnter={this.showThumb(board.id)} onMouseLeave={this.noThumb} onClick={this.combo(board)}>{board.name}</a>
@@ -81,7 +81,10 @@ class PinDropDown extends React.Component {
     return (
       <div className="pincontainer">
         <div onClick={this.showMenu}>
-          <div id="selectButton">{ this.state.board ? this.state.board.name : "select a board"}</div>
+          <div id={this.props.version === "new" ? "selectButton2" 
+          : this.props.version === "pinboard" ? "selectButton"
+          : "selectButton3"}
+          >{ this.state.board ? this.state.board.name : "select a board"}</div>
         </div>
         {
           this.state.showMenu

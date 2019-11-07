@@ -56,6 +56,9 @@ export const updatePin = (pin, boardId) => {
 export const deletePin = (id) => {
     debugger
     return dispatch => {
-        return APIUtil.deletePin(id).then(pin => dispatch(removePin(pin)))
+        return APIUtil.deletePin(id).then(pin => {
+            debugger
+            return dispatch(removePin(pin))
+        })
     }
 }

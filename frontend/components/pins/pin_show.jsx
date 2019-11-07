@@ -7,6 +7,7 @@ import PinBoardContainer from './pin_to_board_container'
 class PinShow extends React.Component {
   constructor(props){
     super(props)
+    this.sendToPins = this.sendToPins.bind(this)
   }
 
   componentDidMount(){
@@ -14,6 +15,9 @@ class PinShow extends React.Component {
     window.scrollTo(0,0)
   }
 
+  sendToPins(){
+    this.props.history.push(`/users/${this.props.user.id}/pins`)
+  }
   
 
 
@@ -92,6 +96,7 @@ class PinShow extends React.Component {
 
       <div>
         <div className="pin-show-big">
+        <img onClick={this.sendToPins} id="arrow" src={window.arrow}></img>
         <img id="pin-edit" src={window.pencil} onClick={()=> {this.props.openModal(this.props.pin.id)}} alt=""/>
        
         <div id="pin-name">{this.props.pin.name}</div>

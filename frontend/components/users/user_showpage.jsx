@@ -12,6 +12,8 @@ class UserShowPage extends React.Component {
         this.sendToEdit = this.sendToEdit.bind(this);
         this.sendToBoards = this.sendToBoards.bind(this);
         this.sendToPins = this.sendToPins.bind(this);
+        this.sendToFollowers = this.sendToFollowers.bind(this);
+        this.sendToFollowing = this.sendToFollowing.bind(this);
         this.state = this.props.user 
     }
 
@@ -40,6 +42,13 @@ sendToEdit(e){
         debugger
     }
 
+    sendToFollowers(){
+        this.props.history.push(`/users/${this.props.user.id}/followers`)
+    }
+
+    sendToFollowing(){
+        this.props.history.push(`/users/${this.props.user.id}/following`)
+    }
 
 
 render(){
@@ -56,6 +65,10 @@ return(
             </Link>
         </div>   
             <h1 id="showpage-header">{this.props.user.f_name} <span>   </span>{ this.props.user.l_name}</h1>
+            <div id="s-follows">
+            <div className="showpage-follows" onClick={this.sendToFollowers}>followers · </div> &nbsp; <div className="showpage-follows2" onClick={this.sendToFollowing}> following</div>
+            </div>
+            <div id="showpage-description">{this.props.user.location ? this.props.user.location + " · " + this.props.user.description : ''}</div>
             {this.props.user.photoUrl !== "" ? 
             <div className="showpage-image2"><img id="user-pic" src={this.props.user.photoUrl}/></div> 
             : <img className="showpage-image" src={window.pinface} />}

@@ -71,7 +71,7 @@ class CreatePinForm extends React.Component {
             <div className="pin-cf-big">
             <form className="pin-cf">
                     {/* <div className="box"></div> */}
-                    <PinDropDownContainer chooseBoard={this.chooseBoard}/> 
+                    <PinDropDownContainer version={"new"} history={this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split('/').length - 1) } chooseBoard={this.chooseBoard}/> 
                     
                     <button className="pin-button-cf" onClick={this.handleSubmit}>Save</button>
                     <button id="pin-button-empty"></button>

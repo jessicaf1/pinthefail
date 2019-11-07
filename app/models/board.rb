@@ -11,4 +11,10 @@ has_many :pins,
 through: :board_pins, 
 source: :pin  
 
+has_many :follows, as: :followable
+
+has_many :followers,
+    through: :follows,
+    source: :follower 
+
 end

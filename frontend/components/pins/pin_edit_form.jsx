@@ -78,10 +78,11 @@ handleSubmit(e){
     if (pin) {
     return(
       <form className="edit-pin">
+        <div id="edit-pin-header">Edit this Pin</div> 
         <div className="edit-pin-top">
            <div id="pin-dd-e">
               Board 
-              <PinDropDownContainer chooseBoard={this.chooseBoard}/> 
+              <PinDropDownContainer version={"edit"} history={this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split('/').length - 1) } chooseBoard={this.chooseBoard}/> 
            </div>
            <img id="edit-photo" src={this.state.pin.photoUrl} alt=""/>
            </div>

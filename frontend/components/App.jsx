@@ -15,6 +15,9 @@ import BoardShowContainer from './boards/board_show_container'
 import BoardCreateFormContainer from './boards/board_create_form_container'
 import PinsCreateFormContainer from './pins/pin_create_form_container'
 import PinShowContainer from './pins/pin_show_container'
+import FollowingContainer from './follows/following_container'
+import FollowersContainer from './follows/followers_container'
+import FollowFeedContainer from './follows/follow_feed_container'
 
 const App = () => (
  <div>
@@ -33,7 +36,9 @@ const App = () => (
             <ProtectedRoute path="/users/:userId/pins" component={PinsIndexContainer} />
             <ProtectedRoute path="/users/:userId/edit" component={EditFormContainer} />
         <ProtectedRoute path="/users/:userId" component={BoardIndexContainer} />
-            
+        <ProtectedRoute path="/users/:userId/followers" component={FollowersContainer}/>
+        <ProtectedRoute path="users/:userId/following" component={FollowingContainer}/>
+        <ProtectedRoute path="/users/following" component={FollowFeedContainer}/>
        
     </Switch>
 </div>

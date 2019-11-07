@@ -56,12 +56,16 @@ import PinDropDownContainer from './pin_drop_down_form_container'
          if(this.state.isHovering === true){
              this.setState({isHovering: true})
          }
+         else{
+             this.setState({isHovering: false})
+         }
          debugger
      }
 
      MouseImageHover(){
         //  debugger
          this.setState({isHoveringOnThumb: true})
+         this.setState({isHovering: true})
         //  if (state.isHovering === true){
         //  this.setState({isHovering: true})
         //  } 
@@ -77,7 +81,7 @@ import PinDropDownContainer from './pin_drop_down_form_container'
     
     stopModal(e) {
         e.stopPropagation()
-        this.MouseImageHover();
+        // this.MouseImageHover();
         this.props.openModal(this.props.pin.id)
 
         this.setState({ isHovering: false })
@@ -102,13 +106,11 @@ import PinDropDownContainer from './pin_drop_down_form_container'
 
      render() {
      return (
-         <div  
-         onMouseEnter={this.MouseHoverIn}
-             onMouseOut={this.MouseHoverOut} 
-             className="grid-div">
+         <div className="grid-div">
          
              
-             <img 
+             <img   onMouseEnter={this.MouseHoverIn}
+             onMouseOut={this.MouseHoverOut} 
             
                  
              onClick={() => {
@@ -119,11 +121,11 @@ import PinDropDownContainer from './pin_drop_down_form_container'
             }
                      className="grid-item" src={this.props.pin.photoUrl} alt="" />  
           
-             { (this.state.isHovering || this.state.isHoveringOnThumb) ? <img img id="grid-item-image"  src={window.logo}  onMouseEnter={this.MouseImageHover} 
+             { (this.state.isHovering) ? <img img id="grid-item-image"  src={window.logo}  onMouseEnter={this.MouseImageHover} 
                                                                                         onMouseOut={this.MouseImageHoverOut} 
                                                                                         onClick={this.stopModal}/> : null } 
                 
-                { (this.state.isHovering || this.state.isHoveringOnThumb) ? <img img id="grid-item-image2"  src={window.pencil}  onMouseEnter={this.MouseImageHover} 
+                { (this.state.isHovering) ? <img img id="grid-item-image2"  src={window.pencil}  onMouseEnter={this.MouseImageHover} 
                                                                                         onMouseOut={this.MouseImageHoverOut} 
                                                                                         onClick={this.stopModal2}/> : null } 
                
