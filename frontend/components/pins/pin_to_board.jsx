@@ -108,7 +108,8 @@ class PinToBoard extends React.Component {
       <div>
         <form className="save-form">
           {/* <div className="box"></div> */}
-          
+          <div id="pinboard-title"> Choose Board </div>
+          <div id="pinboard-cancel" onClick={this.props.closeModal}>X</div>
             <div className="save-form-header">
               <div id="save-form-text">Select Board </div>
               <PinDropDownContainer version={"pinboard"} history={this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split('/').length - 1) } chooseBoard={this.chooseBoard} />

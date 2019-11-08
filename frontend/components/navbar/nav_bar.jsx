@@ -80,7 +80,7 @@ export default ({ currentUser, logout, openModal }) => {
             &nbsp; 
             <Link className="navLink" to={`/users/${currentUser.id}`}>{currentUser.email.split("@")[0]}</Link>
             &nbsp;
-            <button className="btn" type="submit">Following</button>
+            <Link className="btn" to={`/users/following`}>Following</Link>
             &nbsp;
           <DropDownContainer/> 
         </form>

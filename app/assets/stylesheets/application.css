@@ -81,6 +81,10 @@ body {
     height: 30px;
     font-size: 15px;
     font-weight: bold;
+    margin-top: 10px;
+    text-decoration-line: none;
+    margin-right: 2px;
+    padding-left: 7px;
 }
 
 .spacebar {
@@ -474,7 +478,7 @@ body {
 
 .edit-name {
     height: 40px;
-    border-radius: 3px;
+    border-radius: 8px;
     border-width: 1px;
     border-color: #8e8e8e;
     display: block;
@@ -676,6 +680,7 @@ body {
 }
 
 .board-form {
+    position: relative;
     width: 520px;
     height: 290px;
     background: white;
@@ -752,6 +757,7 @@ body {
 
 .boards-total {
     margin-top: 60px;
+    /* z-index: -44; */
 }
 
 .boards-index-item {
@@ -787,7 +793,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin-top: -6%;
-    margin-left: 5%;
+    margin-left: 0;
     padding: 2%;
 }
 
@@ -1123,11 +1129,12 @@ body {
 .save-form {
     display: flex;
     flex-direction: row-reverse;
-    height: 490px;
+    height: 500px;
     width: 590px;
     background: white;
     border-radius: 12px;
     justify-content: space-around;
+    position: relative;
 }
 
 .grid-item-pb {
@@ -1141,7 +1148,7 @@ body {
 #save-pic {
     max-width: 950%;
     height: auto;
-    max-height: 390px;
+    max-height: 370px;
 }
 
 .save-form-header {
@@ -1415,4 +1422,41 @@ body {
     background: red;
     z-index: 90;
     cursor: pointer;
+}
+
+#followfeed {
+    font-size: 100px;
+}
+
+#x-cb {
+    position: absolute;
+    top: 12px;
+    right: 4%;
+    color: gray;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+#x-cb:hover {
+    cursor: pointer;
+}
+
+#pinboard-cancel {
+    position: absolute;
+    right: 4%;
+    top: 2%;
+    font-size: 23px;
+    color: gray;
+    font-weight: bold;
+}
+
+#pinboard-cancel:hover {
+    cursor: pointer;
+}
+
+#pinboard-title {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    top: 1%;
 }

@@ -32,13 +32,17 @@ const App = () => (
         <ProtectedRoute path="/users/pinBuilder" component={PinsCreateFormContainer} /> 
         <ProtectedRoute path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
         <ProtectedRoute path="/users/:userId/boards" component={BoardIndexContainer}/>
+            
+        <ProtectedRoute path="/users/:userId/followers" component={FollowersContainer}/>
+        <ProtectedRoute path="users/:userId/following" component={FollowingContainer}/>
+        <ProtectedRoute path="/users/following" component={FollowFeedContainer}/>
+            
+            
             <ProtectedRoute path="/users/:userId/pins/:pinId" component={PinShowContainer} />
             <ProtectedRoute path="/users/:userId/pins" component={PinsIndexContainer} />
             <ProtectedRoute path="/users/:userId/edit" component={EditFormContainer} />
         <ProtectedRoute path="/users/:userId" component={BoardIndexContainer} />
-        <ProtectedRoute path="/users/:userId/followers" component={FollowersContainer}/>
-        <ProtectedRoute path="users/:userId/following" component={FollowingContainer}/>
-        <ProtectedRoute path="/users/following" component={FollowFeedContainer}/>
+   
        
     </Switch>
 </div>

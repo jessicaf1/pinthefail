@@ -18,7 +18,7 @@ end
 
 
 def follow_params
-    params.require(:follow).permit(:follower_id, :followee_id, :follow_type)
+    params.require(:follow).permit(:follower_id, :followable_id, :followable_type)
 end
 
 end

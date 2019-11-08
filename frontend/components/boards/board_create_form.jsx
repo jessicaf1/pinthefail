@@ -38,6 +38,7 @@ render(){
         <div>
             <form className="board-form">
             <div className="board-header">Create Board</div>
+            <div id="x-cb" onClick={this.props.closeModal}>X</div>
             <label>
                 Name 
                 <input className="form-input" type="text" placeholder="Like 'Guys in tanktops' or 'Jim Carrey Movies'" value={this.state.name} onChange={this.handleInput('name')}/>
