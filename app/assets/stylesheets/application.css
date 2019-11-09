@@ -425,21 +425,19 @@ body {
 }
 
 .showpage-image2 {
-    position: absolute;
-    top: 30%;
-    right: 26%;
+    width: 150px;
+    height: 150px;
+    position: relative;
     overflow: hidden;
-    /* border-radius: 50%; */
+    border-radius: 50%;
 }
 
 #user-pic {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    /* object-fit: cover; */
-    /* margin-left: -30%; */
-    float: right;
-    margin-left: 5%;
+    /* display: inline; */
+    margin: 0 auto;
+    margin-left: 25%;
+    height: 100%;
+    width: auto;
 }
 
 .showpage-pencil {
@@ -481,7 +479,7 @@ body {
     border-radius: 8px;
     border-width: 1px;
     border-color: #8e8e8e;
-    width: 307px;
+    width: 299px;
     font-size: 12px;
     display: inline;
 }
@@ -1120,7 +1118,7 @@ body {
     padding-bottom: 5px;
     height: 31px;
     margin-right: 9%;
-    margin-left: 108px;
+    margin-left: 34px;
 }
 
 #selectButton:hover {
@@ -1237,8 +1235,8 @@ body {
 }
 
 .edit-pin {
-    width: 660px;
-    height: 500px;
+    width: 720px;
+    height: 450px;
     background: white;
     border-radius: 8px;
     display: flex;

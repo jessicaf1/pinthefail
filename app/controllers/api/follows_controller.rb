@@ -1,5 +1,10 @@
 class Api::FollowsController < ApplicationController
 
+def index
+    @follows = Follow.all
+    render :index 
+end 
+
 def create
     @follow = Follow.new(follow_params)
     @follow.follower_id = current_user.id 
@@ -11,6 +16,7 @@ def create
 end 
 
 def destroy
+    debugger
     @follow.destroy
     render json: @follow.id 
 end 

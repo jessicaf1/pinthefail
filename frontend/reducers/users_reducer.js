@@ -18,6 +18,10 @@ const usersReducer = (state = {}, action) => {
             }, action.user.followers);
         case RECEIVE_USERS:
             return action.users;
+        case REMOVE_FOLLOW:
+            newState = Object.assign({}, state);
+            delete newState[action.follow];
+            return newState
         case RECEIVE_FOLLOW:
             return Object.assign({}, state, {
                 [action.follow.id]: action.follow

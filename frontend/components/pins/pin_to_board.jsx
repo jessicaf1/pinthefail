@@ -107,7 +107,7 @@ class PinToBoard extends React.Component {
     return (
       <div>
         <form className="save-form">
-          {/* <div className="box"></div> */}
+          {/* <div className="box"> */}
           <div id="pinboard-title"> Choose Board </div>
           <div id="pinboard-cancel" onClick={this.props.closeModal}>X</div>
     
@@ -120,7 +120,7 @@ class PinToBoard extends React.Component {
             <img className="grid-item-pb" src={this.props.pin.photoUrl} id="save-pic" alt="" />  
             <button className="pin-button" onClick={this.handleSubmit}>Save</button>
             </div>
-      
+            {/* </div> */}
         </form>
       </div>
     )

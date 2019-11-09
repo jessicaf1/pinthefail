@@ -70,7 +70,9 @@ return(
             </div>
             <div id="showpage-description">{this.props.user.location ? this.props.user.location + " · " + this.props.user.description : ''}</div>
             {this.props.user.photoUrl !== "" ? 
-            <div className="showpage-image2"><img id="user-pic" src={this.props.user.photoUrl}/></div> 
+                 <div className="showpage-image2">
+                    <img id="user-pic" src={this.props.user.photoUrl}/>
+                </div> 
             : <img className="showpage-image" src={window.pinface} />}
             <div className="showpage-bps">
                 <Link id="showpage-boards" to={`/users/${this.props.user.id}/boards`}>Boards</Link>

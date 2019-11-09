@@ -81,10 +81,10 @@ handleSubmit(e){
         <div id="edit-pin-header">Edit this Pin</div> 
         <div className="edit-cancel" onClick={this.props.closeModal}>X</div>
         <div className="edit-pin-top">
-           <div id="pin-dd-e">
+           {/* <div id="pin-dd-e"> */}
               <div className="edit-category edit-category-b">Board</div> 
               <PinDropDownContainer version={"edit"} history={this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split('/').length - 1) } chooseBoard={this.chooseBoard}/> 
-           </div>
+           {/* </div> */}
            <img id="edit-photo" src={this.state.pin.photoUrl} alt=""/>
            </div>
         <label>
