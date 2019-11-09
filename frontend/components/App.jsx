@@ -34,7 +34,7 @@ const App = () => (
         <ProtectedRoute path="/users/:userId/boards" component={BoardIndexContainer}/>
             
         <ProtectedRoute path="/users/:userId/followers" component={FollowersContainer}/>
-        <ProtectedRoute path="users/:userId/following" component={FollowingContainer}/>
+        <ProtectedRoute path="/users/:userId/following" component={FollowingContainer}/>
         <ProtectedRoute path="/users/following" component={FollowFeedContainer}/>
             
             

@@ -12,3 +12,11 @@ export const deleteFollow = id => {
         url: `/api/follows/${id}`,
     });
 };
+
+
+export const fetchFollows = () => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/follows`,
+    });
+};

@@ -1,13 +1,16 @@
-import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW, RECEIVE_FOLLOWS } from '../actions/follow_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions'
 
 const FollowsReducer = (state = {}, action) => {
     let newState;
     switch (action.type) {
+        case RECEIVE_FOLLOWS:
+            return Object.assign({}, action.follows)
         case RECEIVE_FOLLOW:
             // debugger
             return Object.assign({}, newState, {
-                [action.follow.id]: action.follow })
+                [action.follow.id]: action.follow
+            })
         case REMOVE_FOLLOW:
             // debugger
             newState = Object.assign({}, state);

@@ -481,10 +481,9 @@ body {
     border-radius: 8px;
     border-width: 1px;
     border-color: #8e8e8e;
-    display: block;
-    width: 290px;
+    width: 307px;
     font-size: 12px;
-    padding-left: 16px;
+    display: inline;
 }
 
 #edit-header {
@@ -519,6 +518,7 @@ body {
     color: rgb(80, 80, 80);
     background: lightgray;
     font-weight: 500;
+    margin-left: 4%;
 }
 
 #pin-boards {
@@ -1120,6 +1120,7 @@ body {
     padding-bottom: 5px;
     height: 31px;
     margin-right: 9%;
+    margin-left: 108px;
 }
 
 #selectButton:hover {
@@ -1241,9 +1242,10 @@ body {
     background: white;
     border-radius: 8px;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-around;
-    padding-left: 6%;
+    /* padding-left: 6%; */
     box-shadow: 4px 4px #303030;
 }
 
@@ -1252,7 +1254,7 @@ body {
     height: 100px;
     z-index: 10;
     border-radius: 6px;
-    margin-left: 11%;
+    margin-left: 16%;
 }
 
 .pin-edit-buttons {
@@ -1389,7 +1391,7 @@ body {
     width: 800px;
     height: 900px;
     position: absolute;
-    top: 12%;
+    top: 15%;
     left: 5%;
     box-shadow: 8px 8px 8px 8px rgb(112, 112, 112);
     border-radius: 16px;
@@ -1400,12 +1402,14 @@ body {
 }
 
 #edit-pin-header {
-    align-self: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 24px;
     font-weight: bold;
-    color: #1d1c1c;
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
     border-bottom: 1px solid lightgray;
+    justify-content: center;
+    padding-bottom: 8px;
 }
 
 #arrow {
@@ -1459,4 +1463,91 @@ body {
     font-size: 24px;
     font-weight: bold;
     top: 1%;
+}
+
+.edit-title {
+    display: flex;
+}
+
+.edit-category {
+    margin-left: 11px;
+    margin-right: 19px;
+    margin-top: 15px;
+}
+
+.edit-category-t {
+    margin-right: 68px;
+}
+
+.edit-category-b {
+    margin-top: 20px;
+}
+
+.edit-cancel {
+    position: absolute;
+    right: 4%;
+    top: 6%;
+    font-size: 23px;
+    color: gray;
+    font-weight: bold;
+}
+
+.edit-cancel:hover {
+    cursor: pointer;
+}
+
+.follower-name {
+    font-size: 100px;
+}
+
+.followindexitem-name {
+    font-size: 24px;
+    /* position: absolute;
+    top: 40%; */
+    z-index: 20;
+    margin-top: 10%;
+}
+
+.followindexitem-pic {
+    position: absolute;
+    top: 20%;
+    border-radius: 50%;
+}
+
+.follower-image {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.default-image {
+    width: 200px;
+}
+
+.follow-list {
+    display: flex;
+    margin-top: 10%;
+    margin-left: 1%;
+}
+
+#num-follows {
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 200px;
+}
+
+#num-follows-h {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+}
+
+#followers-followers {
+    margin-left: 200px;
+}
+
+.follow-list-items {
+    display: flex;
+    flex-direction: column;
 }

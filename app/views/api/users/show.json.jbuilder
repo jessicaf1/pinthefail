@@ -22,3 +22,19 @@ json.pins do
     end
 end
 
+json.followers do 
+    @user.followers.each do |follower|
+        json.set! follower.id do 
+            json.partial! 'api/users/user', user: follower 
+        end
+    end 
+end 
+
+json.followed_users do 
+    @user.followed_users.each do |followed_user|
+        json.set! followed_user.id do 
+            json.partial! 'api/users/user', user: followed_user   
+        end
+    end 
+end 
+

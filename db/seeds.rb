@@ -10,12 +10,23 @@ require 'open-uri'
 Pin.destroy_all 
 Board.destroy_all
 BoardPin.destroy_all 
+Follow.destroy_all
 User.destroy_all
 
 demouser = User.create(email: 'bwaldorf@aol.com', f_name: 'Blair', l_name: 'Waldorf', password: 'nancy5', description: 'xoxo gossip girl', location: 'nyc')
 file = open('https://pinthefail-seeds2.s3.amazonaws.com/blair.jpeg')
 demouser.photo.attach(io: file, filename: 'blair.jpeg')
 user2 = User.create(email: 'mattsaracen@aol.com', f_name: 'matt', l_name: 'saracen', password: 'football', description: 'qb6', location: 'dillon')
+user3 = User.create(email: 'jennamaroney@tgs.com', f_name: 'Jenna', l_name: 'Maroney', password:'jennajenna', description: 'on camera', location: '30 rock')
+
+user4 = User.create(email: 'grocerystorejoe@gmail.com', f_name:'Grocer', l_name: 'Joe', password:'bachelorettesux', description: 'im joe the grocer', location:'trader joes')
+fileg = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/GSJ.jpeg')
+user4.photo.attach(io: fileg, filename: 'GSJ.jpeg')
+
+user5 = User.create(email: 'leslieknope@yahoo.com', f_name: 'leslie', l_name: 'knope', password: 'adamscott', description: 'waffle', location: 'pawnee')
+user6 = User.create(email: 'sabrinateenwitch@hotmail.com', f_name: 'sabrina', l_name: 'spellman', password: 'rememberlibby', description: 'witchy', location: 'linen closet')
+
+
 
 board1 = Board.create(name:'Bad Gossip Girl relationships', description: 'Characters that should not have been together', user_id: demouser.id)
 board2 = Board.create(name: 'Babies', description: 'no thank you', user_id: demouser.id)
@@ -134,13 +145,6 @@ pin15.photo.attach(io: file15, filename: 'hotgirlpizza2.jpeg')
 
 
 
-
-
-
-
-
-
-
 board_pin1 = BoardPin.create(board_id: board1.id, pin_id: pin1.id)
 board_pin2 = BoardPin.create(board_id: board1.id, pin_id: pin2.id)
 board_pin3 = BoardPin.create(board_id: board1.id, pin_id: pin3.id)
@@ -166,3 +170,12 @@ board_pin22 = BoardPin.create(board_id: board5.id, pin_id: pin22.id)
 board_pin23 = BoardPin.create(board_id: board5.id, pin_id: pin23.id)
 board_pin24 = BoardPin.create(board_id: board5.id, pin_id: pin24.id)
 board_pin25 = BoardPin.create(board_id: board5.id, pin_id: pin25.id)
+
+follow1 = Follow.create(follower_id: demouser.id, followable_id: user4.id, followable_type: 'User')
+follow2 = Follow.create(follower_id: demouser.id, followable_id: user3.id, followable_type: 'User')
+follow3 = Follow.create(follower_id: demouser.id, followable_id: user6.id, followable_type: 'User')
+follow4 = Follow.create(follower_id: demouser.id, followable_id: user2.id, followable_type: 'User')
+follow5 = Follow.create(follower_id: demouser.id, followable_id: board1.id, followable_type: 'Board')
+follow6 = Follow.create(follower_id: demouser.id, followable_id: board2.id, followable_type: 'Board')
+follow7 = Follow.create(follower_id: user5.id, followable_id: demouser.id, followable_type: 'User')
+follow8 = Follow.create(follower_id: user4.id, followable_id: demouser.id, followable_type: 'User')

@@ -79,20 +79,25 @@ handleSubmit(e){
     return(
       <form className="edit-pin">
         <div id="edit-pin-header">Edit this Pin</div> 
+        <div className="edit-cancel" onClick={this.props.closeModal}>X</div>
         <div className="edit-pin-top">
            <div id="pin-dd-e">
-              Board 
+              <div className="edit-category edit-category-b">Board</div> 
               <PinDropDownContainer version={"edit"} history={this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split('/').length - 1) } chooseBoard={this.chooseBoard}/> 
            </div>
            <img id="edit-photo" src={this.state.pin.photoUrl} alt=""/>
            </div>
         <label>
-          Title
-          <input className="edit-name" type="text" value={this.state.pin.name} onChange={this.handleInput('name')}/>
+          <div className="edit-title">
+          <div className="edit-category edit-category-t">Title</div>
+          <input className="edit-name edit-name-title" type="text" value={this.state.pin.name} onChange={this.handleInput('name')}/>
+         </div>
         </label>
         <label>
-          Description
-           <input className="edit-name" type="text" value={this.state.pin.link_url} onChange={this.handleInput('link_url')} />
+        <div className="edit-title">
+          <div className="edit-category">Description</div>
+           <input className="edit-name edit-name--description" type="text" value={this.state.pin.link_url} onChange={this.handleInput('link_url')} />
+           </div>
         </label>
         <div className="pin-edit-buttons">
             <button className="pin-edit-button-1" onClick={this.handleDelete}>Delete</button>
