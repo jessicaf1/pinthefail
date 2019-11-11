@@ -12,7 +12,7 @@ https://pinthefail.herokuapp.com/#/
 ![Picture](https://user-images.githubusercontent.com/44717186/66662801-7bfb9900-ec17-11e9-8fe8-e048d3481ef4.png)
 
 ### User's Show Page:
-![Picture](https://user-images.githubusercontent.com/44717186/66663966-b2d2ae80-ec19-11e9-932a-4a2b1349f6d5.png)
+![Picture](https://user-images.githubusercontent.com/44717186/68601137-c0c25c00-0471-11ea-835f-79eb98621da3.png)
 
 ### Features
 * Modals for sign-up and log-in that feature secure authentication.
