@@ -1,29 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
 ### Introduction
 Pinthefail is a Pinterest clone that allows users to create boards and pins dedicated 
 to things they dislike. It is a faithful clone that simulates the Pinterest experience
@@ -41,8 +17,9 @@ https://pinthefail.herokuapp.com/#/
 ### Features
 * Modals for sign-up and log-in that feature secure authentication.
 * A masonry style grid splash page.
-* Users can edit their profiles.
-* Users can upload images and create boards.  
+* Users can edit their profiles and pins.
+* Users can upload images and create boards, as well as attach pins to boards.  
+* Users have the ability to follow other users.  
 
 ### Technologies
 * React/Redux
@@ -51,30 +28,8 @@ https://pinthefail.herokuapp.com/#/
 * Photo storage with AWS
 * CSS
 
-
-### Future Implementation
-* Users can pin images to boards.
-* Users can follow other users as well as boards.  
-* Users can edit pins and boards. 
-
 ### Code Challenges + Solutions  
-* One challenge I faced was creating modals across the app's various pages, including
-sign-in/sign-up and creating a new board. For the new board, I used an event listener to create a dropdown menu, which featured an onClick event to open the create form modal. 
+* In order to be able to update a pin's boards, I needed to adjust the props being sent in to the modal.  
 
- ````this.state.showMenu
-            ? (
-              <div
-                className="menu"
-                ref={(element) => {
-                  this.dropdownMenu = element;
-                }}>
-                <div className="containerdd">
-                <div className="pinsbuilder" onClick={this.props.openModal}>Create Board</div>
-                <Link className="pinsbuilder" to="/users/pinBuilder">Create Pin</Link>
-                </div>
-                </div>
-            )
-            :
-            (null)
-
+* In order for a user to follow other users and boards, I used a polymorphic association on the backend.
 
