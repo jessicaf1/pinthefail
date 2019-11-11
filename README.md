@@ -1,9 +1,8 @@
 # README
 
 ### Introduction
-Pinthefail is a Pinterest clone that allows users to create boards and pins dedicated 
-to things they dislike. It is a faithful clone that simulates the Pinterest experience
-while being the anti-Pinterest Pinterest.
+Pinthefail, inspired by Pinterest, allows users to create boards and pins dedicated 
+to things they dislike. It is a faithful clone that simulates the Pinterest user experience while offering its own twist.
 
 ### Live Link
 https://pinthefail.herokuapp.com/#/
@@ -17,9 +16,8 @@ https://pinthefail.herokuapp.com/#/
 ### Features
 * Modals for sign-up and log-in that feature secure authentication.
 * A masonry style grid splash page.
-* Users can edit their profiles and pins.
-* Users can upload images and create boards, as well as attach pins to boards.  
-* Users have the ability to follow other users.  
+* Ability for the user to upload images and create boards, edit profiles and pins, and attach pins to boards.  
+* Polymorphic associations that allow users to follow other users and boards.  
 
 ### Technologies
 * React/Redux
@@ -30,6 +28,16 @@ https://pinthefail.herokuapp.com/#/
 
 ### Code Challenges + Solutions  
 * In order to be able to update a pin's boards, I needed to adjust the props being sent in to the modal.  
+
+///
+case 'savePinToBoard':
+      debugger
+      component = <PinToBoardContainer pinId={modal.props}/>; 
+      break; 
+    case 'editPin':
+      component = <PinEditFormContainer pinId={modal.props}/>;
+      break; 
+      ///
 
 * In order for a user to follow other users and boards, I used a polymorphic association on the backend.
 
