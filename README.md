@@ -29,15 +29,14 @@ https://pinthefail.herokuapp.com/#/
 ### Code Challenges + Solutions  
 * In order to be able to update a pin's boards, I needed to adjust the props being sent in to the modal.  
 
-///
+```
 case 'savePinToBoard':
       debugger
       component = <PinToBoardContainer pinId={modal.props}/>; 
       break; 
     case 'editPin':
       component = <PinEditFormContainer pinId={modal.props}/>;
-      break; 
-      ///
+      break; ```
 
 * In order for a user to follow other users and boards, I used a polymorphic association on the backend.
 
