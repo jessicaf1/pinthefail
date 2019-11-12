@@ -36,16 +36,21 @@ import PinDropDownContainer from './pin_drop_down_form_container'
         // debugger
         // console.log(e.relatedTarget)
 
-            this.setState({isHovering: true})
+            this.setState((state) => {return {isHovering: true}})
      }
 
      MouseHoverOut() {
         //  debugger
-         if (this.state.isHoveringOnThumb === true){
-         this.setState({isHovering: true})
-         } 
+        this.setState(state => state.isHoveringOnThumb === true ?
+        {isHovering: true }
+        :
+        {isHovering: false}
+        )
+        //  if (this.state.isHoveringOnThumb === true){
+        //  this.setState({isHovering: true})
+        //  } 
         //  else {
-             this.setState({isHovering: false}); 
+            //  this.setState({isHovering: false}); 
          }
     
 // if ! (hovering on image && hovering on icon): dont show the icon
@@ -53,19 +58,30 @@ import PinDropDownContainer from './pin_drop_down_form_container'
      MouseImageHoverOut() {
          debugger
          this.setState({isHoveringOnThumb: false});
-         if(this.state.isHovering === true){
-             this.setState({isHovering: true})
-         }
-         else{
-             this.setState({isHovering: false})
-         }
-         debugger
+         this.setState(state => state.isHovering === true?
+            {isHovering: true}
+            :
+            {isHovering: false}
+            )
+
+        //  if(this.state.isHovering === true){
+        //      this.setState({isHovering: true})
+        //  }
+        //  else{
+        //      this.setState({isHovering: false})
+        //  }
+        //  debugger
      }
 
      MouseImageHover(){
         //  debugger
-         this.setState({isHoveringOnThumb: true})
-         this.setState({isHovering: true})
+
+
+        this.setState((state) => {return {isHovering: true}})
+        this.setState((state) => {return {isHoveringOnThumb: true}})
+
+        //  this.setState({isHoveringOnThumb: true})
+        //  this.setState({isHovering: true})
         //  if (state.isHovering === true){
         //  this.setState({isHovering: true})
         //  } 

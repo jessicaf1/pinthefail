@@ -16,6 +16,7 @@ import BoardCreateFormContainer from './boards/board_create_form_container'
 import PinsCreateFormContainer from './pins/pin_create_form_container'
 import PinShowContainer from './pins/pin_show_container'
 import FollowingContainer from './follows/following_container'
+import FollowingBoardsContainer from './follows/following_boards_container'
 import FollowersContainer from './follows/followers_container'
 import FollowFeedContainer from './follows/follow_feed_container'
 
@@ -35,6 +36,7 @@ const App = () => (
             
         <ProtectedRoute path="/users/:userId/followers" component={FollowersContainer}/>
         <ProtectedRoute path="/users/:userId/following" component={FollowingContainer}/>
+        <ProtectedRoute path="/users/:userId/followingboards" component={FollowingBoardsContainer}/>
         <ProtectedRoute path="/users/following" component={FollowFeedContainer}/>
             
             

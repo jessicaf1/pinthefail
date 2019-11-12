@@ -10,10 +10,10 @@ export const receiveUser = user => {
     }
 }
 
-const receiveUsers = users => {
+const receiveUsers = payload => {
     return {
         type: RECEIVE_USERS,
-        users
+        users: payload.users
     }
 }
 

@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-class FollowerIndexItem extends React.Component{
+class FollowedBoardItem extends React.Component{
     constructor(props){
         super(props)
         this.handleFollow = this.handleFollow.bind(this);
@@ -13,9 +13,9 @@ class FollowerIndexItem extends React.Component{
         // debugger
         // let i = this.props.currentUser.followed_user_ids.indexOf(this.props.follow.id)
         // this.props.currentUser.followed_user_ids.splice(i, 1)
-        let follow = {follower_id: this.props.currentUser.id, followable_id: this.props.follower.id, followable_type: 'User'}
+        let follow = {follower_id: this.props.currentUser.id, followable_id: this.props.board.id, followable_type: 'Board'}
         debugger
-        let payload = {follow: follow, user: this.props.currentUser}
+        let payload = {follow: board, user: this.props.currentUser}
         this.props.deleteFollow(follow)
     }
 
@@ -24,7 +24,7 @@ class FollowerIndexItem extends React.Component{
         // debugger
         // let i = this.props.currentUser.followed_user_ids.indexOf(this.props.follow.id)
         // this.props.currentUser.followed_user_ids.splice(i, 1)
-        let follow = {follower_id: this.props.currentUser.id, followable_id: this.props.follower.id, followable_type: 'User'}
+        let follow = {follower_id: this.props.currentUser.id, followable_id: this.props.board.id, followable_type: 'Board'}
         // debugger
         // let payload = {follow: follow, user: this.props.currentUser}
         this.props.createFollow(follow)
@@ -35,16 +35,18 @@ class FollowerIndexItem extends React.Component{
     return (
     <div className="follow-list">
         <div className="follow-list-items">
-           {/* <div className="followindexitem-name">{this.props.follower.l_name}</div> */}
 
+            
+           {/* <div className="followindexitem-name">{this.props.follower.l_name}</div> */}
+{/* 
            {this.props.follower.photoUrl !== undefined ? 
             <img className="follower-image" src={this.props.follower.photoUrl}/>
             : <img className="default-image" src={window.pinface} />}
 
-            <div className="followindexitem-name">{this.props.follower.f_name + " " + this.props.follower.l_name}</div> 
+            <div className="followindexitem-name">{this.props.follower.f_name + " " + this.props.follower.l_name}</div>  */}
             {/* <img id="followindexitem-pic"src={this.props.follower.f_name.photoUrl} alt=""/> */}
            
-            {this.props.currentUser.followed_user_ids.includes(this.props.follower.id) ?
+            {this.props.currentUser.followed_board_ids.includes(this.props.board.id) ?
             <button onClick={this.handleUnfollow} className="unfollow-button">Unfollow</button> :
             <button onClick={this.handleFollow} className="follow-button">Follow</button>}
             </div>
@@ -74,4 +76,4 @@ export const mapDispatchToProps = dispatch => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FollowerIndexItem))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FollowedBoardItem))

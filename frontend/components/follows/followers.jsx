@@ -35,7 +35,9 @@ render(){
                 <div id="num-follows">{arr.length} </div>
                 <div id="followers-followers">followers</div>
             </div>
+            <div id="followers-array">
             {arr}
+            </div>
         </div>
     )
 }

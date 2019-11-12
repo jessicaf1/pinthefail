@@ -96,7 +96,7 @@ handleSubmit(e){
         <label>
         <div className="edit-title">
           <div className="edit-category">Description</div>
-           <input className="edit-name edit-name--description" type="text" value={this.state.pin.link_url} onChange={this.handleInput('link_url')} />
+           <input className="edit-name edit-name-description" type="text" value={this.state.pin.link_url} onChange={this.handleInput('link_url')} />
            </div>
         </label>
         <div className="pin-edit-buttons">

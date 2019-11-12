@@ -349,6 +349,7 @@ body {
     margin-left: 5px;
     text-decoration: none;
     color: gray;
+    z-index: 100;
 }
 
 #showpage-boards:hover {
@@ -359,6 +360,7 @@ body {
 #showpage-pins {
     text-decoration: none;
     color: gray;
+    z-index: 100;
 }
 
 #showpage-pins:hover {
@@ -427,17 +429,20 @@ body {
 .showpage-image2 {
     width: 150px;
     height: 150px;
-    position: relative;
+    position: absolute;
     overflow: hidden;
     border-radius: 50%;
+    right: 14%;
+    top: 29%;
 }
 
 #user-pic {
     /* display: inline; */
-    margin: 0 auto;
-    margin-left: 25%;
-    height: 100%;
     width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -5%;
 }
 
 .showpage-pencil {
@@ -484,6 +489,10 @@ body {
     display: inline;
 }
 
+.edit-name-description {
+    margin-left: -5px;
+}
+
 #edit-header {
     font-size: 36px;
     font-weight: bold;
@@ -516,7 +525,7 @@ body {
     color: rgb(80, 80, 80);
     background: lightgray;
     font-weight: 500;
-    margin-left: 4%;
+    margin-left: 5%;
 }
 
 #pin-boards {
@@ -767,6 +776,13 @@ body {
     padding: 11px;
 }
 
+.boards-index-item:hover {
+    cursor: pointer;
+    border: 2px solid rgb(219, 217, 217);
+    background: rgb(219, 217, 217);
+    border-radius: 9px;
+}
+
 .index-list-item {
     width: 124px;
     height: 107px;
@@ -790,7 +806,7 @@ body {
 .board-index {
     display: flex;
     flex-wrap: wrap;
-    margin-top: -6%;
+    margin-top: -10%;
     margin-left: 0;
     padding: 2%;
 }
@@ -941,6 +957,24 @@ body {
     display: inline-block;
     border-radius: 9px;
     margin: 0 0 1em;
+    display: block;
+    transition: opacity .3s linear;
+    background: rgba(0, 255, 255, .5);
+}
+
+.grid-item:hover {
+    opacity: .5;
+    cursor: pointer;
+    background: rgba(0, 255, 255, .5);
+    border-radius: 9px;
+}
+
+#grid-item-image:hover {
+    opacity: .5;
+}
+
+#grid-item-image2:hover {
+    opacity: .5;
 }
 
 #grid-item-image {
@@ -954,6 +988,8 @@ body {
     padding: 10px;
     background: red;
     z-index: 12;
+    display: block;
+    transition: opacity .3s linear;
 }
 
 #grid-item-image2 {
@@ -963,11 +999,15 @@ body {
     position: absolute;
     left: 9%;
     top: 20px;
-    z-index: 18;
+    /* /* z-index: 18; */
+    display: block;
+    transition: opacity .3s linear;
 }
 
 .grid-div {
     position: relative;
+    background: gray;
+    border-radius: 9px;
 }
 
 .grid-item:hover {
@@ -1084,7 +1124,12 @@ body {
     margin-top: -13%;
     /* position: absolute;
     top: 12%;
-    left: 54%; */
+    left: 5
+    4%; */
+}
+
+#selectButton:hover {
+    cursor: pointer;
 }
 
 #selectButton2 {
@@ -1202,6 +1247,10 @@ body {
     z-index: 10;
 }
 
+#pin-edit:hover {
+    cursor: pointer;
+}
+
 #pin-name {
     position: absolute;
     top: 17%;
@@ -1260,7 +1309,7 @@ body {
 }
 
 .hiddenpin {
-    width: 330px;
+    width: 350px;
     background: white;
     border: none;
 }
@@ -1427,7 +1476,22 @@ body {
 }
 
 #followfeed {
-    font-size: 100px;
+    column-count: 4;
+    column-gap: 1em;
+    margin-top: 65px;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+}
+
+.follow-image {
+    width: 100%;
+    display: inline-block;
+    border-radius: 9px;
+    margin: 0 0 1em;
+    display: block;
+    transition: opacity .3s linear;
+    background: rgba(0, 255, 255, .5);
 }
 
 #x-cb {
@@ -1460,7 +1524,7 @@ body {
     position: absolute;
     font-size: 24px;
     font-weight: bold;
-    top: 1%;
+    top: 3%;
 }
 
 .edit-title {
@@ -1504,6 +1568,7 @@ body {
     top: 40%; */
     z-index: 20;
     margin-top: 10%;
+    align-self: center;
 }
 
 .followindexitem-pic {
@@ -1526,7 +1591,9 @@ body {
 .follow-list {
     display: flex;
     margin-top: 10%;
-    margin-left: 1%;
+    margin-left: 4%;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #num-follows {
@@ -1537,7 +1604,7 @@ body {
 
 #num-follows-h {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: 4%;
 }
 
@@ -1548,4 +1615,71 @@ body {
 .follow-list-items {
     display: flex;
     flex-direction: column;
+}
+
+.unfollow-button {
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgb(228, 227, 227);
+    font-size: 15px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.unfollow-button:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
+.follow-button {
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    background: red;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.follow-button:hover {
+    background: darkred;
+    cursor: pointer;
+}
+
+.follow-link {
+    text-decoration-line: none;
+    padding-left: 1%;
+    /* position: absolute; */
+    /* top: 5%;
+    left: 10%; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+    padding: 1%;
+    background: rgb(248, 247, 247);
+    border-radius: 50px;
+    margin-left: 1%;
+}
+
+.follow-link:hover {
+    cursor: pointer;
+    color: black;
+    text-decoration-line: underline;
+}
+
+#follow-array {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.follow-links {
+    display: flex;
+    justify-content: center;
+}
+
+#followers-array {
+    display: flex;
 }

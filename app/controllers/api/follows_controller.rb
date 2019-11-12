@@ -6,19 +6,22 @@ def index
 end 
 
 def create
+    # debugger
     @follow = Follow.new(follow_params)
     @follow.follower_id = current_user.id 
     if @follow.save
-        render :show 
+        # debugger
+        render :show
     else
         render json: @follow.errors.full_messages, status: 422
     end 
 end 
 
 def destroy
-    debugger
+    # debugger
+    @follow = Follow.find_by(followable_id: follow_params["followable_id"])
     @follow.destroy
-    render json: @follow.id 
+    render :show
 end 
 
 

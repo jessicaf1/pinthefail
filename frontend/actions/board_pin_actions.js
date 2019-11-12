@@ -4,7 +4,7 @@ export const RECEIVE_BOARD_PINS = 'RECEIVE_BOARD_PINS';
 export const REMOVE_BOARD_PIN = 'REMOVE_BOARD_PIN';
 import { receivePin } from './pin_actions';
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
- 
+
 const receiveBoardPin = board_pin => {
     return {
         type: RECEIVE_BOARD_PIN,
@@ -27,11 +27,11 @@ const removeBoardPin = board_pinId => {
 }
 
 const receiveErrors = errors => {
-  debugger;
-  return {
-    type: RECEIVE_SESSION_ERRORS,
-    errors
-  };
+    debugger;
+    return {
+        type: RECEIVE_SESSION_ERRORS,
+        errors
+    };
 };
 
 export const fetchBoardPins = () => {
@@ -50,14 +50,14 @@ export const createBoardPin = (board_pin) => {
     debugger
     return dispatch => {
         return APIUtil.createBoardPin(board_pin).then(board_pin =>
-          dispatch(receiveBoardPin(board_pin)),
-          errors => dispatch(receiveErrors(errors.responseJSON))
+            dispatch(receiveBoardPin(board_pin)),
+            errors => dispatch(receiveErrors(errors.responseJSON))
         );
     }
 }
 
 export const updateBoardPin = (board_pin) => {
-
+    debugger
     return dispatch => {
         return APIUtil.updateBoardPin(board_pin).then(board_pin => dispatch(receiveBoardPin(board_pin)))
     }

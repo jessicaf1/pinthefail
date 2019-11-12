@@ -9,8 +9,12 @@ class Following extends React.Component {
         super(props)
     }
 
+
+
 componentDidMount(){
-    this.props.fetchUser(this.props.match.params.userId)
+    // this.props.fetchUser(this.props.match.params.userId)
+    this.props.fetchFollows()
+    this.props.fetchUsers()
 }
 
 render(){
@@ -19,23 +23,37 @@ render(){
         return null 
     }
    let arr; 
-    if (this.props.follows === undefined || this.props.follows[0] === undefined) {
+    if (this.props.users === undefined || this.props.users[0] === undefined) {
         arr = <div></div>
     }
    
     else {
-    arr = this.props.follows.map(follow => {
+    arr = this.props.users.map(user => {
         debugger
-        return <FollowedUserIndexItem follow={follow}/> 
+        if(user.id !== this.props.user.id){
+        return  <FollowedUserIndexItem follow={user}/> 
+        } 
+       
     })
 }
     return(
+        
         <div className="follow-list">
-            <div className="num-follows-h">
-                <div id="num-follows">{arr.length} </div>
+              <div id="num-follows">{arr.length} </div>
                 <div id="followers-followers">followed users</div>
+            <div className="follow-links">
+                    <Link className="follow-link" to={`/users/${this.props.user.id}/following`}>
+                        <div className="follow-link">People</div>    
+                    </Link> 
+                    <Link className="follow-link" to={`/users/${this.props.user.id}/followingboards`}>Boards</Link> 
+           
             </div>
+            <div className="num-follows-h">
+              
+            </div>
+            <div id="follow-array">
             {arr}
+            </div>
         </div>
     )
 }

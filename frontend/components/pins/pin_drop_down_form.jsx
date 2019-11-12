@@ -84,7 +84,7 @@ class PinDropDown extends React.Component {
           <div id={this.props.version === "new" ? "selectButton2" 
           : this.props.version === "pinboard" ? "selectButton"
           : "selectButton3"}
-          >{ this.state.board ? this.state.board.name : "select a board"}</div>
+          >{ this.state.board ? this.state.board.name : "select a board" + "  " + "▼"}</div>
         </div>
         {
           this.state.showMenu

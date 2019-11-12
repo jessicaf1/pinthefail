@@ -34,6 +34,7 @@ export const fetchFollows = () => {
 }
 
 export const createFollow = (follow) => {
+    debugger
     return dispatch => {
         return APIUtil.createFollow(follow).then(follow => dispatch(receiveFollow(follow)))
     }
