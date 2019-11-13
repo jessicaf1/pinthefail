@@ -19,7 +19,7 @@ end
 
 def destroy
     # debugger
-    @follow = Follow.find_by(followable_id: follow_params["followable_id"])
+    @follow = Follow.find_by(followable_id: follow_params["followable_id"], follower_id: follow_params["follower_id"])
     @follow.destroy
     render :show
 end 

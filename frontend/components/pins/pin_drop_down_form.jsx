@@ -80,7 +80,7 @@ class PinDropDown extends React.Component {
   // debugger
     return (
       <div className="pincontainer">
-        <div onClick={this.showMenu}>
+        <div id="pincontainer-menu" onClick={this.showMenu}>
           <div id={this.props.version === "new" ? "selectButton2" 
           : this.props.version === "pinboard" ? "selectButton"
           : "selectButton3"}

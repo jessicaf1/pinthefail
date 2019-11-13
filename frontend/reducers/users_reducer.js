@@ -24,18 +24,37 @@ const usersReducer = (state = {}, action) => {
             return action.users;
         case REMOVE_FOLLOW:
             let newState = Object.assign({}, state);
+            debugger
 
-            array = [];
-            state[action.follow.follower_id].followed_user_ids.forEach((id) => {
-                if (id !== action.follow.followable_id) {
-                    array.push(id)
-                }
-            })
-            newState[action.follow.follower_id].followed_user_ids = array
+            let follower = newState[action.follow.follower_id]
+            let followable = newState[action.follow.followable_id]
+
+            let i = follower.followed_user_ids.indexOf(followable.id)
+            let j = followable.follower_ids.indexOf(follower.id)
+
+            follower.followed_user_ids.splice(i, 1)
+            followable.follower_ids.splice(j, 1)
+
+            //let array = state[action.follow.follawble_id].followers
+            //for(let i = 0; i < array.length; i ++){
+            // if(array[i] === action.follow.follower){
+            //array.splice(i, 1)
+            //}
+            //}
+
+
+
+            // array = [];
+            // state[action.follow.follower_id].followed_user_ids.forEach((id) => {
+            //     if (id !== action.follow.followable_id) {
+            //         array.push(id)
+            //     }
+            // })
+            // newState[action.follow.follower_id].followed_user_ids = array
             debugger
 
 
-            state[action.follow.followable_id].follower_ids.pop()
+            // state[action.follow.followable_id].follower_ids.pop()
 
 
             return newState

@@ -33,9 +33,9 @@ import PinDropDownContainer from './pin_drop_down_form_container'
      }
 
      MouseHoverIn(e) {
-        // debugger
+        debugger
         // console.log(e.relatedTarget)
-
+            this.props.setHoveredPinId(this.props.pin.id)
             this.setState((state) => {return {isHovering: true}})
      }
 
@@ -56,7 +56,7 @@ import PinDropDownContainer from './pin_drop_down_form_container'
 // if ! (hovering on image && hovering on icon): dont show the icon
 //  if hovering on icon but not image: then allow click action to open modal
      MouseImageHoverOut() {
-         debugger
+        //  debugger
          this.setState({isHoveringOnThumb: false});
          this.setState(state => state.isHovering === true?
             {isHovering: true}
@@ -74,7 +74,7 @@ import PinDropDownContainer from './pin_drop_down_form_container'
      }
 
      MouseImageHover(){
-        //  debugger
+         debugger
 
 
         this.setState((state) => {return {isHovering: true}})
@@ -137,11 +137,11 @@ import PinDropDownContainer from './pin_drop_down_form_container'
             }
                      className="grid-item" src={this.props.pin.photoUrl} alt="" />  
           
-             { (this.state.isHovering) ? <img img id="grid-item-image"  src={window.logo}  onMouseEnter={this.MouseImageHover} 
+             { (this.state.isHovering && this.props.pin.id === this.props.hoveredPinId) ? <img img id="grid-item-image"  src={window.logo}  onMouseEnter={this.MouseImageHover} 
                                                                                         onMouseOut={this.MouseImageHoverOut} 
                                                                                         onClick={this.stopModal}/> : null } 
                 
-                { (this.state.isHovering) ? <img img id="grid-item-image2"  src={window.pencil}  onMouseEnter={this.MouseImageHover} 
+                { (this.state.isHovering && this.props.pin.id === this.props.hoveredPinId) ? <img img id="grid-item-image2"  src={window.pencil}  onMouseEnter={this.MouseImageHover} 
                                                                                         onMouseOut={this.MouseImageHoverOut} 
                                                                                         onClick={this.stopModal2}/> : null } 
                

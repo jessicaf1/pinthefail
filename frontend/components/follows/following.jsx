@@ -30,7 +30,7 @@ render(){
     else {
     arr = this.props.users.map(user => {
         debugger
-        if(user.id !== this.props.user.id){
+        if(user.id !== this.props.user.id && user.f_name !== null){
         return  <FollowedUserIndexItem follow={user}/> 
         } 
        
