@@ -18,19 +18,19 @@ file = open('https://pinthefail-seeds2.s3.amazonaws.com/blair.jpeg')
 demouser.photo.attach(io: file, filename: 'blair.jpeg')
 
 user2 = User.create(email: 'mattsaracen@aol.com', f_name: 'matt', l_name: 'saracen', password: 'football', description: 'qb6', location: 'dillon')
-filem = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/matt2.jpg')
-user2.photo.attach(io: filem, filename: 'mattsar.jpg')
+filem = open('https://pinthefail-seeds2.s3.amazonaws.com/matt2.jpg')
+user2.photo.attach(io: filem, filename: 'matt2.jpg')
 
 user3 = User.create(email: 'jennamaroney@tgs.com', f_name: 'Jenna', l_name: 'Maroney', password:'jennajenna', description: 'on camera', location: '30 rock')
-filej = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/jennam.png')
+filej = open('https://pinthefail-seeds2.s3.amazonaws.com/jennam.png')
 user3.photo.attach(io: filej, filename: 'jennam.png')
 
 user4 = User.create(email: 'grocerystorejoe@gmail.com', f_name:'Grocer', l_name: 'Joe', password:'bachelorettesux', description: 'im joe the grocer', location:'trader joes')
-fileg = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/GSJ.jpeg')
+fileg = open('https://pinthefail-seeds2.s3.amazonaws.com/GSJ.jpeg')
 user4.photo.attach(io: fileg, filename: 'GSJ.jpeg')
 
 user5 = User.create(email: 'leslieknope@yahoo.com', f_name: 'leslie', l_name: 'knope', password: 'adamscott', description: 'waffle', location: 'pawnee')
-filel = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/lesliek.jpg')
+filel = open('https://pinthefail-seeds2.s3.amazonaws.com/lesliek.jpg')
 user5.photo.attach(io: filel, filename: 'lesliek.jpg')
 
 user6 = User.create(email: 'sabrinateenwitch@hotmail.com', f_name: 'sabrina', l_name: 'spellman', password: 'rememberlibby', description: 'witchy', location: 'linen closet')
@@ -54,8 +54,8 @@ pin18.photo.attach(io: file18, filename: 'hotg4.png')
 
 
 pin1 = Pin.create(name: 'Blair and Dan')
-file1 = open('https://pinthefail-seeds2.s3.amazonaws.com/blairanddan.jpeg')
-pin1.photo.attach(io: file1, filename: 'blairanddan.jpeg')
+file1 = open('https://pinthefail-seeds2.s3.amazonaws.com/bd.jpg')
+pin1.photo.attach(io: file1, filename: 'bd.jpg')
 
 
 pin22 = Pin.create(name: 'Cat 1')

@@ -12,7 +12,8 @@ import PinDropDownContainer from './pin_drop_down_form_container'
          this.MouseHoverIn = this.MouseHoverIn.bind(this);
          this.MouseHoverOut = this.MouseHoverOut.bind(this);
          this.MouseImageHover = this.MouseImageHover.bind(this);
-        this.MouseImageHoverOut = this.MouseImageHoverOut.bind(this)
+        this.MouseImageHoverOut = this.MouseImageHoverOut.bind(this);
+        // this.setHoveredPinId = this.setHoveredPinId.bind(this);
          this.state = {
              isHovering: false, 
              isHoveringOnThumb: false

@@ -6,13 +6,19 @@ import PinIndexItem from '../pins/pin_index_item'
 class BoardShow extends React.Component {
   constructor(props){
     super(props);
-   
+    this.state = { hoveredPinId: null }
+    this.setHoveredPinId = this.setHoveredPinId.bind(this)
   }
 
 componentDidMount(){
   this.props.fetchBoard(this.props.match.params.boardId), 
   this.props.fetchPins()
 }
+
+setHoveredPinId(id){
+  this.setState({hoveredPinId: id})
+}
+
 render(){
   // debugger
   // if (this.props.board === undefined) {
@@ -41,7 +47,7 @@ render(){
      debugger
   array = this.props.pins.map(pin => {
     // debugger
-    return <PinIndexItem pin={pin} />
+    return <PinIndexItem pin={pin} key={pin.id} setHoveredPinId={this.setHoveredPinId} hoveredPinId={this.state.hoveredPinId}/>
     // return <Link to={`/users/${this.props.user.id}/pins/${pin.id}`}><img className="board-show-item" src={pin.photoUrl} alt="" /></Link>
   }) 
 } 
