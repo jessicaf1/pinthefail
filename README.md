@@ -36,7 +36,29 @@ case 'savePinToBoard':
       break; 
     case 'editPin':
       component = <PinEditFormContainer pinId={modal.props}/>;
-      break; ```
+      break;
+```
+* To allow users to follow both other users and boards, and conserve space while improving scalability, I used polymorphic associations on the back end. 
+```
+has_many :follows, as: :followable
+  
+has_many :followings,
+  foreign_key: :follower_id,
+  class_name: :'Follow'
 
-* In order for a user to follow other users and boards, I used a polymorphic association on the backend.
+has_many :followers,
+  through: :follows,
+  source: :follower
+
+has_many :followed_users, 
+  through: :followings,
+  source: :followable,
+  source_type: :'User'
+
+has_many :followed_boards,
+  through: :followings,
+  source: :followable,
+  source_type: :'Board'
+```
+     
 
