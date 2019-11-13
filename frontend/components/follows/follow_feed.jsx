@@ -36,7 +36,10 @@ class FollowFeed extends React.Component {
      
         return(
             <div id="followfeed">
-            {arraypics}
+    {this.props.user.followed_board_ids.length === 0 ?  
+    <div id="followfeedtext">your following feed is currently empty!</div>
+    :
+    arraypics}
             </div>
         )
     }

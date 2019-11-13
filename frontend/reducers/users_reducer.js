@@ -6,6 +6,7 @@ const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState2;
     let array;
+    let array2;
     switch (action.type) {
 
         case RECEIVE_CURRENT_USER:
@@ -32,17 +33,34 @@ const usersReducer = (state = {}, action) => {
             })
             newState[action.follow.follower_id].followed_user_ids = array
             debugger
+
+
+            state[action.follow.followable_id].follower_ids.pop()
+
+
             return newState
         case RECEIVE_FOLLOW:
             debugger
             newState2 = Object.assign({}, state);
             array = [];
+            array2 = [];
             state[action.follow.follower_id].followed_user_ids.forEach((id) => {
                 array.push(id)
             })
             array.push(action.follow.followable_id)
             newState2[action.follow.follower_id].followed_user_ids = array
             debugger
+
+            state[action.follow.followable_id].follower_ids.forEach((id) => {
+                // if (!array2.includes(id)) {
+                array2.push(id)
+                    // }
+            })
+            array2.push(action.follow.follower_id)
+            newState2[action.follow.followable_id].follower_ids = array2
+
+
+
             return newState2;
         default:
             return state;

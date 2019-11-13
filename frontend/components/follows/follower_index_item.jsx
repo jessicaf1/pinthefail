@@ -43,7 +43,8 @@ class FollowerIndexItem extends React.Component{
 
             <div className="followindexitem-name">{this.props.follower.f_name + " " + this.props.follower.l_name}</div> 
             {/* <img id="followindexitem-pic"src={this.props.follower.f_name.photoUrl} alt=""/> */}
-           
+            <div className="followindexitem-followers">2 boards · {this.props.follower.follower_ids.length} followers</div>
+
             {this.props.currentUser.followed_user_ids.includes(this.props.follower.id) ?
             <button onClick={this.handleUnfollow} className="unfollow-button">Unfollow</button> :
             <button onClick={this.handleFollow} className="follow-button">Follow</button>}

@@ -32,7 +32,7 @@ render(){
     return(
         <div className="follow-list">
             <div className="num-follows-h">
-                <div id="num-follows">{arr.length} </div>
+                <div id="num-follows">{this.props.user.follower_ids.length === 0 ? 0 : arr.length} </div>
                 <div id="followers-followers">followers</div>
             </div>
             <div id="followers-array">

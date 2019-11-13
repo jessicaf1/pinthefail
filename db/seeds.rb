@@ -18,7 +18,7 @@ file = open('https://pinthefail-seeds2.s3.amazonaws.com/blair.jpeg')
 demouser.photo.attach(io: file, filename: 'blair.jpeg')
 
 user2 = User.create(email: 'mattsaracen@aol.com', f_name: 'matt', l_name: 'saracen', password: 'football', description: 'qb6', location: 'dillon')
-filem = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/mattsar.jpg')
+filem = open('https://pinthefail-seeds.s3.us-east-2.amazonaws.com/matt2.jpg')
 user2.photo.attach(io: filem, filename: 'mattsar.jpg')
 
 user3 = User.create(email: 'jennamaroney@tgs.com', f_name: 'Jenna', l_name: 'Maroney', password:'jennajenna', description: 'on camera', location: '30 rock')

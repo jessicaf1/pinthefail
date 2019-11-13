@@ -39,7 +39,7 @@ render(){
     return(
         
         <div className="follow-list">
-              <div id="num-follows">{arr.length} </div>
+              <div id="num-follows">{this.props.user.followed_user_ids.length} </div>
                 <div id="followers-followers">followed users</div>
             <div className="follow-links">
                     <Link className="follow-link" to={`/users/${this.props.user.id}/following`}>
