@@ -36,7 +36,7 @@ class Api::PinsController < ApplicationController
     end
 
     def destroy
-        debugger
+        
         @pin = Pin.find(params[:id])
         @pin.destroy 
             render json: @pin.id
