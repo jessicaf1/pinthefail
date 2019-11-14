@@ -13,10 +13,12 @@ const mapStateToProps = (state, ownProps) => {
 //    let currentUser = state.entities.users[state.session.currentUser] || -0;
    let currentUser = state.entities.users[ownProps.match.params.userId] || -0; 
 //    let pins = Object.values(state.entities.pins)
+let demoUser = state.entities.users[state.session.currentUser]
    debugger
     return {
         currentUser, 
-        boards
+        boards,
+        demoUser
         
     } 
 }

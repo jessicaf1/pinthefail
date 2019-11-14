@@ -33,7 +33,7 @@ render(){
     
     let boards = this.props.boards.map(board=> {
         debugger
-        if(board.id === this.props.currentUser) {
+        if(this.props.demoUser === this.props.currentUser) {
             return <BoardIndexItem className="bi" board={board} key={board.id} currentUser={this.props.currentUser} openModal={this.props.openModal}/>
         } 
     })
