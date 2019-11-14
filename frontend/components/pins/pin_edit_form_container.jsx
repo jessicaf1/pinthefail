@@ -5,6 +5,8 @@ import { fetchPin, updatePin, deletePin } from '../../actions/pin_actions'
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 
 export const mapStateToProps = (state, ownProps) => {
+  // let user = state.entities.users[ownProps.match.params.userId] || -0 
+
   return {
     pin: state.entities.pins[ownProps.pinId],
     user: state.entities.users[state.session.currentUser] || -0

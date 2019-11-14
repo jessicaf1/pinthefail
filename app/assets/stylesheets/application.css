@@ -996,8 +996,10 @@ body {
 .uploadpic {
     border: 2px dashed lightgray;
     padding: 155px;
+    padding-bottom: 301px;
     position: absolute;
     left: 18%;
+    top: 23%;
     font-size: 16px;
     color: gray;
 }
@@ -1666,6 +1668,10 @@ body {
     border-radius: 50%;
     height: 200px;
     width: 200px;
+}
+
+.follower-image:hover {
+    cursor: pointer;
 }
 
 .default-image {

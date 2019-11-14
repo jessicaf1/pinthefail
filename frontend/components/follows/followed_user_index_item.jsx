@@ -78,7 +78,7 @@ class FollowedUserIndexItem extends React.Component{
                     <img onClick={this.sendtoUserShow} className="follower-image" src={this.props.follow.photoUrl}/>
                     : <img className="default-image" src={window.pinface} />}
                     <div className="followindexitem-name">{this.props.follow.f_name + " " + this.props.follow.l_name}</div> 
-                    <div className="followindexitem-followers">2 boards · {this.props.follow.follower_ids.length} followers</div>
+                    <div className="followindexitem-followers">{this.props.follow.followed_board_ids.length + " " + " boards" } · {this.props.follow.follower_ids.length} followers</div>
                                
                     {this.props.currentUser.followed_user_ids.includes(this.props.follow.id) ?
                        <button onClick={this.handleUnfollow} className="unfollow-button">Unfollow</button> :
