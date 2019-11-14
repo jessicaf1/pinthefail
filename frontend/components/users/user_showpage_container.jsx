@@ -8,10 +8,10 @@ import { withRouter, Route, Redirect, Link, HashRouter, Switch } from 'react-rou
 export const mapStateToProps = (state, ownProps) => {
     debugger
     // const user = state.entities.users[ownProps.match.params.userId]
-    // let user = state.entities.users[ownProps.match.params.userId] || -0 
+    let user = state.entities.users[ownProps.match.params.userId] || -0 
     // let userId = parseInt(ownProps.location.pathname.split('/')[4]);
-    // let user = state.entities.users[userId]
-    const user = state.entities.users[state.session.currentUser] || -0
+    // let user = state.entities.users[userId] 
+    // const user = state.entities.users[state.session.currentUser] || -0
     return {user}
 }
 

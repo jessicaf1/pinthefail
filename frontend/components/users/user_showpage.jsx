@@ -18,12 +18,12 @@ class UserShowPage extends React.Component {
         this.state = this.props.user 
     }
 
-// componentDidMount(){
-//     debugger
-//     this.props.fetchUsers()
-//     // this.props.fetchUser(this.props.match.params.userId)
+componentDidMount(){
+    debugger
+    this.props.fetchUsers()
+    // this.props.fetchUser(this.props.match.params.userId)
    
-// }
+}
 
 sendToEdit(e){
     e.preventDefault();
@@ -55,9 +55,9 @@ sendToEdit(e){
 
 
 render(){
-    // if(this.props.user === undefined){
-    //     return null 
-    // }
+    if(this.props.user === undefined){
+        return null 
+    }
 
     debugger 
     // let path = this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split.length + 1).toString();

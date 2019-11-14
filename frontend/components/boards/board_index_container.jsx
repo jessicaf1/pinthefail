@@ -10,8 +10,8 @@ import { withRouter, Route, Redirect, Link, HashRouter, Switch } from 'react-rou
 
 const mapStateToProps = (state, ownProps) => {
    let boards = Object.values(state.entities.boards);
-   let currentUser = state.entities.users[state.session.currentUser] || -0;
-//    let currentUser = state.entities.users[ownProps.match.params.userId] || -0; 
+//    let currentUser = state.entities.users[state.session.currentUser] || -0;
+   let currentUser = state.entities.users[ownProps.match.params.userId] || -0; 
 //    let pins = Object.values(state.entities.pins)
    debugger
     return {
