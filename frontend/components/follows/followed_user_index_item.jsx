@@ -10,7 +10,7 @@ class FollowedUserIndexItem extends React.Component{
         this.handleUnfollow = this.handleUnfollow.bind(this);
         this.displayMessage = this.displayMessage.bind(this);
         this.undisplayMessage = this.undisplayMessage.bind(this);
-        this.sendtoUserShow = this.sendtoUserShow.bind(this);
+        // this.sendtoUserShow = this.sendtoUserShow.bind(this);
         this.state = {message: false}
     }
 
@@ -57,9 +57,9 @@ class FollowedUserIndexItem extends React.Component{
         this.displayMessage()
     }
 
-    sendtoUserShow(){
-        this.props.history.push(`users/${this.props.follow.id}/boards`)
-    }
+    // sendtoUserShow(){
+    //     this.props.history.push(`users/${this.props.follow.id}/boards`)
+    // }
 
 
     render(){
@@ -75,7 +75,7 @@ class FollowedUserIndexItem extends React.Component{
                              : null}
 
                 {this.props.follow.photoUrl !== undefined ? 
-                    <img onClick={this.sendtoUserShow} className="follower-image" src={this.props.follow.photoUrl}/>
+                    <img className="follower-image" src={this.props.follow.photoUrl}/>
                     : <img className="default-image" src={window.pinface} />}
                     <div className="followindexitem-name">{this.props.follow.f_name + " " + this.props.follow.l_name}</div> 
                     <div className="followindexitem-followers">2 boards · {this.props.follow.follower_ids.length} followers</div>
