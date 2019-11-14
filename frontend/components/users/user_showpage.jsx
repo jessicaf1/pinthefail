@@ -3,7 +3,8 @@ import NavBarContainer from '../navbar/nav_bar_container';
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 import UserDropDownContainer from './user_drop_down_container';
 import BoardIndexContainer from '../boards/board_index_container'; 
-import PinsIndexContainer from '../pins/pin_index_container'
+import PinsIndexContainer from '../pins/pin_index_container';
+
 
 class UserShowPage extends React.Component {
     constructor(props){
@@ -19,7 +20,9 @@ class UserShowPage extends React.Component {
 
 // componentDidMount(){
 //     debugger
-//     this.props.fetchUser(this.props.match.params.userId)
+//     this.props.fetchUsers()
+//     // this.props.fetchUser(this.props.match.params.userId)
+   
 // }
 
 sendToEdit(e){
@@ -52,6 +55,10 @@ sendToEdit(e){
 
 
 render(){
+    // if(this.props.user === undefined){
+    //     return null 
+    // }
+
     debugger 
     // let path = this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split.length + 1).toString();
 return(

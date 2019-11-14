@@ -173,7 +173,7 @@ body {
     position: sticky;
 }
 
-::placeholder {
+ ::placeholder {
     color: #bfbfbf;
     font-size: 20px;
     font-weight: normal;
@@ -784,6 +784,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 11px;
+    animation: .8s ease 0s 1 growdiv;
 }
 
 .boards-index-item:hover {
@@ -791,6 +792,64 @@ body {
     border: 2px solid rgb(219, 217, 217);
     background: rgb(219, 217, 217);
     border-radius: 9px;
+    /* -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1); */
+    /* animation: moveit 5s infinite; */
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    /* 50%, */
+    100% {
+        -webkit-transform: translateY(0);
+    }
+    /* 40% {
+        -webkit-transform: translateY(-60px);
+    } */
+    50% {
+        -webkit-transform: translateY(-30px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-40px);
+    }
+    60% {
+        transform: translateY(-25px);
+    }
+}
+
+
+/*
+ * Adding the animation to our element
+*/
+
+
+/* @keyframes growdiv {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+} */
+
+@keyframes moveit {
+    from {
+        top: 0px;
+    }
+    to {
+        top: 800px;
+    }
 }
 
 .index-list-item {
@@ -976,7 +1035,10 @@ body {
     opacity: .5;
     cursor: pointer;
     background: rgba(0, 255, 255, .5);
-    border-radius: 9px;
+    /* border-radius: 9px;
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01); */
 }
 
 #grid-item-image:hover {
@@ -1711,4 +1773,41 @@ body {
     align-self: center;
     font-size: 12px;
     font-weight: bold;
+}
+
+.follow-message {
+    background: rgb(192, 190, 190);
+    padding: 40px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    animation: .8s linear 0s 1 followed;
+    position: absolute;
+    left: 600px;
+    top: 32%;
+}
+
+
+/* @keyframes followed {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+} */
+
+@keyframes followed {
+    0% {
+        top: 0%;
+    }
+    25% {
+        top: 8%;
+    }
+    50% {
+        top: 16%;
+    }
+    100% {
+        top: 32%;
+    }
 }

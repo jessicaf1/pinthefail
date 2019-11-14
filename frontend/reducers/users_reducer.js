@@ -10,21 +10,21 @@ const usersReducer = (state = {}, action) => {
     switch (action.type) {
 
         case RECEIVE_CURRENT_USER:
-            debugger
+            // debugger
             return Object.assign({}, state, {
                 [action.payload.user.id]: action.payload.user
             }, action.payload.followers, action.payload.followed_boards, action.payload.followed_users);
         case RECEIVE_USER:
-            debugger
+            // debugger
             return Object.assign({}, state, {
                 [action.user.id]: action.user
             }, action.user.followers);
         case RECEIVE_USERS:
-            debugger
+            // debugger
             return action.users;
         case REMOVE_FOLLOW:
             let newState = Object.assign({}, state);
-            debugger
+            // debugger
 
             let follower = newState[action.follow.follower_id]
             let followable = newState[action.follow.followable_id]

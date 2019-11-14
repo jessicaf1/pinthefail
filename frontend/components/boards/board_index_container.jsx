@@ -5,11 +5,13 @@ import {fetchBoards, updateBoard } from '../../actions/board_actions';
 import {openModal} from '../../actions/modal_actions';
 import { fetchPin, fetchPins } from '../../actions/pin_actions'
 import { fetchBoardPins } from '../../actions/board_pin_actions';
+import { withRouter, Route, Redirect, Link, HashRouter, Switch } from 'react-router-dom';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
    let boards = Object.values(state.entities.boards);
    let currentUser = state.entities.users[state.session.currentUser] || -0;
+//    let currentUser = state.entities.users[ownProps.match.params.userId] || -0; 
 //    let pins = Object.values(state.entities.pins)
    debugger
     return {
@@ -30,4 +32,4 @@ const mapDispatchToProps = dispatch => {
     } 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BoardIndex)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardIndex))

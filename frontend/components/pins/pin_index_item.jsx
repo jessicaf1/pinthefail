@@ -12,13 +12,12 @@ import PinDropDownContainer from './pin_drop_down_form_container'
          this.MouseHoverIn = this.MouseHoverIn.bind(this);
          this.MouseHoverOut = this.MouseHoverOut.bind(this);
          this.MouseImageHover = this.MouseImageHover.bind(this);
-        this.MouseImageHoverOut = this.MouseImageHoverOut.bind(this);
-        // this.setHoveredPinId = this.setHoveredPinId.bind(this);
+         this.MouseImageHoverOut = this.MouseImageHoverOut.bind(this);
          this.state = {
              isHovering: false, 
              isHoveringOnThumb: false
          }
-        //  this.sendToPinShow = this.sendToPinShow.bind(this);
+
      }
 
      toggleHoverState(state) {
@@ -34,61 +33,31 @@ import PinDropDownContainer from './pin_drop_down_form_container'
      }
 
      MouseHoverIn(e) {
-        debugger
-        // console.log(e.relatedTarget)
             this.props.setHoveredPinId(this.props.pin.id)
             this.setState((state) => {return {isHovering: true}})
      }
 
      MouseHoverOut() {
-        //  debugger
+ 
         this.setState(state => state.isHoveringOnThumb === true ?
         {isHovering: true }
         :
         {isHovering: false}
         )
-        //  if (this.state.isHoveringOnThumb === true){
-        //  this.setState({isHovering: true})
-        //  } 
-        //  else {
-            //  this.setState({isHovering: false}); 
-         }
-    
-// if ! (hovering on image && hovering on icon): dont show the icon
-//  if hovering on icon but not image: then allow click action to open modal
+    }
+
      MouseImageHoverOut() {
-        //  debugger
          this.setState({isHoveringOnThumb: false});
          this.setState(state => state.isHovering === true?
             {isHovering: true}
             :
             {isHovering: false}
             )
-
-        //  if(this.state.isHovering === true){
-        //      this.setState({isHovering: true})
-        //  }
-        //  else{
-        //      this.setState({isHovering: false})
-        //  }
-        //  debugger
      }
 
      MouseImageHover(){
-         debugger
-
-
         this.setState((state) => {return {isHovering: true}})
         this.setState((state) => {return {isHoveringOnThumb: true}})
-
-        //  this.setState({isHoveringOnThumb: true})
-        //  this.setState({isHovering: true})
-        //  if (state.isHovering === true){
-        //  this.setState({isHovering: true})
-        //  } 
-        //  else {
-        //      this.setState({isHovering: false})
-        //  }
      }
 
      sendToPinShow(e) {
@@ -98,41 +67,25 @@ import PinDropDownContainer from './pin_drop_down_form_container'
     
     stopModal(e) {
         e.stopPropagation()
-        // this.MouseImageHover();
         this.props.openModal(this.props.pin.id)
-
-        this.setState({ isHovering: false })
-        debugger
-       
-        // this.props.history.push("/")
-  
+        this.setState({ isHovering: false })  
     }
 
     stopModal2(e) {
         e.stopPropagation()
         this.MouseImageHover();
         this.props.openModal2(this.props.pin.id)
-
         this.setState({ isHovering: false })
-        debugger
-       
-        // this.props.history.push("/")
-  
     }
 
 
      render() {
      return (
          <div className="grid-div">
-         
-             
-             <img   onMouseEnter={this.MouseHoverIn}
-             onMouseOut={this.MouseHoverOut} 
-            
-                 
-             onClick={() => {
+             <img onMouseEnter={this.MouseHoverIn}
+                  onMouseOut={this.MouseHoverOut}     
+                 onClick={() => {
                 
-                // this.toggleHoverState(this.state)
                 this.props.history.push(`/users/${this.props.currentUser.id}/pins/${this.props.pin.id}`)
                 } 
             }

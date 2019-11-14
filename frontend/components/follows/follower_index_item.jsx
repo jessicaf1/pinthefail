@@ -1,11 +1,26 @@
 
 import React from 'react';
+// import { withRouter, Route, Redirect, Link, HashRouter, Switch } from 'react-router-dom';
+
 
 class FollowerIndexItem extends React.Component{
     constructor(props){
         super(props)
         this.handleFollow = this.handleFollow.bind(this);
         this.handleUnfollow = this.handleUnfollow.bind(this);
+        this.displayMessage = this.displayMessage.bind(this);
+        this.undisplayMessage = this.undisplayMessage.bind(this);
+        this.state = {message: false}
+    }
+
+    displayMessage(){
+        debugger
+        this.setState({message: true}),
+        setTimeout(this.undisplayMessage, 2000)
+    }
+
+    undisplayMessage(){
+        this.setState({message: false})
     }
 
     handleUnfollow(e){
@@ -27,7 +42,8 @@ class FollowerIndexItem extends React.Component{
         let follow = {follower_id: this.props.currentUser.id, followable_id: this.props.follower.id, followable_type: 'User'}
         // debugger
         // let payload = {follow: follow, user: this.props.currentUser}
-        this.props.createFollow(follow)
+        this.props.createFollow(follow),
+        this.displayMessage()
     }
 
     render(){
@@ -36,7 +52,9 @@ class FollowerIndexItem extends React.Component{
     <div className="follow-list">
         <div className="follow-list-items">
            {/* <div className="followindexitem-name">{this.props.follower.l_name}</div> */}
-
+           {this.state.message === true ? 
+                        <div className="follow-message">you are now following {this.props.follower.f_name}!</div>
+                             : null}
            {this.props.follower.photoUrl !== undefined ? 
             <img className="follower-image" src={this.props.follower.photoUrl}/>
             : <img className="default-image" src={window.pinface} />}

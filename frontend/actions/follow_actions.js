@@ -34,14 +34,14 @@ export const fetchFollows = () => {
 }
 
 export const createFollow = (follow) => {
-    debugger
+    // debugger
     return dispatch => {
         return APIUtil.createFollow(follow).then(follow => dispatch(receiveFollow(follow)))
     }
 }
 
 export const deleteFollow = (follow) => {
-    debugger
+    // debugger
     return dispatch => {
         return APIUtil.deleteFollow(follow).then(follow => dispatch(removeFollow(follow)))
     }
