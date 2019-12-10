@@ -27,7 +27,7 @@ https://pinthefail.herokuapp.com/#/
 * CSS
 
 ### Code Challenges + Solutions  
-* One challenge I faced was in the hovering of the pencil and thumb images on each pin, which give the user the ability to edit pins and pin them to boards, respectively. I needed to stop propagation so that these buttons did not redirect to the pin show page; additonally, I needed to ensure that these buttons did not hover on more than one image at once despite the absolute positioning of these buttons on the page.  To that end, I used conditionals checking the state, and passed in the pin ID as props.
+* One challenge I faced was in the hovering of the pencil and thumb images on each pin, which give the user the ability to edit pins and pin them to boards, respectively. I needed to stop propagation so that these buttons did not redirect to the pin show page; additonally, I needed to ensure that these buttons did not hover on more than one image at once despite the absolute positioning of these buttons on the page.  To that end, I used conditionals to check the state, JS event handlers to handle the hover, and the pin Id as a prop to verify uniqueness.
 ```
      MouseImageHoverOut() {
          this.setState({isHoveringOnThumb: false});
