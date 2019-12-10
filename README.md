@@ -27,16 +27,40 @@ https://pinthefail.herokuapp.com/#/
 * CSS
 
 ### Code Challenges + Solutions  
-* In order to be able to update a pin's boards, I needed to adjust the props being sent in to the modal.  
+* One challenge I faced was in the hovering of the pencil and thumb images on each pin, which give the user the ability to edit pins and pin them to boards, respectively. I needed to stop propagation so that these buttons did not redirect to the pin show page; additonally, I needed to ensure that these buttons did not hover on more than one image at once despite the absolute positioning of these buttons on the page.  To that end, I used conditionals checking the state, and passed in the pin ID as props.
+```
+     MouseImageHoverOut() {
+         this.setState({isHoveringOnThumb: false});
+         this.setState(state => state.isHovering === true?
+            {isHovering: true}
+            :
+            {isHovering: false}
+            )
+     }
+
+     MouseImageHover(){
+        this.setState((state) => {return {isHovering: true}})
+        this.setState((state) => {return {isHoveringOnThumb: true}})
+     }
 
 ```
-case 'savePinToBoard':
-      debugger
-      component = <PinToBoardContainer pinId={modal.props}/>; 
-      break; 
-    case 'editPin':
-      component = <PinEditFormContainer pinId={modal.props}/>;
-      break;
+```
+           <img onMouseEnter={this.MouseHoverIn}
+                  onMouseOut={this.MouseHoverOut}     
+                 onClick={() => {
+                
+                this.props.history.push(`/users/${this.props.currentUser.id}/pins/${this.props.pin.id}`)
+                } 
+            }
+                     className="grid-item" src={this.props.pin.photoUrl} alt="" />  
+          
+             { (this.state.isHovering && this.props.pin.id === this.props.hoveredPinId) ? <img img id="grid-item-image"  src={window.logo}  onMouseEnter={this.MouseImageHover} 
+                                                                                        onMouseOut={this.MouseImageHoverOut} 
+                                                                                        onClick={this.stopModal}/> : null } 
+                
+                { (this.state.isHovering && this.props.pin.id === this.props.hoveredPinId) ? <img img id="grid-item-image2"  src={window.pencil}  onMouseEnter={this.MouseImageHover} 
+                                                                                        onMouseOut={this.MouseImageHoverOut} 
+                                                                                        onClick={this.stopModal2}/> : null } 
 ```
 * To allow users to follow both other users and boards, and conserve space while improving scalability, I used polymorphic associations on the back end. 
 ```
