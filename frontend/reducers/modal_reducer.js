@@ -6,7 +6,7 @@ export default function modalReducer(state = null, action) {
 
         case OPEN_MODAL:
             debugger
-            return action.modal;
+            return {type: action.modal, props: action.props};
         case CLOSE_MODAL:
             return null;
         default:

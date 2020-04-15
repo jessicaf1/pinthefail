@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
+import PinDropDownContainer from './pin_drop_down_form_container';
+
 
 class CreatePinForm extends React.Component {
     constructor(props){
@@ -7,12 +9,13 @@ class CreatePinForm extends React.Component {
         super(props);
         
         // console.log(this.props.currentUser)
-        this.state = {...this.props.pin, photoFile:null, photoUrl: null};
+        this.state = {...this.props.pin, photoFile:null, photoUrl: null, boardId: null};
         debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.chooseBoard = this.chooseBoard.bind(this);
         
     }
 
@@ -22,21 +25,26 @@ class CreatePinForm extends React.Component {
         };
     }
 
-    handleSubmit(e){
+    chooseBoard(boardId){
+       debugger
+        this.setState({ boardId })
+  
+    }
+
+    handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
         formData.append('pin[name]', this.state.name); 
         formData.append('pin[id]', this.state.id); 
-        formData.append('pin[link_url]', this.state.name); 
+        formData.append('pin[link_url]', this.state.link_url); 
+        
         if (this.state.photoFile) {
             formData.append('pin[photo]', this.state.photoFile);
         }
-     this.props.createPin(formData).then(alert("pin saved!"))
-    }
-
+        debugger
+        this.props.createPin(formData, this.state.boardId).then(() => this.props.history.push(`/users/${this.props.user.id}/pins`))
+    } 
     handleFile(e){
-        // e.preventDefault; 
-        //photoFile - file //photo_url - reader reading file for us 
 
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
@@ -60,9 +68,13 @@ class CreatePinForm extends React.Component {
     render(){
         return(
         <div>   
+            <div className="pin-cf-big">
             <form className="pin-cf">
                     {/* <div className="box"></div> */}
-                    <button className="pin-button" onClick={this.handleSubmit}>Save</button>
+                    <PinDropDownContainer version={"new"} history={this.props.history.location.pathname.split('/').slice(this.props.history.location.pathname.split('/').length - 1) } chooseBoard={this.chooseBoard}/> 
+                    
+                    <button className="pin-button-cf" onClick={this.handleSubmit}>Save</button>
+                    <button id="pin-button-empty"></button>
                         <label className="pin-cf-t">
                         <input placeholder="Add your title" className="pin-cf-tb" type="text" value={this.state.name} onChange={this.handleInput('name')}/>
                         </label>
@@ -70,6 +82,7 @@ class CreatePinForm extends React.Component {
                     <div className="uploadpic">Upload picture here</div>
                     <img className="file-pic"src={this.state.photoUrl} alt=""/>
             </form>
+            </div>
         </div>
         ) 
     } 

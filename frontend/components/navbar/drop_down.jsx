@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './nav_bar';
+import {Link, Route, HashRouter, Switch, withRouter} from 'react-router-dom';
 
 
 class DropDown extends React.Component{
@@ -19,7 +20,7 @@ class DropDown extends React.Component{
   }
     
   closeMenu(){
-    if (!this.dropdownMenu.contains(event.target)){
+    if (this.dropdownMenu && !this.dropdownMenu.contains(event.target)){
 
     this.setState({ showMenu: false}, ()=> {
       document.removeEventListener('click', this.closeMenu)
@@ -29,7 +30,8 @@ class DropDown extends React.Component{
 
   logout(){
     debugger
-    this.props.logout();
+    this.props.logout()
+    .then(() => this.props.history.push("/"))
   }
 
   render(){
@@ -60,4 +62,4 @@ class DropDown extends React.Component{
   }
 }
 
-export default DropDown; 
+export default withRouter(DropDown); 

@@ -5,14 +5,18 @@ import LoginContainer from '../components/session/login_container';
 import SignupContainer from '../components/session/signup_container';
 import BoardCreateFormContainer from '../components/boards/board_create_form_container';
 import PinEditFormContainer from '../components/pins/pin_edit_form_container'
+import BoardEditFormContainer from '../components/boards/board_edit_container'
+import PinToBoardContainer from '../components/pins/pin_to_board_container'
+import PinDeleteContainer from '../components/pins/pin_delete_container'
+import BadPinBoard from '../components/pins/bad_pin_board'
 
-function Modal({modal, closeModal}) {
+function Modal({modal, props, closeModal}) {
   if (!modal) {
     return null;
   }
   let component;
   // debugger
-  switch (modal) {
+  switch (modal.type) {
     case 'login':
       // debugger
       component = <LoginContainer />;
@@ -24,18 +28,34 @@ function Modal({modal, closeModal}) {
     case 'createBoard':
       // debugger
       component = <BoardCreateFormContainer/>;
-      break; 
-    case 'editPin':
-      component = <PinEditFormContainer/>;
+      break;
+    case 'updateBoard':
+      component = <BoardEditFormContainer/>;
       break;  
     case 'savePin':
       component = <SavePinFormContainer/>;  
+      break; 
+    case 'savePinToBoard':
+      debugger
+      component = <PinToBoardContainer pinId={modal.props}/>; 
+      break; 
+    case 'editPin':
+      component = <PinEditFormContainer pinId={modal.props}/>;
+      break; 
+    case 'deletePin':
+      component = <PinDeleteContainer pinId={modal.props}/>;
+      break; 
+    case 'badPinBoard':
+      component = <BadPinBoard/>
       break; 
     default:
       return null;
   }
   return (
-    <div id="modal-background" onClick={closeModal}>
+    <div id="modal-background" onClick={(e) => {
+      debugger
+      e.stopPropagation();
+      closeModal(); }}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         { component }
       </div>

@@ -3,7 +3,7 @@ import NavBarContainer from './navbar/nav_bar_container';
 //import SignupContainer from './session/signup_container';
 //import LoginContainer from './session/login_container';
 import { Route, Redirect, Link, HashRouter, Switch } from 'react-router-dom';
-//import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from '../components/modal';
 //import DropDownContainer from './navbar/drop_down_container'
 import Background from './background'
@@ -14,6 +14,11 @@ import PinsIndexContainer from './pins/pin_index_container'
 import BoardShowContainer from './boards/board_show_container'
 import BoardCreateFormContainer from './boards/board_create_form_container'
 import PinsCreateFormContainer from './pins/pin_create_form_container'
+import PinShowContainer from './pins/pin_show_container'
+import FollowingContainer from './follows/following_container'
+import FollowingBoardsContainer from './follows/following_boards_container'
+import FollowersContainer from './follows/followers_container'
+import FollowFeedContainer from './follows/follow_feed_container'
 
 const App = () => (
  <div>
@@ -22,15 +27,24 @@ const App = () => (
         <NavBarContainer/>
     </header>
     <Switch>
-       <Route exact path="/" component={Background}/> 
-        <Route path="/users/pinBuilder" component={PinsCreateFormContainer} /> 
-        <Route path="/users/:userId/boards/:boardId" component={BoardShowContainer}/>
-        <Route path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
-        <Route path="/users/:userId/boards" component={BoardIndexContainer}/>
-            <Route path="/users/:userId/pins" component={PinsIndexContainer} />
-            <Route path="/users/:userId/edit" component={EditFormContainer} />
-        <Route path="/users/:userId" component={BoardIndexContainer} />
-       
+       <AuthRoute exact path="/" component={Background}/> 
+        
+        <ProtectedRoute path="/users/:userId/boards/:boardId" component={BoardShowContainer}/>
+        <ProtectedRoute path="/users/pinBuilder" component={PinsCreateFormContainer} /> 
+        <ProtectedRoute path="/users/:userId/boards/new" component={BoardCreateFormContainer}/>
+        <ProtectedRoute path="/users/:userId/boards" component={BoardIndexContainer}/>
+            
+        <ProtectedRoute path="/users/:userId/followers" component={FollowersContainer}/>
+        <ProtectedRoute path="/users/:userId/following" component={FollowingContainer}/>
+        <ProtectedRoute path="/users/:userId/followingboards" component={FollowingBoardsContainer}/>
+        <ProtectedRoute path="/users/following" component={FollowFeedContainer}/>
+            
+            
+            <ProtectedRoute path="/users/:userId/pins/:pinId" component={PinShowContainer} />
+            <ProtectedRoute path="/users/:userId/pins" component={PinsIndexContainer} />
+            <ProtectedRoute path="/users/:userId/edit" component={EditFormContainer} />
+        <ProtectedRoute path="/users/:userId" component={BoardIndexContainer} />
+   
        
     </Switch>
 </div>

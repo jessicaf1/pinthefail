@@ -10,9 +10,9 @@ class SessionForm extends React.Component {
             password: ''
         };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleSubmitdemoUser = this.handleSubmitdemoUser.bind(this);
+    // this.handleSubmitdemoUser = this.handleSubmitdemoUser.bind(this);
     //this.renderEmailblank = this.renderEmailblank.bind(this)
-    // this.handledemoUser = this.handledemoUser.bind(this)
+    this.handledemoUser = this.handledemoUser.bind(this)
     }
 
 handleInput(field) {
@@ -31,32 +31,34 @@ handleSubmit(e) {
     this.props.processForm(this.state).then(this.props.closeModal);
 }
 
-// handledemoUser(e){
-//     e.preventDefault();
-//     this.setState({ email:'', password:''} )
+handledemoUser(e){
+    e.preventDefault();
+    this.setState({ email:'', password:''} )
+    let demoUserEmail = 'bwaldorf@aol.com'.split("");
+    let demoPassword = 'nancy5'.split("")
 
-//     let demoUserEmail = 'bwaldorf@aol.com'.split("");
-//     let demoPassword = 'nancy5'.split("")
-
-//     const animateLogin = () => {
-//         const int = setInterval(()=> {
-//             let email = this.state.email;
-//             let password = this.state.password;
-
-//             if (demoUserEmail.length > 0){
-//                 email += demoUserEmail.shift();
-//                 this.setState({email})
-//             } else if (demoPassword.length > 0){
-//                 password += demoPassword.shift();
-//                 this.setState({password});
-//             } else {
-//                 clearInterval(int);
-//                 this.props.processForm({email: 'bwaldorf@aol.com', password: 'nancy5'}).then(this.props.closeModal)
-//             }
-//         }, 30);
-//     }
-// animateLogin();
-// }
+    const animateLogin = () => {
+        const int = setInterval(()=> {
+            let email = this.state.email;
+            let password = this.state.password;
+            let times = 0;
+            
+            if (times < demoUserEmail.length){
+                email += demoUserEmail.shift();
+                times += 1;
+                this.setState({email: email})
+            } else if (times < (demoPassword.length + demoUserEmail.length)){
+                password += demoPassword.shift();
+                times += 1;
+                this.setState({password: password});
+            } else {
+                clearInterval(int);
+                this.props.processForm({email: 'bwaldorf@aol.com', password: 'nancy5'}).then(this.props.closeModal)
+            }
+        }, 30);
+    }
+animateLogin();
+}
 
     handleSubmitdemoUser(e) {
         debugger
@@ -64,6 +66,8 @@ handleSubmit(e) {
         debugger
         this.props.processForm(this.props.demouser).then(this.props.closeModal);
     }
+
+  
 
 componentDidMount(){
     document.getElementById('modal-background').removeEventListener('click', this.props.closeModal)
@@ -99,13 +103,17 @@ componentDidMount(){
         if (this.props.errors.includes(error) && error === "Password is too short (minimum is 6 characters)" && this.props.formType === 'signup') {
             return "Your password is too short! You need 6+ characters."
         }
+        if (this.props.errors.includes(error) && error === "invalid user") {
+            return "Your password is too short! You need 6+ characters"
+        }
     }
 
    render(){
        const emailError = "Email can't be blank";
        const passwordError = "Password is too short (minimum is 6 characters)"
        const genericError = "invalid Email and/or Password"
-    
+       const genericError2 = "invalid user"
+
        let disp;
        let buttontext; 
        if (this.props.formType === 'login'){
@@ -131,7 +139,7 @@ componentDidMount(){
 
       let demoU;
       if (this.props.formType === 'login') {
-          demoU = <input className="session-button" type="submit" value="demo user login" onClick={this.handleSubmitdemoUser} />
+          demoU = <input className="session-button" type="submit" value="demo user login" onClick={this.handledemoUser} />
       }
     return(
        
@@ -153,6 +161,7 @@ componentDidMount(){
                 <label>
                     <input type="password" className="field" placeholder="password" value={this.state.password} onChange={this.handleInput('password')}/>
                         <p className="err">{this.errorExists(passwordError)}</p> 
+                        <p className="err">{this.errorExists(genericError2)}</p>
                 </label>
             </div>
             <div className="bottom">

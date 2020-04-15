@@ -9,18 +9,25 @@ class PinIndex extends React.Component {
     constructor(props){
         super(props)
         debugger
+        this.state = { hoveredPinId: null }
+        this.setHoveredPinId = this.setHoveredPinId.bind(this)
     }
 componentDidMount(){
         this.props.fetchPins()
     }
 //am i fetching pins here of a specific user or of the user's boards? 
 
+setHoveredPinId(id){
+    this.setState({hoveredPinId: id})
+}
+
+
 render(){
     let pins = this.props.pins.map(pin => {
-        debugger
-        return <PinIndexItem pin={pin} key={pin.id}/>
+        // debugger
+        return <PinIndexItem pin={pin} key={pin.id} setHoveredPinId={this.setHoveredPinId} hoveredPinId={this.state.hoveredPinId}/>
     })
-    debugger 
+    // debugger 
     return(
         <div> 
             {this.props.user? <UserShowContainer /> : null} 

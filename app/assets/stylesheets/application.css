@@ -14,22 +14,12 @@
  *= require_self
  */
 
-#modal-background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 12;
-}
-
 .modal-child {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 16;
+    z-index: 91;
 }
 
 body {
@@ -65,18 +55,19 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 390px;
+    width: 380px;
     height: 550px;
 }
 
 .nav-bar {
+    z-index: 14;
     display: flex;
     justify-content: flex-end;
     position: fixed;
     right: 10px;
     width: 100%;
     align-items: center;
-    height: 60px;
+    height: 70px;
     background: white;
     top: 0;
     border-bottom: 1px solid lightgray;
@@ -90,6 +81,10 @@ body {
     height: 30px;
     font-size: 15px;
     font-weight: bold;
+    margin-top: 10px;
+    text-decoration-line: none;
+    margin-right: 2px;
+    padding-left: 7px;
 }
 
 .spacebar {
@@ -178,7 +173,7 @@ body {
     position: sticky;
 }
 
-::placeholder {
+ ::placeholder {
     color: #bfbfbf;
     font-size: 20px;
     font-weight: normal;
@@ -230,6 +225,7 @@ body {
     position: absolute;
     left: 5%;
     position: absolute;
+    top: 5px;
 }
 
 .spanner {
@@ -269,6 +265,15 @@ body {
 .container {
     position: relative;
 }
+
+.pincontainer {
+    position: relative;
+}
+
+
+/* #pincontainer-menu {
+    position: absolute;
+} */
 
 .menubutton {
     background: white;
@@ -322,10 +327,12 @@ body {
 }
 
 .err {
-    font-size: 10px;
+    font-size: 12px;
     color: red;
     position: absolute;
     margin: 0px;
+    bottom: -20%;
+    z-index: 100;
 }
 
 .showpage {
@@ -349,11 +356,20 @@ body {
 
 #showpage-boards {
     margin-left: 5px;
+    text-decoration: none;
+    color: gray;
+    z-index: 12;
 }
 
 #showpage-boards:hover {
     text-decoration: underline;
     color: black;
+}
+
+#showpage-pins {
+    text-decoration: none;
+    color: gray;
+    z-index: 12;
 }
 
 #showpage-pins:hover {
@@ -365,6 +381,41 @@ body {
     font-size: 36px;
     font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 500;
+    margin-bottom: -2px;
+}
+
+.showpage-follows {
+    padding-left: 4px;
+    display: inline;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#s-follows {
+    display: flex;
+}
+
+#s-follows:hover {
+    cursor: pointer;
+}
+
+.showpage-follows:hover .showpage-follows2:hover {
+    cursor: pointer;
+}
+
+.showpage-follows2 {
+    display: inline;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#showpage-description {
+    font-size: 12px;
+    padding: 4px;
+    margin-bottom: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .showpage-button {
@@ -374,11 +425,35 @@ body {
 }
 
 .showpage-image {
-    width: 100px;
-    ;
+    width: 120px;
+    height: 120px;
     float: right;
-    margin-right: 50px;
+    margin-right: 4%;
     margin-top: -90px;
+    margin-left: 30%;
+    border-radius: 53%;
+    overflow: hidden;
+}
+
+.showpage-image2 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    right: 14%;
+    top: 21%;
+}
+
+#user-pic {
+    /* display: inline; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: top;
 }
 
 .showpage-pencil {
@@ -409,15 +484,24 @@ body {
     width: 100%
 }
 
+
+/* #pin-dd-e {
+    position: absolute;
+    top: 20%
+} */
+
 .edit-name {
     height: 40px;
-    border-radius: 3px;
+    border-radius: 8px;
     border-width: 1px;
     border-color: #8e8e8e;
-    display: block;
-    width: 290px;
+    width: 299px;
     font-size: 12px;
-    padding-left: 16px;
+    display: inline;
+}
+
+.edit-name-description {
+    margin-left: -5px;
 }
 
 #edit-header {
@@ -440,6 +524,66 @@ body {
     font-size: 16px;
     color: grey;
     font-weight: 500;
+}
+
+.pin-edit-button-1 {
+    width: 80px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(80, 80, 80);
+    background: lightgray;
+    font-weight: 500;
+    margin-left: 5%;
+}
+
+#pin-boards {
+    position: absolute;
+    top: 20%;
+    list-style-type: none;
+    left: 48%;
+    z-index: 10;
+}
+
+#pin-photo {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    border-radius: 12px;
+    max-height: 400px;
+}
+
+#pin-boards-title {
+    position: absolute;
+    font-weight: bold;
+    top: 17%;
+    left: 48%;
+    list-style-type: none;
+    z-index: 10;
+    font-size: 20px;
+}
+
+.pin-edit-button {
+    width: 80px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: red;
+    font-weight: 500;
+    margin-left: 16px;
+}
+
+.pin-edit-button-1:hover {
+    background: rgba(71, 71, 71, 0.842);
+}
+
+.pin-edit-button:hover {
+    background: darkred;
 }
 
 .edit-button:hover {
@@ -486,6 +630,7 @@ body {
     position: sticky;
     top: 0;
     height: 20px;
+    z-index: 40;
 }
 
 .navLink {
@@ -552,28 +697,15 @@ body {
     background-color: white;
 }
 
-.grid-container {
-    column-count: 4;
-    column-gap: 1em;
-    margin-top: 65px;
-    margin-right: 40px;
-}
-
-.grid-item {
-    width: 100%;
-    display: inline-block;
-    border-radius: 9px;
-    margin: 0 0 1em;
-}
-
 .board-form {
+    position: relative;
     width: 520px;
     height: 290px;
     background: white;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: #333;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, "\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3", Hiragino Kaku Gothic Pro, "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33 \FF30\30B4\30B7\30C3\30AF", Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
@@ -604,10 +736,12 @@ body {
     width: 300px;
     height: 40px;
     border-radius: 10px;
+    font-size: 16px;
 }
 
 .form-input::placeholder {
     font-size: 14px;
+    color: lightgray;
 }
 
 .b-f-button {
@@ -632,10 +766,17 @@ body {
 .containerdd {
     position: absolute;
     background: white;
-    height: 80px;
+    height: 94px;
     width: 200px;
     box-shadow: 2px 2px 2px 2px lightgray;
     border-radius: 6px;
+    z-index: 100;
+}
+
+.boards-total {
+    margin-top: 60px;
+    /* z-index: -44; */
+    margin-bottom: -10%;
 }
 
 .boards-index-item {
@@ -644,16 +785,85 @@ body {
     height: 220px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding: 11px;
+    animation: .8s ease 0s 1 growdiv;
+}
+
+.boards-index-item:hover {
+    cursor: pointer;
+    border: 2px solid rgb(219, 217, 217);
+    background: rgb(219, 217, 217);
+    border-radius: 9px;
+    /* -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1); */
+    /* animation: moveit 5s infinite; */
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    /* 50%, */
+    100% {
+        -webkit-transform: translateY(0);
+    }
+    /* 40% {
+        -webkit-transform: translateY(-60px);
+    } */
+    50% {
+        -webkit-transform: translateY(-30px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-40px);
+    }
+    60% {
+        transform: translateY(-25px);
+    }
+}
+
+
+/*
+ * Adding the animation to our element
+*/
+
+
+/* @keyframes growdiv {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+} */
+
+@keyframes moveit {
+    from {
+        top: 0px;
+    }
+    to {
+        top: 800px;
+    }
 }
 
 .index-list-item {
-    width: 109px;
-    height: 95px;
+    width: 124px;
+    height: 107px;
+    border-radius: 8px;
 }
 
 .bi-title {
     font-size: 15px;
     font-weight: bold;
+    margin-left: 11px;
 }
 
 .bi {
@@ -667,7 +877,9 @@ body {
 .board-index {
     display: flex;
     flex-wrap: wrap;
-    margin-top: -6%;
+    margin-top: -10%;
+    margin-left: 0;
+    padding: 2%;
 }
 
 .pin-cf {
@@ -687,7 +899,11 @@ body {
     width: 350px;
     height: 50px;
     border: none;
-    border-bottom: 1px solid lightgray; 
+    border-bottom: 1px solid lightgray;
+    position: absolute;
+    top: 5%;
+    left: 45%;
+    font-size: 20px;
 }
 
 .pin-cf-input {
@@ -705,11 +921,25 @@ body {
     width: 85px;
     height: 53px;
     border-radius: 8px;
+    /* position: absolute;
+    top: 17%;
+    right: 27%; */
+    color: white;
+    font-size: 23px;
+    margin-left: 9%;
+}
+
+.pin-button-cf {
+    background: red;
+    width: 85px;
+    height: 53px;
+    border-radius: 8px;
     position: absolute;
-    top: 10%;
-    right: 20%;
-    color:  white;
-    font-size: 23px; 
+    top: 12%;
+    right: 44%;
+    color: white;
+    font-size: 23px;
+    margin-left: 9%;
 }
 
 
@@ -725,9 +955,9 @@ body {
     background: white;
     height: 400px;
     width: 300px;
-    
     content: 'click to upload'
 }
+
 
 /* .file::before {
     content: 'Upload Picture';
@@ -741,10 +971,13 @@ body {
 }
 
 .board-show-pics {
+    /* display: flex; */
     column-count: 4;
     column-gap: 1em;
     margin-top: 65px;
     margin-right: 40px;
+    padding-left: 63px;
+    padding-right: 63px;
 }
 
 .board-show-item {
@@ -757,23 +990,832 @@ body {
 .board-show-header {
     font-size: 24px;
     margin-top: 57px;
+    font-weight: bold;
 }
 
 .uploadpic {
     border: 2px dashed lightgray;
-    padding: 155px; 
-    position: absolute; 
-    left: 18%; 
+    padding: 155px;
+    padding-bottom: 301px;
+    position: absolute;
+    left: 18%;
+    top: 23%;
+    font-size: 16px;
+    color: gray;
 }
 
-.uploadpic::after{
+.uploadpic::after {
     content: hello
 }
 
-.file-pic{
+.file-pic {
     box-sizing: border-box;
-    width: 300px; 
+    width: 300px;
     position: absolute;
-    left: 23%; 
-    z-index: 90; 
+    left: 24%;
+    z-index: 90;
+}
+
+.grid-container {
+    column-count: 4;
+    column-gap: 1em;
+    margin-top: 65px;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+}
+
+.grid-item {
+    width: 100%;
+    display: inline-block;
+    border-radius: 9px;
+    margin: 0 0 1em;
+    display: block;
+    transition: opacity .3s linear;
+    background: rgba(0, 255, 255, .5);
+}
+
+.grid-item:hover {
+    opacity: .5;
+    cursor: pointer;
+    background: rgba(0, 255, 255, .5);
+    /* border-radius: 9px;
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01); */
+}
+
+#grid-item-image:hover {
+    opacity: .5;
+}
+
+#grid-item-image2:hover {
+    opacity: .5;
+}
+
+#grid-item-image {
+    /* display: none; */
+    position: absolute;
+    width: 32px;
+    height: 26px;
+    right: 7%;
+    top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background: red;
+    z-index: 12;
+    display: block;
+    transition: opacity .3s linear;
+}
+
+#grid-item-image2 {
+    width: 50px;
+    height: 43px;
+    border-radius: 12px;
+    position: absolute;
+    left: 9%;
+    top: 20px;
+    /* /* z-index: 18; */
+    display: block;
+    transition: opacity .3s linear;
+}
+
+.grid-div {
+    position: relative;
+    background: gray;
+    border-radius: 9px;
+}
+
+.grid-item:hover {
+    cursor: pointer;
+}
+
+.grid-div:hover {
+    cursor: pointer;
+}
+
+.grid-item:hover+img#grid-item-image {
+    display: block;
+}
+
+.bi-title-sub {
+    margin-left: 11px;
+}
+
+.board-show-header-container {
+    margin-left: 63px;
+    margin-bottom: -18px;
+}
+
+.loader,
+.loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+
+.containerdd-p {
+    width: 220px;
+    font-weight: bold;
+    min-height: 250px;
+    justify-content: space-around;
+}
+
+.board-list {
+    display: block;
+    margin-bottom: 9px;
+    /* position: relative; */
+}
+
+.boardlist1 {
+    position: relative;
+    width: 140px;
+}
+
+.board-list-items {
+    list-style-type: none;
+    display: inline-block;
+    position: absolute;
+}
+
+.board-list:hover {
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.boardlist1:hover {
+    cursor: pointer;
+}
+
+
+/* .board-list:hover::after {
+    /* content: '';
+    width: 18px;
+    height: 18px;
+    background: url(pencil.png) no-repeat center center fixed;
+    background-size: cover;
+    /* background: image-set('../assets/images/logo.png'); */
+
+
+/* position: absolute; */
+
+
+/* z-index: 12; */
+
+
+/* background: purple; */
+
+
+/* right: 0;
+    top: 0;
+    */
+
+
+/* } */
+
+#thumb-dd {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -40px;
+    top: 0;
+    z-index: 90;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+#selectButton {
+    border-radius: 1px solid black;
+    background: lightgray;
+    width: 260px;
+    height: 53px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    padding-top: 17px;
+    padding-bottom: 5px;
+    height: 31px;
+    margin-right: 9%;
+    margin-top: -13%;
+    /* position: absolute;
+    top: 12%;
+    left: 5
+    4%; */
+}
+
+#selectButton:hover {
+    cursor: pointer;
+}
+
+#selectButton2 {
+    border-radius: 1px solid black;
+    background: lightgray;
+    width: 180px;
+    height: 53px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    padding-top: 17px;
+    padding-bottom: 5px;
+    height: 31px;
+    margin-right: 9%;
+    /* position: absolute; */
+    top: 12%;
+    left: 54%;
+}
+
+#selectButton3 {
+    border-radius: 1px solid black;
+    background: lightgray;
+    width: 307px;
+    height: 53px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    padding-top: 17px;
+    padding-bottom: 5px;
+    height: 31px;
+    margin-right: 9%;
+    margin-left: 34px;
+}
+
+#selectButton:hover {
+    border: 1px solid black;
+}
+
+.save-form {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 500px;
+    width: 590px;
+    background: white;
+    border-radius: 12px;
+    justify-content: space-around;
+    position: relative;
+}
+
+.grid-item-pb {
+    width: 100%;
+    display: inline-block;
+    border-radius: 12px;
+    margin: 0 0 1em;
+    margin-left: 9%;
+}
+
+#save-pic {
+    max-width: 950%;
+    height: auto;
+    max-height: 370px;
+}
+
+.save-form-header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6%;
+    padding-right: 1%;
+}
+
+.hidden {
+    z-index: 0;
+}
+
+#modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 60;
+}
+
+#save-form-text {
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    padding-top: 14%;
+    padding-right: 4%;
+    align-self: center;
+}
+
+.save-form-bottom {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    padding-right: 7%;
+}
+
+#pin-show {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+#pin-edit {
+    position: absolute;
+    top: 16%;
+    width: 60px;
+    left: 10%;
+    z-index: 10;
+}
+
+#pin-edit:hover {
+    cursor: pointer;
+}
+
+#pin-name {
+    position: absolute;
+    top: 17%;
+    left: 19%;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#pin-dd {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+#pin-user {
+    position: absolute;
+    font-weight: bold;
+    top: 44%;
+    right: 46%;
+    z-index: 90;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#pin-description {
+    position: absolute;
+    z-index: 1;
+    top: 23%;
+    left: 19%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.edit-pin {
+    width: 720px;
+    height: 450px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+    /* padding-left: 6%; */
+    box-shadow: 4px 4px #303030;
+}
+
+#edit-photo {
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    border-radius: 6px;
+    margin-left: 16%;
+}
+
+.pin-edit-buttons {
+    display: flex;
+}
+
+.hiddenpin {
+    width: 350px;
+    background: white;
+    border: none;
+}
+
+#pin-button-empty {
+    width: 300px;
+    border: none;
+}
+
+#tester {
+    display: hidden;
+}
+
+.appear {
+    font-size: 200px;
+    color: red;
+}
+
+.deletePin {
+    height: 200px;
+    width: 400px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#deleteSubmit {
+    color: white;
+    background: red;
+    border-radius: 8px;
+    width: 100px;
+    height: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#deleteSubmit:hover {
+    background: darkred;
+}
+
+#deleteCancel {
+    color: #838383;
+    background: light gray;
+    border-radius: 8px;
+    width: 100px;
+    height: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#deleteCancel:hover {
+    background: darkgray;
+}
+
+.deletePin-h {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.deletePin-sub-h {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding-left: 14%;
+    padding-right: 12%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+@keyframes movenow {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.badpinboard {
+    width: 300px;
+    height: 100px;
+    background: #616060;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    animation: .8s ease 0s 1 movenow;
+}
+
+#badpinboard-h {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    transition: width 2s;
+}
+
+#badpinboard-b:hover {
+    background: darkred;
+}
+
+.pin-show-big {
+    background: white;
+    height: 900px;
+    width: 900px;
+    box-shadow: 8px 8px 8px 8px rgb(112, 112, 112);
+    border-radius: 16px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.pin-cf-big {
+    background: white;
+    width: 800px;
+    height: 900px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    box-shadow: 8px 8px 8px 8px rgb(112, 112, 112);
+    border-radius: 16px;
+}
+
+.edit-pin-top {
+    display: flex;
+}
+
+#edit-pin-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+#arrow {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    top: 4%;
+    left: 2%;
+    border-radius: 100px;
+}
+
+#arrow:hover {
+    border-radius: 100px;
+    background: red;
+    z-index: 90;
+    cursor: pointer;
+}
+
+#followfeed {
+    column-count: 4;
+    column-gap: 1em;
+    margin-top: 65px;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+}
+
+#followfeedtext {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    align-self: center;
+    position: absolute;
+    top: 8%;
+    left: 20%;
+}
+
+.follow-image {
+    width: 100%;
+    display: inline-block;
+    border-radius: 9px;
+    margin: 0 0 1em;
+    display: block;
+    transition: opacity .3s linear;
+    background: rgba(0, 255, 255, .5);
+}
+
+#x-cb {
+    position: absolute;
+    top: 12px;
+    right: 4%;
+    color: gray;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+#x-cb:hover {
+    cursor: pointer;
+}
+
+#pinboard-cancel {
+    position: absolute;
+    right: 4%;
+    top: 2%;
+    font-size: 23px;
+    color: gray;
+    font-weight: bold;
+}
+
+#pinboard-cancel:hover {
+    cursor: pointer;
+}
+
+#pinboard-title {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    top: 3%;
+}
+
+.edit-title {
+    display: flex;
+}
+
+.edit-category {
+    margin-left: 11px;
+    margin-right: 19px;
+    margin-top: 15px;
+}
+
+.edit-category-t {
+    margin-right: 68px;
+}
+
+.edit-category-b {
+    margin-top: 20px;
+}
+
+.edit-cancel {
+    position: absolute;
+    right: 4%;
+    top: 6%;
+    font-size: 23px;
+    color: gray;
+    font-weight: bold;
+}
+
+.edit-cancel:hover {
+    cursor: pointer;
+}
+
+.follower-name {
+    font-size: 100px;
+}
+
+.followindexitem-name {
+    font-size: 24px;
+    /* position: absolute;
+    top: 40%; */
+    z-index: 20;
+    margin-top: 10%;
+    align-self: center;
+}
+
+.followindexitem-pic {
+    position: absolute;
+    top: 20%;
+    border-radius: 50%;
+}
+
+.follower-image {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.follower-image:hover {
+    cursor: pointer;
+}
+
+.default-image {
+    width: 200px;
+}
+
+.follow-list {
+    display: flex;
+    margin-top: 10%;
+    margin-left: 4%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#num-follows {
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 200px;
+}
+
+#num-follows-h {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4%;
+}
+
+#followers-followers {
+    margin-left: 200px;
+}
+
+.follow-list-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.unfollow-button {
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgb(228, 227, 227);
+    font-size: 15px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.unfollow-button:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
+.follow-button {
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    background: red;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.follow-button:hover {
+    background: darkred;
+    cursor: pointer;
+}
+
+.follow-link {
+    text-decoration-line: none;
+    padding-left: 1%;
+    /* position: absolute; */
+    /* top: 5%;
+    left: 10%; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+    padding: 1%;
+    background: rgb(248, 247, 247);
+    border-radius: 50px;
+    margin-left: 1%;
+}
+
+.follow-link:hover {
+    cursor: pointer;
+    color: black;
+    text-decoration-line: underline;
+}
+
+#follow-array {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -4%;
+}
+
+.follow-links {
+    display: flex;
+    margin-left: 13%;
+    margin-top: 1%;
+    z-index: 9;
+}
+
+#followers-array {
+    display: flex;
+}
+
+.followindexitem-followers {
+    align-self: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.follow-message {
+    background: rgb(192, 190, 190);
+    padding: 40px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    animation: .8s linear 0s 1 followed;
+    position: absolute;
+    left: 600px;
+    top: 32%;
+}
+
+
+/* @keyframes followed {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+} */
+
+@keyframes followed {
+    0% {
+        top: 0%;
+    }
+    25% {
+        top: 8%;
+    }
+    50% {
+        top: 16%;
+    }
+    100% {
+        top: 32%;
+    }
 }

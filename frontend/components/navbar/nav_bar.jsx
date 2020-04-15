@@ -57,14 +57,22 @@ export default ({ currentUser, logout, openModal }) => {
       
     }
 
+  // const pickClass = () => {
+  //   if (document.getElementById('modal-background') === null){
+  //     return 'nav'
+  //   }
+  //   else {
+  //     return 'hidden'
+  //   }
+  // }
 
 
   const navbar = (currentUser, logout) => {
     return(
-      <div className="nav">
+      <div className={ (document.getElementById('modal-background') === null) ? "nav" : "hidden"}>
                 
                 <form className="nav-bar">
-                <img className="image" id="spacethumb" src={window.logo}/>
+          <Link className="navLink" to={`/users/${currentUser.id}/pins`}><img className="image" id="spacethumb" src={window.logo} /></Link>
           {/* <input className="btn spacebar" type="text" placeholder="search..."/> */}
           {/* <button className="btn" onClick={} type="submit">Home</button> */}
             <Link className="navLink" to={`/users/${currentUser.id}/pins`}>Home</Link>
@@ -72,7 +80,7 @@ export default ({ currentUser, logout, openModal }) => {
             &nbsp; 
             <Link className="navLink" to={`/users/${currentUser.id}`}>{currentUser.email.split("@")[0]}</Link>
             &nbsp;
-            <button className="btn" type="submit">Following</button>
+            <Link className="btn" to={`/users/following`}>Following</Link>
             &nbsp;
           <DropDownContainer/> 
         </form>

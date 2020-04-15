@@ -3,11 +3,11 @@ export const RECEIVE_PIN = 'RECEIVE_PIN';
 export const RECEIVE_PINS = 'RECEIVE_PINS';
 export const REMOVE_PIN = 'REMOVE_PIN';
 
-export const receivePin = pin => {
+export const receivePin = payload => {
     debugger
     return {
         type: RECEIVE_PIN,
-        pin
+        payload
     }
 }
 
@@ -20,6 +20,7 @@ const receivePins = pins => {
 }
 
 const removePin = pinId => {
+    debugger
     return {
         type: REMOVE_PIN,
         pinId
@@ -38,23 +39,26 @@ export const fetchPin = (id) => {
     }
 }
 
-export const createPin = (pin) => {
+export const createPin = (pin, boardId) => {
     debugger
     return dispatch => {
-        return APIUtil.createPin(pin).then(pin => dispatch(receivePin(pin)))
+        return APIUtil.createPin(pin, boardId).then(payload => dispatch(receivePin(payload)))
     }
 }
 
-export const updatePin = (pin) => {
+export const updatePin = (pin, boardId) => {
     debugger
     return dispatch => {
-        return APIUtil.updatePin(pin).then(pin => dispatch(receivePin(pin)))
+        return APIUtil.updatePin(pin, boardId).then(payload => dispatch(receivePin(payload)))
     }
 }
 
 export const deletePin = (id) => {
     debugger
     return dispatch => {
-        return APIUtil.deletePin(id).then(pin => dispatch(removePin(pin)))
+        return APIUtil.deletePin(id).then(pin => {
+            debugger
+            return dispatch(removePin(pin))
+        })
     }
 }

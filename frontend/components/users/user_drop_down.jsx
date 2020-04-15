@@ -18,11 +18,17 @@ class UserDropDown extends React.Component {
   }
 
   closeMenu() {
+    debugger
     if (!this.dropdownMenu.contains(event.target)) {
 
       this.setState({ showMenu: false }, () => {
         document.removeEventListener('click', this.closeMenu)
-      });
+      })
+    }
+    else if (event.target.innerText === 'Create Board'){
+      this.setState({ showMenu: false }, () => {
+        document.removeEventListener('click', this.closeMenu)
+      })
     }
   }
 

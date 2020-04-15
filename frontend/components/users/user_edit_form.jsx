@@ -30,35 +30,51 @@ class UserEditForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         debugger
+        this.state.f_name === null || this.state.f_name === "null" ?
+        formData.append('user[f_name]', '') : 
         formData.append('user[f_name]', this.state.f_name); 
+
         formData.append('user[id]', this.state.id); 
+
         debugger
-        formData.append('user[l_name]', this.state.l_name); 
+        this.state.l_name === null || this.state.l_name === "null" ?
+        formData.append('user[l_name]', '') : 
+        formData.append('user[l_name]', this.state.l_name);    
+        
+        this.state.username === null || this.state.username === "null" ?
+        formData.append('user[username]', ' ') : 
         formData.append('user[username]', this.state.username); 
+
+        this.state.description === "null" || this.state.description === null ?
+        formData.append('user[description]', '') : 
         formData.append('user[description]', this.state.description); 
+        
+        this.state.location === "null" || this.state.location === null ?
+        formData.append('user[location]', '') : 
         formData.append('user[location]', this.state.location); 
+
             if (this.state.photoFile) {
                 formData.append('user[photo]', this.state.photoFile);
             }
-     this.props.updateUser(formData).then(alert("saved!"))
+        this.props.updateUser(formData).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`))
+     //then(alert("saved!"))
        
     }
 
     handleFile(e){
-        // e.preventDefault; 
-        //photoFile - file //photo_url - reader reading file for us 
 
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        reader.onloadend = () =>
+        reader.onloadend = () => {
             this.setState({ photoUrl: reader.result, photoFile: file });
-
+        };
         if (file) {
             reader.readAsDataURL(file);
         } else {
             this.setState({ photoUrl: "", photoFile: null });
         }
     }
+    
 
   //this.props.updateUser
     
@@ -86,17 +102,22 @@ class UserEditForm extends React.Component {
         <div id="edit-sub">People on pinthefail will get to know you with the info below</div>
         <div className="edit-and-span">
                 <div className="edit-top-button" >
-                    <button className="edit-button" onClick={this.handleCancel}>Cancel</button>
-                    <button className="edit-button" onClick={this.handleSubmit}>Done</button>
+                   
                    
                 </div>
                 </div>
        
     <form>
+    <button className="edit-button" onClick={this.handleCancel}>Cancel</button>
+                    <button className="edit-button" onClick={this.handleSubmit}>Done</button>
+                    
         <label className="edit-photo">
             <div id="edit-photo-text"> </div>
             <br/> 
+            { this.state.photoUrl !== "" ? 
+            <img src={this.state.photoURL}/> :
             <img className="showpage-image" id="edit-pinface" src={window.pinface} />
+            } 
             <input type="file" onChange={this.handleFile}/>
         </label>
         <div className="names">

@@ -1,26 +1,29 @@
 class Api::BoardPinsController < ApplicationController
 
-    # def index
-    #     @board_pins = BoardPin.all 
-    # end 
+    def index
+        @board_pins = BoardPin.all 
+    end 
 
-    # def show
-    #     @board_pin = BoardPin.find(params[:id])
-    #     if @board_pin
-    #         render :show
-    #     else
-    #         render json: ['no board_pin relationship'], status: 422
-    #     end 
-    # end
+    def show
+        @board_pin = BoardPin.find(params[:id])
+        if @board_pin
+            render :show
+        else
+            render json: ['no board_pin relationship'], status: 422
+        end 
+    end
 
     def create
-        @board_pin = BoardPin.new(params[:id])
+        @board_pin = BoardPin.new(board_pin_params)
+        # debugger
         if @board_pin.save
+            # debugger
             render :show 
-            @pin = Pin.find_by(id: @board_id.pin_id)
+            # @pin = Pin.find_by(id: @board_id.pin_id)
             # render :show //save pin as instance variable, render pin's show 
         else
-            render json: @board_pin.errors.full_messages, status: 422
+            # debugger
+            render json: ['already saved to board!'], status: 422
         end 
     end
 
@@ -43,7 +46,7 @@ class Api::BoardPinsController < ApplicationController
     end
 
     def board_pin_params
-        params.require(:boardpin).permit(:board_id, :pin_id)
+        params.require(:board_pin).permit(:pin_id, :board_id)
     end 
 
 end

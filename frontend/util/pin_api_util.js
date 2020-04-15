@@ -12,22 +12,26 @@ export const fetchPin = id => {
     });
 };
 
-export const createPin = pin => {
+export const createPin = (pin, boardId) => {
     debugger
     return $.ajax({
         method: "POST",
-        url: "/api/pins",
-        data: pin, 
-        contentType: false, 
-        processData: false  
+        url: `/api/boards/${boardId}/pins`,
+        data: pin,
+        contentType: false,
+        processData: false
     });
 };
 
-export const updatePin = pin => {
+export const updatePin = ({ pin, boardId }) => {
+    debugger
     return $.ajax({
         method: "PATCH",
-        url: `/api/pins/${pin.id}`,
-        data: { pin }
+        url: `/api/boards/${boardId}/pins/${pin.id}`,
+        data: {
+            pin,
+            boardId
+        }
     });
 };
 

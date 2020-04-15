@@ -12,10 +12,11 @@ export const fetchBoardPin = id => {
     });
 };
 
-export const createBoardPin = board_pin => {
+export const createBoardPin = (board_pin) => {
+    debugger
     return $.ajax({
         method: "POST",
-        url: "/api/boards_pins",
+        url: "/api/board_pins",
         data: { board_pin }
     });
 };

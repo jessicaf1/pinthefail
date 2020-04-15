@@ -3,17 +3,17 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 import { receiveCurrentUser } from './session_actions'
 
-const receiveUser = user => {
+export const receiveUser = user => {
     return {
         type: RECEIVE_USER,
         user
     }
 }
 
-const receiveUsers = users => {
+const receiveUsers = payload => {
     return {
         type: RECEIVE_USERS,
-        users
+        users: payload.users
     }
 }
 

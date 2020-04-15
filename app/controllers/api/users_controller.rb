@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
       log_in_user(@user)
       render '/api/users/show'
     else
-      render json: ['invalid user']
+      render json: ['invalid user'], status: 404 
     end 
   end
 
@@ -23,6 +23,7 @@ class Api::UsersController < ApplicationController
 
   def index 
     @users = User.all 
+    render :index 
   end
 
   def show 

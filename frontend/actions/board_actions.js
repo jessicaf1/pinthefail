@@ -7,7 +7,7 @@ const receiveBoard = board => {
     // debugger
     return {
         type: RECEIVE_BOARD,
-        board
+        board 
     }
 }
 
@@ -15,7 +15,7 @@ const receiveBoards = boards => {
     // debugger
     return {
         type: RECEIVE_BOARDS,
-        boards
+        payload: {boards}
     }
 }
 
